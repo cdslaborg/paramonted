@@ -1,0 +1,2 @@
+# paramonted
+ParaMonte library documentation
