@@ -1,0 +1,3 @@
+- name: regression_powerlaw_data_paradram
+- name: regression_censored_lognormal_data_paradram
+- name: regression_censored_bivariate_lognormal_data_paradram

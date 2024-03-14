@@ -1,0 +1,62 @@
+## Topnav single links
+## if you want to list an external url, use external_url instead of url. the theme will apply a different link base.
+#topnav:
+#- title: Topnav
+#  items:
+#    - title: CDSLab
+#        folders:
+#            - title: About
+#                external_url: {{site.companyurl}}/#about
+#            - title: People
+#                external_url: {{site.companyurl}}/people
+#    - title: News
+#      url: /news
+
+#Topnav dropdowns
+topnav_dropdowns:
+- title: Topnav dropdowns
+  folders:
+
+    - title: CDSLab
+      folderitems:
+        - title: About
+          external_url: "!site.companyurl!/#about"
+        - title: People
+          external_url: "!site.companyurl!/people"
+        - title: Research
+          external_url: "!site.companyurl!/research"
+
+    - title: Tutorials
+      folderitems:
+        - title: MATLAB Programming
+          external_url: "!site.companyurl!/matlab/"
+        - title: Python Programming
+          external_url: "!site.companyurl!/python/"
+
+    # We cannot change these absolute URLs because paramonte notes doc resides in a different directory than paramonte/generic/1
+
+    - title: History
+      folderitems:
+        - title: latest
+          external_url: "https://www.cdslab.org/paramonte/generic/latest"
+        - title: version 1                
+          external_url: "https://www.cdslab.org/paramonte/generic/1"
+
+#    - title: UTA
+#      folderitems:
+#        - title: College of Science
+#          external_url: "https://www.uta.edu/science/"
+#        - title: Data Science
+#          external_url: "https://www.uta.edu/science/data-science/"
+#        - title: Physics
+#          external_url: "https://www.uta.edu/physics/"
+
+topnav:
+- title: Topnav
+  items:
+    - title: GitHub
+      external_url: https://github.com/cdslaborg/paramonte
+    - title: MathWorks
+      external_url: https://www.mathworks.com/matlabcentral/fileexchange/78946-paramonte
+    - title: PyPI
+      external_url: https://pypi.org/project/paramonte/

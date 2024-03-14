@@ -1,0 +1,9 @@
+/workspace
+**/___*___/**
+**/auxil/**
+**/latex/**
+**/html/**
+**/READ_THESE_BUILD_WARNINGS.txt
+**/*.exe
+**/bin
+**/bld

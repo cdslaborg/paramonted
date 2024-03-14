@@ -1,0 +1,1 @@
+{% include tip.html content="If the `matlab` executable is not recognized by the Bash terminal, see [this page](../../troubleshooting/bash-matlab-command-not-found){:target='_blank'} for a solution." %}  

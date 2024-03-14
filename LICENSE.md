@@ -1,0 +1,1 @@
+This repository follows the licensing rules of the [ParaMonte library](https://github.com/cdslaborg/paramonte).

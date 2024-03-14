@@ -1,0 +1,236 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+@charset "utf-8";
+
+
+
+// Our variables
+$base-font-family: Helvetica, Arial, sans-serif;
+$base-font-size:   15px;
+$small-font-size:  $base-font-size * 0.875;
+$base-line-height: 1.5;
+
+$spacing-unit:     30px;
+
+$text-color:       #111;
+$text-color-light: #c0c0c0;
+$text-color-extra-light: #e0e0e0;
+/* $background-color: #fdfdfd; */ /* This is the original color used */
+$background-color: #f3f3f3;
+$brand-color:      #2a7ae2; /* used for links */
+$brand-color-light: lighten($brand-color, 20%);
+$brand-color-dark: darken($brand-color, 20%);
+
+$grey-color:       #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark:  darken($grey-color, 25%);
+
+// Width of the content area
+$content-width:    850px;
+
+$on-palm:          790px;
+$on-laptop:        850px;
+
+
+
+// Using media queries with like this:
+// @include media-query($on-palm) {
+//     .wrapper {
+//         padding-right: $spacing-unit / 2;
+//         padding-left: $spacing-unit / 2;
+//     }
+// }
+@mixin media-query($device) {
+    @media screen and (max-width: $device) {
+        @content;
+    }
+}
+
+
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+        "base",
+        "layout",
+        "syntax-highlighting"
+;
+
+/* ******************************************************** */
+/* ******************************************************** */
+/* ******************************************************** */
+
+.tag-box {
+    padding: 4px 0;
+    margin: 0;
+    overflow: hidden;
+    list-style: none;
+    *zoom: 1;
+}
+
+.tag-box:after,.tag-box:before {
+    display: table;
+    line-height: 0;
+    content: "";
+}
+
+.tag-box:after {
+    clear: both;
+}
+
+.tag-box.inline li {
+    float: left;
+    font-size: 1rem;
+    /*
+    */
+    line-height: 2.5;
+}
+
+.tag-box a {
+    padding: 8px 6px;
+    margin: 4px;
+    text-decoration: none;
+    border: 0.1rem solid black;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    border-color: $brand-color;
+}
+
+.tag-box a span {
+    font-size: 1rem;
+    vertical-align: center;
+    color: $brand-color;
+}
+
+
+/* ******************************************************** */
+/* ******************************************************** */
+/* horizontal line */
+
+hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    color: black;
+} 
+
+/**
+ * Wrapper
+ */
+.wrapper {
+    max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit} * 2));
+    max-width:         calc(#{$content-width} - (#{$spacing-unit} * 2));
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: $spacing-unit;
+    padding-left: $spacing-unit;
+    @extend %clearfix;
+
+    @include media-query($on-laptop) {
+        max-width: -webkit-calc(#{$content-width} - (#{$spacing-unit}));
+        max-width:         calc(#{$content-width} - (#{$spacing-unit}));
+        padding-right: $spacing-unit / 2;
+        padding-left: $spacing-unit / 2;
+    }
+}
+
+
+/**
+ * Site footer
+ */
+.site-footer {
+    /* height: 20%; */
+    height: 150px;
+    /*border-top: 1px solid $grey-color-light;*/
+    /*background-color: $grey-color-dark;*/
+    background-color: #000000;
+    color: $text-color-light;
+    padding: $spacing-unit 0;
+    /* */
+    a:link{color:#ffef99};      /* This makes the color of links golden */
+    a:visited{color:#ffef99}
+
+    min-height: 150px;    
+        
+    a {
+        color: $brand-color-light;
+        
+        &:hover {
+            color: $text-color-light;
+        }
+    }
+    
+    @include media-query($on-laptop) {
+        min-height: 260px;
+    }
+    
+    @include media-query($on-palm) {
+        min-height: 350px;
+    }   
+}
+
+.footer-heading {
+    font-size: 18px;
+    color: $text-color-extra-light;
+    margin-top: $spacing-unit / 2;
+    margin-bottom: $spacing-unit / 2;
+}
+
+.contact-list,
+.social-media-list {
+    list-style: none;
+    margin-left: 0;
+}
+
+.footer-col-wrapper {
+    font-size: 14px;
+    margin-left: -$spacing-unit / 2;
+    @extend %clearfix;
+}
+
+.footer-col {
+    float: left;
+    margin-bottom: $spacing-unit / 2;
+    padding-left: $spacing-unit / 2;
+}
+
+.footer-col-1 {
+    width: -webkit-calc(33% - (#{$spacing-unit} / 2));
+    width:         calc(33% - (#{$spacing-unit} / 2));
+}
+
+.footer-col-2 {
+    width: -webkit-calc(22% - (#{$spacing-unit} / 2));
+    width:         calc(22% - (#{$spacing-unit} / 2));
+}
+
+.footer-col-3 {
+    width: -webkit-calc(45% - (#{$spacing-unit} / 2));
+    width:         calc(45% - (#{$spacing-unit} / 2));
+}
+
+@include media-query($on-laptop) {
+    .footer-col-1,
+    .footer-col-2 {
+        width: -webkit-calc(50% - (#{$spacing-unit} / 2));
+        width:         calc(50% - (#{$spacing-unit} / 2));
+    }
+
+    .footer-col-3 {
+        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+        width:         calc(100% - (#{$spacing-unit} / 2));
+    }
+}
+
+@include media-query($on-palm) {
+    .footer-col {
+        float: none;
+        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+        width:         calc(100% - (#{$spacing-unit} / 2));
+    }
+}

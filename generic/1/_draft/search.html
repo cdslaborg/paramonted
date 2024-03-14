@@ -1,0 +1,42 @@
+---
+layout: default
+title: Search
+keywords: search_contents, contents_index
+tags: [search_contents, contents_index]
+sidebar: home_sidebar
+permalink: search.html
+summary:
+search: exclude
+---
+
+<center>
+    <!-- Search form -->
+    <form method="get" action="/search" class="search-wrapper cf">
+        <input type="text" name="q" id="search" placeholder="e.g. science" autocomplete="off" />
+        <button type="submit">Search</button>
+        <span class="nav-hint-mob" > Hit Ctrl+&larr; to delete whole word </span>
+    </form>
+</center>
+<!-- Search results placeholder -->
+<section>
+    <ul id="search-results">
+        <center>
+            <h2> [Or] try multitag search ;)</h2>
+            <a href="/filtertags" id="s-tag-button">Multi Tag Search!</a>
+        </center>
+    </ul>
+</section>
+
+<script type='text/javascript'>
+loadJquery();
+
+function loadJquery() {
+    if( window.$ ) {
+        checkloadjscssfile("/assets/js/lunr-feed.js","js");
+    } else {
+        window.setTimeout( loadJquery, 50 );
+    }
+};
+</script>
+<noscript><META HTTP-EQUIV="Refresh" CONTENT="0;URL=nojs"></noscript>
+<!-- <script src="/js/lunr-feed.js" defer></script> -->

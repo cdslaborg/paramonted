@@ -1,0 +1,3 @@
+{% include note.html content="
+On some platforms (e.g., supercomputers) the support for Python's visualization libraries such as **`matplotlib`** and **`seaborn`** may be weak. In particular, **`import matplotlib`** is known to cause a **`segmentation fault`** error on some platforms, which subsequently leads to the crash of the active Python session. The Python interface of ParaMonte has been implemented in such a way as to ensure that no unnecessary call is made to the visualization libraries as long as the user is only interested in performing a pure ParaMonte simulation, without any visualizations or post-processing of the current (or some old preexisting) ParaMonte simulation output files.
+" %}  

@@ -1,0 +1,74 @@
+<div class="social-icons">
+
+    {% if site.lab.facebook %}
+    <span class="social-icon">
+        <a href="https://facebook.com/{{ site.lab.facebook }}" target="_blank">
+            <span class="fa-stack fa-lg">
+                {% comment %}
+                <i class="fa fa-circle fa-stack-2x fa-inverse" style="color:black"></i>
+                {% endcomment %}
+                {% include socialIconsCircle.html %}
+                <i class="fa fa-facebook fa-stack-xs"></i>
+            </span>
+        </a>
+    </span>
+    {% endif %}
+
+    {% if site.lab.github %}
+    <span class="social-icon">
+        <a href="https://github.com/{{ site.lab.github }}" target="_blank">
+            <span class="fa-stack fa-lg">
+                {% include socialIconsCircle.html %}
+                <i class="fa fa-github fa-stack-xs"></i>
+            </span>
+        </a>
+    </span>
+    {% endif %}
+
+    {% if site.lab.google_plus %}
+    <span class="social-icon">
+        <a href="{{ site.lab.google_plus }}" target="_blank">
+            <span class="fa-stack fa-lg">
+                {% include socialIconsCircle.html %}
+                <i class="fa fa-google-plus fa-stack-xs"></i>
+            </span>
+        </a>
+    </span>
+    {% endif %}
+
+    {% if site.lab.instagram %}
+    <span class="social-icon">
+        <a href="https://instagram.com/{{ site.lab.instagram }}" target="_blank">
+            <span class="fa-stack fa-lg">
+                {% include socialIconsCircle.html %}
+                <i class="fa fa-instagram fa-stack-xs"></i>
+            </span>
+        </a>
+    </span>
+    {% endif %}
+
+    {% if site.lab.medium %}
+    <span class="social-icon">
+        <a href="https://medium.com/{{ site.lab.medium }}" target="_blank">
+            <span class="fa-stack fa-lg">
+                {% include socialIconsCircle.html %}
+                <i class="fa fa-medium fa-stack-xs"></i>
+                <!--
+                -->
+            </span>
+        </a>
+    </span>
+    {% endif %}
+
+    {% if site.lab.twitter %}
+    <span class="social-icon">
+        <a href="https://twitter.com/{{ site.lab.twitter }}" target="_blank">
+            <span class="fa-stack fa-lg">
+                {% include socialIconsCircle.html %}
+                <i class="fa fa-twitter fa-stack-xs"></i>
+            </span>
+        </a>
+    </span>
+    {% endif %}
+
+</div>

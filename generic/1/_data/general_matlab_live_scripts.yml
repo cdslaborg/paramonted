@@ -1,0 +1,16 @@
+- name: working_with_logarithm_of_objective_function
+- name: visualization_proposal_ellipsoid
+- name: visualization_heatmap
+- name: visualization_grid
+- name: visualization_line
+- name: visualization_line3
+- name: visualization_scatter
+- name: visualization_scatter3
+- name: visualization_lineScatter
+- name: visualization_lineScatter3
+- name: visualization_histfit
+- name: visualization_histogram
+- name: visualization_histogram2
+- name: visualization_contour
+- name: visualization_contourf
+- name: visualization_contour3

@@ -1,0 +1,359 @@
+# This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
+
+entries:
+- title: sidebar
+  product:
+  version:
+  folders:
+
+#  - title:
+#    output: pdf
+#    type: frontmatter
+#    folderitems:
+#    - title:
+#      url: /titlepage.html
+#      output: pdf
+#      type: frontmatter
+#    - title:
+#      url: /tocpage.html
+#      output: pdf
+#      type: frontmatter
+
+  ################################################################
+
+  - title: Overview
+    output: web, pdf
+    folderitems:
+
+    - title: Preface
+      url: /overview/preface/
+      output: web, pdf
+      type: homepage
+
+    - title: ParaMonte C release notes
+      url: /overview/paramonte-c-release-notes/
+      output: web, pdf
+      type: frontmatter
+
+    - title: ParaMonte C++ release notes
+      url: /overview/paramonte-cpp-release-notes/
+      output: web, pdf
+      type: frontmatter
+
+    - title: ParaMonte Fortran release notes
+      url: /overview/paramonte-fortran-release-notes/
+      output: web, pdf
+      type: frontmatter
+
+    - title: ParaMonte MATLAB release notes
+      url: /overview/paramonte-matlab-release-notes/
+      output: web, pdf
+      type: frontmatter
+
+    - title: ParaMonte Python release notes
+      url: /overview/paramonte-python-release-notes/
+      output: web, pdf
+      type: frontmatter
+
+  ################################################################
+
+  - title: Installation
+    output: web, pdf
+    folderitems:
+
+    - title: ParaMonte pre-installation notes
+      output: web, pdf
+      url: /installation/readme/
+
+    - title: ParaMonte installation quickstart
+      output: web, pdf
+      url: /installation/QUICKSTART.md
+
+    - title: ParaMonte installation guidelines
+      output: web, pdf
+      url: /installation/install.md
+
+    - title: ParaMonte installation in Unix Bash 
+      output: web, pdf
+      url: /installation/install.sh.md
+
+    - title: ParaMonte installation in Windows CMD 
+      output: web, pdf
+      url: /installation/install.bat.md
+
+    - title: ParaMonte installation configuration
+      output: web, pdf
+      url: /installation/install.config.md
+
+    - title: ParaMonte installation via CMake 
+      output: web, pdf
+      url: /installation/CMakeLists.md
+
+    #- title: ParaMonte C/C++/Fortran - Windows
+    #  output: web, pdf
+    #  url: /installation/windows/
+    #
+    #- title: ParaMonte C/C++/Fortran - macOS
+    #  url: /installation/macos/
+    #  output: web, pdf
+    #
+    #- title: ParaMonte C/C++/Fortran - Linux
+    #  url: /installation/linux/
+    #  output: web, pdf
+    #
+    #- title: ParaMonte MATLAB
+    #  output: web, pdf
+    #  url: /installation/matlab/
+    #
+    #- title: ParaMonte Python
+    #  output: web, pdf
+    #  url: /installation/python/
+
+    #- title: Java / Julia / Mathematica / MATLAB / R
+    #  output: web, pdf
+    #  url: /installation/java-julia-mathematica-matlab-r/
+
+  ################################################################
+
+  - title: API documentation
+    output: web, pdf
+    folderitems:
+
+    - title: ParaMonte C API
+      output: web, pdf
+      #external_url: !site.baseurl!/c/2/
+      url: "{{site.baseurl}}/../c/2/"
+
+    - title: ParaMonte C++ API
+      output: web, pdf
+      external_url: !site.baseurl!/cpp/2/
+
+    - title: ParaMonte Fortran API
+      output: web, pdf
+      external_url: !site.baseurl!/fortran/2/
+
+  ################################################################
+
+  - title: "Usage: ParaDRAM sampler"
+    output: web, pdf
+    folderitems:
+
+    - title: ParaDRAM quick start
+      url: /usage/paradram/interface/
+      output: web, pdf
+
+    - title: ParaDRAM optional input file
+      url: /usage/paradram/input/
+      output: web, pdf
+
+    #- title: ParaDRAM simulation specifications
+    #  url: /usage/paradram/specifications/
+    #  output: web, pdf
+
+    - title: ParaDRAM simulation output files
+      url: /usage/paradram/output/
+      output: web, pdf
+
+    - title: ParaDRAM simulation restart
+      url: /usage/paradram/restart/
+      output: web, pdf
+
+    - title: ParaDRAM parallelization tips
+      url: /usage/paradram/parallelization/
+      output: web, pdf
+
+  ################################################################
+
+  #- title: Building ParaMonte application
+  #  output: web, pdf
+  #  folderitems:
+  #
+  #  - title: Building ParaMonte C application
+  #    url: /build/c/
+  #    output: web, pdf
+  #
+  #  - title: Building ParaMonte C++ application
+  #    url: /build/cpp/
+  #    output: web, pdf
+  #
+  #  - title: Building ParaMonte Fortran application
+  #    url: /build/fortran/
+  #    output: web, pdf
+  #
+  #- title: Running ParaMonte application
+  #  output: web, pdf
+  #  folderitems:
+  #
+  #  - title: Running C/C++/Fortran application
+  #    url: /run/default/
+  #    output: web, pdf
+  #
+  #  - title: Running MATLAB application
+  #    url: /run/matlab/
+  #    output: web, pdf
+  #
+  #  - title: Running Python application
+  #    url: /run/python/
+  #    output: web, pdf
+  #
+  #- title: C examples
+  #  output: web, pdf
+  #  folderitems:
+  #
+  #  - title: Sampling a Multivariate Normal distribution
+  #    url: /examples/c/mvn/
+  #    output: web, pdf
+  #
+  #- title: C++ examples
+  #  output: web, pdf
+  #  folderitems:
+  #
+  #  - title: Sampling a Multivariate Normal distribution
+  #    url: /examples/cpp/mvn/
+  #    output: web, pdf
+  #
+  #- title: Fortran examples
+  #  output: web, pdf
+  #  folderitems:
+  #
+  #  - title: Sampling a Multivariate Normal distribution
+  #    url: /examples/fortran/mvn/
+  #    output: web, pdf
+  #
+  #- title: MATLAB examples
+  #  output: web, pdf
+  #  folderitems:
+  #
+  #  - title: MATLAB Live Scripts
+  #    url: /examples/matlab/mlx/
+  #    output: web, pdf
+  #
+  #  - title: Post-processing existing simulations
+  #    url: /examples/matlab/postprocess/
+  #    output: web, pdf
+  #
+  #- title: Python examples
+  #  output: web, pdf
+  #  folderitems:
+  #
+  #  - title: Jupyter Notebooks
+  #    url: /examples/python/jupyter/
+  #    output: web, pdf
+  #
+  #  - title: Post-processing existing simulations
+  #    url: /examples/python/postprocess/
+  #    output: web, pdf
+  #
+  #  # - title: Sampling a Multivariate Normal distribution
+  #    # url: /examples/python/mvn/
+  #    # output: web, pdf
+
+  ################################################################
+
+  - title: Code Coverage Reports
+    output: web, pdf
+    folderitems:
+
+    - title: Guidelines
+      url: /codecov/
+      output: web, pdf
+
+    - title: Kernel - Serial
+      external_url: https://cdslaborg.github.io/paramonte-codecov/kernel/serial/
+      output: web, pdf
+
+    - title: Kernel - MPI Parallel
+      external_url: https://cdslaborg.github.io/paramonte-codecov/kernel/mpi/
+      output: web, pdf
+
+    - title: Kernel - Coarray Parallel
+      external_url: https://cdslaborg.github.io/paramonte-codecov/kernel/caf/
+      output: web, pdf
+
+  ################################################################
+
+  - title: Contributing to ParaMonte
+    output: web, pdf
+    folderitems:
+
+    - title: Reporting defects
+      url: /contributing/defects
+      output: web, pdf
+
+    - title: Requesting enhancements
+      url: /contributing/enhancements
+      output: web, pdf
+
+    - title: Development guidelines - general
+      url: /contributing/development/general/
+      output: web, pdf
+
+    - title: Development guidelines - kernel
+      url: /contributing/development/kernel/
+      output: web, pdf
+
+  ################################################################
+
+  - title: Troubleshooting
+    output: web, pdf
+    folderitems:
+
+    - title: Enhancement-requests and bug-reports
+      url: /troubleshooting/issues/
+      output: web, pdf
+
+    - title: "-bash: Permission denied"
+      url: /troubleshooting/bash-permission-denied/
+      output: web, pdf
+
+    - title: "bash: matlab: command not found"
+      url: /troubleshooting/bash-matlab-command-not-found/
+      output: web, pdf
+
+    - title: "catastrophic error: cannot open source file"
+      url: /troubleshooting/catastrophic-error-cannot-open-source-file/
+      output: web, pdf
+
+    - title: "Catastrophic error: could not set locale"
+      url: /troubleshooting/catastrophic-error-could-not-set-locale/
+      output: web, pdf
+
+    - title: 'xcrun: error: unable to find utility "clang"'
+      url: /troubleshooting/xcrun-error-unable-to-find-utility-clang/
+      output: web, pdf
+
+    - title: changing directory on Windows CMD
+      url: /troubleshooting/windows-drive-change/
+      output: web, pdf
+
+    - title: error while loading shared libraries
+      url: /troubleshooting/error-while-loading-shared-libraries/
+      output: web, pdf
+
+    - title: finding the MPI libraries on Windows
+      url: /troubleshooting/finding-mpi-libraries-on-windows/
+      output: web, pdf
+
+    - title: "Fortran runtime error: End of file"
+      url: /troubleshooting/fortran-runtime-error-end-of-file/
+      output: web, pdf
+
+    - title: libgfortran not found
+      url: /troubleshooting/libgfortran-not-found/
+      output: web, pdf
+
+    - title: "macOS: developer cannot be verified"
+      url: /troubleshooting/macos-developer-cannot-be-verified/
+      output: web, pdf
+
+    - title: "Python: could not find module"
+      url: /troubleshooting/python-could-not-find-module/
+      output: web, pdf
+
+    - title: "Python: module object is not callable"
+      url: /troubleshooting/python-module-object-is-not-callable/
+      output: web, pdf
+
+    - title: "Python: segmentation-fault error"
+      url: /troubleshooting/python-segmentation-fault/
+      output: web, pdf

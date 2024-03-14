@@ -1,0 +1,27 @@
+{% comment %}
+    <!-- this handles the automatic toc. use ## for subheads to auto-generate the on-page minitoc. if you use html tags, you must supply an ID for the heading element in order for it to appear in the minitoc. -->
+{% endcomment %}
+<script>
+    $( document ).ready(function() {
+        // Handler for .ready() called.
+        $('#toc').toc({ minimumHeaders: 0 
+                      , listType: 'ol'
+                      , showSpeed: 0
+                      , headers: 'h2,h3,h4,h5,h6'
+        });
+        /* the following offset helps account for the space taken up by the floating toolbar. */
+        $('#toc').on('click', 'a', function() {
+            var target = $(this.getAttribute('href')), scroll_target = target.offset().top$(window).scrollTop(scroll_target - 10);
+            return false
+        })
+    });
+</script>
+{% comment %}
+    <!-- make toc sticky via tocible -->
+    <script>
+        $('#container').tocible({
+            heading: 'h2', subheading: 'h3', navigation: 'nav',
+        });
+    </script>
+{% endcomment %}
+<div id="toc"></div>

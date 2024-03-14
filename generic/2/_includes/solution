@@ -1,0 +1,9 @@
+<div style="text-align:center;margin-top:2rem;margin-bottom:2rem;">
+    {% if include.part %}
+        <a href="#solution-{{ include.part | slugify: "pretty" }}">
+            <h2 id="solution-{{ include.part | slugify: "pretty" }}">Solution Part {{ include.part }}</h2>
+        </a>
+    {% else %}
+        <span style="text-decoration:underline;font-size:1.5em;font-weight:bold;">Solution</span>
+    {% endif %}
+</div>

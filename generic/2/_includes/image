@@ -1,0 +1,44 @@
+<!-- include.src must be given relative to site.baseurl, which is the project's root directory -->
+{% if include.name %}
+    {% capture imageSrc %}{{include.name}}{% endcapture %}
+{% elsif include.src %}
+    {% capture imageSrc %}{{include.src}}{% endcapture %}
+{% else %}
+    {% assign imageSrc = include.href %}
+{% endif %}
+
+<div>
+    <figure style="display:block;text-align:center;width=1200px">
+        {% if include.href %}
+            {% if include.newtab==false %}
+                <a href="{{ include.href }}">
+            {% else %}
+                <a href="{{ include.href }}" target="_blank">
+            {% endif %}
+        {% endif %}
+            <img
+                src="{{ imageSrc }}"
+                {% if include.alt %}
+                    alt="{{ include.alt }}"
+                {% elsif include.name %}
+                    alt="{{ include.name }}"
+                {% endif %}
+                {% if include.width %}
+                    width="{{ include.width }}"
+                {% endif %}
+                {% if include.height %}
+                    height="{{ include.height }}"
+                {% endif %}
+            >
+        {% if include.href %}
+        </a>
+        {% endif %}
+        {% if include.caption %}
+            {% if include.capstyle %}
+                <figcaption style="{{include.capstyle}}">{{ include.caption }}</figcaption>
+            {% else %}
+                <figcaption style="display:block;text-align:justify;margin-right:auto;margin-left:auto">{{ include.caption }}</figcaption>
+            {% endif %}
+        {% endif %}
+    </figure>
+</div>
