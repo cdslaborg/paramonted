@@ -1,7 +1,7 @@
 <div align="center">
 
 <a href="https://cdslab.org/paramonte" target="_blank">
-    <img alt="paramonte-kernel-doc" src="https://cdslab.org/paramonte/img/paramonte.png" width="80%">
+    <img alt="ParaMonte library documentation website" src="https://github.com/cdslaborg/paramonte/blob/main/img/paramonte.png" width="80%">
 </a>
 
 <h1>
