@@ -1,7 +1,7 @@
 <div align="center">
 
-    <a href="https://cdslaborg.github.io/paramonted/fortran/html/" target="_blank">
-        <img alt="paramonte-kernel-doc" src="https://cdslaborg.github.io/paramonted/fortran/html/logo.png" width="80%">
+    <a href="https://cdslab.org/paramonte" target="_blank">
+        <img alt="paramonte-kernel-doc" src="https://cdslab.org/paramonte/img/paramonte.png" width="80%">
     </a>
 
     <h1>
