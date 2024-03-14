@@ -122,15 +122,15 @@ entries:
     - title: ParaMonte C API
       output: web, pdf
       #external_url: !site.baseurl!/c/2/
-      url: "{{site.baseurl}}/../c/2/"
+      external_url: "!site.baseurl!/../../c/2/"
 
     - title: ParaMonte C++ API
       output: web, pdf
-      external_url: !site.baseurl!/cpp/2/
+      external_url: "!site.baseurl!/../../cpp/2/"
 
     - title: ParaMonte Fortran API
       output: web, pdf
-      external_url: !site.baseurl!/fortran/2/
+      external_url: "!site.baseurl!/../../fortran/2/"
 
   ################################################################
 
