@@ -60,7 +60,7 @@ cmakeVersion: 3.14.0
 
 releases: "https://github.com/cdslaborg/paramonte/releases"
 archive: "https://github.com/cdslaborg/paramonte/archive"
-codecov: "https://cdslaborg.github.io/paramonte-codecov/"
+codecov: "https://cdslab.org/paramonte/codecov/fortran/1"
 issues: "https://github.com/cdslaborg/paramonte/issues"
 
 currentRelease:         "https://github.com/cdslaborg/paramonte/releases/v1.5.1"

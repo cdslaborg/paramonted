@@ -283,7 +283,7 @@ for (( idoc=0 ; idoc<${#paramonte_doc_out_dir_list[@]} ; idoc++ )) ; do
                 doc_brand="R"
             elif [ "${doc_name}" = "generic" ]; then
                 doc_brand="Generic"
-            else
+            elif ! [ "${doc_name}" = "codecov" ]; then
                 echo >&2
                 echo >&2 "${pmfatal} Unrecognized ParaMonte documentation folder detected: \"${doc_path}\""
                 echo >&2
@@ -391,4 +391,26 @@ if [ "${is_latest_version}" = "true" ]; then
     fi
     mkdir -p "${paramonte_doxygen_out_latest_dir}"
     cp -arf "${paramonte_doc_out_lang_dir}"/* "${paramonte_doxygen_out_latest_dir}"
+fi
+
+####
+#### Copy the required generic doc files from the ParaMonte Fortran directory to the corresponding generic docs source folder.
+####
+
+if [ "${lang}" = "fortran" ]; then
+    destin="${paramonte_doc_gen_dir}/${paramonte_version_major}/_includes"
+    origin="${bdir}/pkg/example/pm_sampling/attributes"
+    if [ -d "${destin}" ] && [ -d "${origin}" ]; then
+        cp -arf "${origin}"/*.md "${destin}"/
+    else
+        echo >&2
+        echo >&2 "${pmwarn} Failed to find one of the following origin and destin folders:"
+        echo >&2 "${pmwarn} "
+        echo >&2 "${pmwarn}     origin=\"${origin}\""
+        echo >&2 "${pmwarn}     destin=\"${destin}\""
+        echo >&2 "${pmwarn} "
+        echo >&2 "${pmwarn} Some functionalities of the generic documentation may not work properly."
+        echo >&2 "${pmwarn} Skipping the generic documentation source file copies..."
+        echo >&2
+    fi
 fi

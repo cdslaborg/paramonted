@@ -111,8 +111,7 @@ PROJECT_BRIEF          = "Parallel Monte Carlo and Machine Learning Library"
 # pixels and the maximum width should not exceed 200 pixels. Doxygen will copy
 # the logo to the output directory.
 
-#PROJECT_LOGO           = "./img/$(paramopnte_lang)/logo.png"
-PROJECT_LOGO           = "$(paramonte_doc_out_lang_dir)/logo.png"
+PROJECT_LOGO           = "./img/$(paramonte_lang)/logo.png"
 
 # The OUTPUT_DIRECTORY tag is used to specify the (relative or absolute) path
 # into which the generated documentation will be written. If a relative path is
@@ -386,23 +385,23 @@ ALIASES += author="\authorlist"
 ALIASES += "devnotelist=\xrefitem DEVNOTE \"Developer Remark\" \"Developer Remarks\""
 ALIASES += devnote="\devnotelist"
 
-ALIASES += "benchmarks=\xrefitem benchmarks \"Benchmarks\" \"Benchmark List\""
+ALIASES += benchmarks="\xrefitem benchmarks \"Benchmarks\" \"Benchmark List\""
 ALIASES += benchmark="<br><a id='benchmark'><b>Example usage</b></a> [⛓](#example) \par"
 ALIASES += benchmark{1}="<br><a id='benchmark-\1'><b>Benchmark :: \1</b></a> [⛓](#benchmark-\1) \par"
 ALIASES += benchmark{2}="<br><a id='benchmark-\1'><b>Benchmark :: \2</b></a> [⛓](#benchmark-\1) \par"
 
 ALIASES += cmakerun="\
 <br>\
-<a id='cmakerun-unix-bash'><b>Example Unix Bash build command via CMake build generator</b></a> [⛓](#cmakerun-unix-bash) \include{lineno} cmakerun.sh\
+<a id='cmakerun-unix-bash'><b>Example Unix Bash build command via CMake build generator</b></a> [⛓](#cmakerun-unix-bash) \include{lineno} $(paramonte_dir)/cmakerun.sh\
 <br>\
-<a id='cmakerun-unix-batch'><b>Example Windows CMD Batch build command via CMake build generator</b></a> [⛓](#cmakerun-windows-batch) \include{lineno} cmakerun.bat\
+<a id='cmakerun-unix-batch'><b>Example Windows CMD Batch build command via CMake build generator</b></a> [⛓](#cmakerun-windows-batch) \include{lineno} $(paramonte_dir)/cmakerun.bat\
 "
 
 ALIASES += cmakerun{1}="\
 <br>\
-<a id='cmakerun-unix-bash-\1'><b>Example Unix Bash build command via CMake build generator</b></a> [⛓](#cmakerun-unix-bash-\1) \include{lineno} example/auxil/cmakerun.sh\
+<a id='cmakerun-unix-bash-\1'><b>Example Unix Bash build command via CMake build generator</b></a> [⛓](#cmakerun-unix-bash-\1) \include{lineno} $(paramonte_dir)/example/auxil/cmakerun.sh\
 <br>\
-<a id='cmakerun-windows-batch-\1'><b>Example Windows CMD Batch build command via CMake build generator</b></a> [⛓](#cmakerun-windows-batch-\1) \include{lineno} example/auxil/cmakerun.bat\
+<a id='cmakerun-windows-batch-\1'><b>Example Windows CMD Batch build command via CMake build generator</b></a> [⛓](#cmakerun-windows-batch-\1) \include{lineno} $(paramonte_dir)/example/auxil/cmakerun.bat\
 "
 
 ALIASES += cmakefile{1}="<br><a id='cmakefile-\1'><b>Example CMakeLists build generator file</b></a> [⛓](#cmakefile-\1)" # \include{lineno} \2/CMakeLists.txt
@@ -443,10 +442,14 @@ ALIASES += compilefb{1}="\
 <a id=' compilefb-unix-gnu-\1'><b>Example Unix / MinGW compile command via GNU `gfortran` compiler</b></a> [⛓](#compilefb-unix-gnu-\1) \include{lineno} build.gnu.release.sh\
 "
 
-ALIASES += inputnml{2}="\
+ALIASES += inputfile{2}="\
 <br>\
-<a id='inputnml-\1'><b>Example specifications input namelist file <code>input.nml</code>:</b></a> [⛓](#inputnml-\1)\
-" # \include{lineno} \2/input.nml
+<a id='inputfile-\1'><b>The contents of <code>\2</code></b></a> [⛓](#inputfile-\1)\
+"
+ALIASES += inputfile{3}="\
+<br>\
+<a id='inputfile-\1'><b>The contents of \3 <code>\2</code></b></a> [⛓](#inputfile-\1)\
+"
 
 ALIASES += output="<br><a id='output'><b>Example output</b></a> [⛓](#output)"
 ALIASES += outputb="<br><a id='outputb'><b>Benchmark output</b></a> [⛓](#outputb)"
@@ -502,25 +505,33 @@ ALIASES += plow="<span class='plow'>Low Priority</span>:"
 ALIASES += pmed="<span class='pmed'>Normal Priority</span>:"
 ALIASES += phigh="<span class='phigh'>High Priority</span>:"
 ALIASES += pvhigh="<span class='pvhigh'>Critical Priority</span>:"
-ALIASES += abbr="For details on the naming abbreviations, see [this page](@ref ParaMonteAbbreviationGuidlines).<br>"
-ALIASES += conventions="For details on the naming conventions, see [this page](@ref ParaMonteNamingConventions).<br>"
+ALIASES += abbr="For details on the naming abbreviations, see [this page](@ref ParaMonteLangAbbreviationGuidlines).<br>"
+ALIASES += conventions="For details on the naming conventions, see [this page](@ref ParaMonteLangNamingConventions).<br>"
 
 ALIASES += license1="This software is distributed under the <a href='https://github.com/cdslaborg/paramonte#license' target='_blank'>MIT license</a> <b>with additional terms outlined below.</b><br>"
 
 ALIASES += license2="If you use any parts or concepts from this library to any extent, <b>you must acknowledge the usage by citing the relevant</b>\
-<a href='https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work' target='_blank'><b>publications of the ParaMonte library</b></a>.<br>"
+<a href='https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work' target='_blank'><b>publications of the ParaMonte library</b></a>.<br>"
 
-ALIASES += license3="If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library, <b>you must also ask the end users to</b> \
-<a href='https://www.cdslab.org/paramonte/notes/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work' target='_blank'><b>cite this original ParaMonte library</b></a>.<br>"
+ALIASES += license3="If you regenerate any parts/ideas from this library in a programming environment other than those currently supported by this ParaMonte library (i.e., other than C, C++, Fortran, MATLAB, Python, R), \
+<b>you must also ask the end users to</b> <a href='https://www.cdslab.org/paramonte/generic/latest/overview/preface/#how-to-acknowledge-the-use-of-the-paramonte-library-in-your-work' target='_blank'><b>cite this original ParaMonte library</b></a>.<br>"
 
 ALIASES += license="\license1<ol><li>\license2<li>\license3</ol>"
 
-ALIASES += giturl="https://github.com/cdslaborg/pmdev"
-ALIASES += pmdoc="https://www.cdslab.org/paramonte/"
-ALIASES += incurl="\giturl/tree/master/src/$(paramonte_lang)/main"
-ALIASES += mainurl="\giturl/tree/master/src/$(paramonte_lang)/main"
-ALIASES += mincurl="\giturl/tree/master/src/$(paramonte_lang)/main/inc"
-ALIASES += testurl="\mainurl/tree/master/src/$(paramonte_lang)/test"
+ALIASES += giturl="https://github.com/cdslaborg/paramonte"
+ALIASES += pmdoc="https://www.cdslab.org/paramonte/generic/$(paramonte_version_major)"
+ALIASES += pmdoc_usage="\pmdoc/usage"
+ALIASES += pmdoc_usage_sampling="\pmdoc_usage/sampling"
+ALIASES += incurl="\giturl/tree/main/src/$(paramonte_lang)/main"
+ALIASES += mainurl="\giturl/tree/main/src/$(paramonte_lang)/main"
+ALIASES += mincurl="\giturl/tree/main/src/$(paramonte_lang)/main/inc"
+ALIASES += testurl="\mainurl/tree/main/src/$(paramonte_lang)/test"
+
+ALIASES += paramonte_version_major="$(paramonte_version_major)"
+ALIASES += specdram{1}="See the generic documentation at: <a href='\pmdoc_usage_sampling/paradram/specifications/#\1' target='_blank'>\
+\pmdoc_usage_sampling/paradram/specifications/#\1\
+</a>"
+
 ALIASES += docedit{1}="If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> \
 <a href='\1/\fileinfo{filename}#L\lineinfo' target='_blank'><b>to edit this page's documentation and source file on GitHub</b></a>.<br>"
 
@@ -557,6 +568,8 @@ ALIASES += IK16="[IK16](@ref    pm_kind::IK16)"
 ALIASES += IK32="[IK32](@ref    pm_kind::IK32)"
 ALIASES += IK64="[IK64](@ref    pm_kind::IK64)"
 ALIASES += IKALL="any supported by the processor (e.g., \IK, \IK8, \IK16, \IK32, or \IK64)"
+ALIASES += IKW="[IKW](@ref      pm_kind::IKW)"
+ALIASES += IKL="[IKL](@ref      pm_kind::IKL)"
 ALIASES += IKH="[IKH](@ref      pm_kind::IKH)"
 ALIASES += IKB="[IKB](@ref      pm_kind::IKB)"
 
@@ -580,8 +593,16 @@ ALIASES += CK32="[CK32](@ref    pm_kind::CK32)"
 ALIASES += CK64="[CK64](@ref    pm_kind::CK64)"
 ALIASES += CK128="[CK128](@ref  pm_kind::CK128)"
 ALIASES += CKALL="any supported by the processor (e.g., \CK, \CK32, \CK64, or \CK128)"
+
+ALIASES += CKW="[CKW](@ref      pm_kind::CKW)"
+ALIASES += CKL="[CKL](@ref      pm_kind::CKL)"
 ALIASES += CKH="[CKH](@ref      pm_kind::CKH)"
 ALIASES += CKB="[CKB](@ref      pm_kind::CKB)"
+
+ALIASES += CKWR="[CKWR](@ref    pm_kind::CKWR)"
+ALIASES += CKLR="[CKLR](@ref    pm_kind::CKLR)"
+ALIASES += CKHR="[CKHR](@ref    pm_kind::CKHR)"
+ALIASES += CKBR="[CKBR](@ref    pm_kind::CKBR)"
 
 ALIASES += RK="[RK](@ref        pm_kind::RK)"
 ALIASES += RK1="[RK1](@ref      pm_kind::RK1)"
@@ -593,15 +614,25 @@ ALIASES += RK32="[RK32](@ref    pm_kind::RK32)"
 ALIASES += RK64="[RK64](@ref    pm_kind::RK64)"
 ALIASES += RK128="[RK128](@ref  pm_kind::RK128)"
 ALIASES += RKALL="any supported by the processor (e.g., \RK, \RK32, \RK64, or \RK128)"
+
+ALIASES += RKW="[RKW](@ref      pm_kind::RKW)"
+ALIASES += RKL="[RKL](@ref      pm_kind::RKL)"
 ALIASES += RKH="[RKH](@ref      pm_kind::RKH)"
 ALIASES += RKB="[RKB](@ref      pm_kind::RKB)"
+
+ALIASES += RKWR="[RKWR](@ref    pm_kind::RKWR)"
+ALIASES += RKLR="[RKLR](@ref    pm_kind::RKLR)"
+ALIASES += RKHR="[RKHR](@ref    pm_kind::RKHR)"
+ALIASES += RKBR="[RKBR](@ref    pm_kind::RKBR)"
 
 ALIASES += IKS="[IKS](@ref      pm_kind::IKS)"
 ALIASES += IKD="[IKD](@ref      pm_kind::IKD)"
 ALIASES += RKD="[RKD](@ref      pm_kind::RKD)"
 ALIASES += RKS="[RKS](@ref      pm_kind::RKS)"
 
-ALIASES += CFI="C-Fortran Interoperation"
+ALIASES += C_RKALL="`float`, `double`, or `long double`"
+
+ALIASES += cfi="C-Fortran Interoperation"
 
 # Set the OPTIMIZE_OUTPUT_FOR_C tag to YES if your project consists of C sources
 # only. Doxygen will then generate output that is more tailored for C. For
@@ -1164,7 +1195,7 @@ WARN_FORMAT            = "$file:$line: $text"
 # messages should be written. If left blank the output is written to standard
 # error (stderr).
 
-WARN_LOGFILE = "./READ_THESE_BUILD_WARNINGS.txt"
+WARN_LOGFILE = "./READ_THESE_BUILD_WARNINGS.$(paramonte_lang).txt"
 
 #---------------------------------------------------------------------------
 # Configuration options related to the input files
@@ -1331,11 +1362,9 @@ EXCLUDE_SYMBOLS    += pm_kind::CK_DEF
 # that contain example code fragments that are included (see the \include
 # command).
 
-EXAMPLE_PATH    ="$(paramonte_bld_pkg_dir)/"
-EXAMPLE_PATH   +="$(paramonte_dir)/example/auxil/"
+#EXAMPLE_PATH   ="$(paramonte_bld_dir)/"
+EXAMPLE_PATH   +="$(paramonte_bld_pkg_dir)/"
 EXAMPLE_PATH   +="$(paramonte_dir)/example/$(paramonte_lang)/"
-EXAMPLE_PATH   +="$(paramonte_dir)/example/auxil/$(paramonte_lang)/"
-#EXAMPLE_PATH   +="$(paramonte_bld_dir)/"
 
 # If the value of the EXAMPLE_PATH tag contains directories, you can use the
 # EXAMPLE_PATTERNS tag to specify one or more wildcard pattern (like *.cpp and

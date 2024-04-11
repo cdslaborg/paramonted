@@ -15,10 +15,11 @@
 ####################################################################################################################################
 ####################################################################################################################################
 
-lang="generic"
-caller_name="${lang}"; source ../build.init.sh
 source_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 cd "${source_dir}"
+
+lang="generic"
+caller_name="${lang}"; source ../build.init.sh
 
 echo >&2 "${pmnote} The ParaMonte root directory: ${paramonte_dir}"
 
@@ -127,6 +128,26 @@ for (( idoc=0 ; idoc<${#paramonte_doc_gen_dir_list[@]} ; idoc++ )) ; do
     echo >&2 "${pmnote} Removing the origin directory: ${origin}"
     rm -rf "${origin}"
 
+    ####
+    #### Copy required source files from the ParaMonte root directory.
+    ####
+
+    if [ "${paramonte_version_major}" = "${paramonte_lang_version_major}" ]; then
+        if [ -f "${paramonte_doc_gen_version_dir}/copy.sh" ]; then
+            echo >&2 "${pmnote} Copying the documentation files from the ParaMonte root directory..."
+            cd "${paramonte_doc_gen_version_dir}" && ./copy.sh
+            cd "${source_dir}"
+        else
+            echo >&2 "${pmwarn} The Bash script `copy.sh` for copying the documentation files from the ParaMonte root directory is missing."
+            echo >&2 "${pmwarn} missing: \"${paramonte_doc_gen_version_dir}/copy.sh\""
+            echo >&2 "${pmwarn} skipping potential documentation file updates..."
+        fi
+    fi
+
+    ####
+    #### Build the generic documentation.
+    ####
+
     echo >&2 "${pmnote} Bundling the documentation..."
     cd "${paramonte_doc_gen_version_dir}" && bundle exec jekyll build --baseurl "${tempurl}"
     cp -arf "${paramonte_doc_gen_version_dir}/.htaccess" "${origin}/";
@@ -143,6 +164,7 @@ for (( idoc=0 ; idoc<${#paramonte_doc_gen_dir_list[@]} ; idoc++ )) ; do
 
     echo >&2 "${pmnote} Moving the documentation to the destination folder: \"${destin}\""
     cp -arf "${origin}" "${paramonte_doc_out_lang_dir}" && mv "${paramonte_doc_out_lang_dir}/_site" "${destin}"
+    rm -rf "${origin}"
 
     if [ "${paramonte_lang_version_major}" = "notes" ] || [ "${paramonte_lang_version_major}" = "1" ]; then
         if [ -d "${destin}/api/python" ]; then

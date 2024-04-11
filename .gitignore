@@ -7,11 +7,12 @@
 # git config core.filemode true
 # https://stackoverflow.com/questions/14267441/automatically-apply-git-update-index-chmod-x-to-executable-files
 
-#########################
+########################
 # ParaMonte temp folders
-#########################
+########################
 
 **/.ipynb_checkpoints
+./paramonte
 **/_draft
 **/_site
 **/temp
@@ -20,10 +21,10 @@
 **/R
 **/___*___
 
-#########################
+######################
 # ParaMonte temp files
-#########################
+######################
 
-**/READ_THESE_BUILD_WARNINGS.txt
+**/READ_THESE_BUILD_WARNINGS*
 
 ___*___.*

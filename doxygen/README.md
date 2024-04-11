@@ -1,63 +1,66 @@
-<div align="center">
+### The ParaMonte C, C++, Fortran API Documentation Source
 
-<a href="https://cdslaborg.github.io/paramonte-kernel-doc/html/" target="_blank">
-    <img alt="paramonte-kernel-doc" src="https://cdslaborg.github.io/paramonte-kernel-doc/html/logo.png" width="80%">
-</a>
+This folder contains the source codes for the ParaMonte Doxygen documentations.
 
-<h1>
-    The ParaMonte Kernel API Documentation
-</h1>
+### Instructions to regenerate the documentation
 
-This project contains the 
-<a href="https://cdslaborg.github.io/paramonte-kernel-doc/html/" target="_blank">
-    Application Programming Interface documentation
-</a>
-of the 
-<a href="https://github.com/cdslaborg/paramonte" target="_blank">
-    ParaMonte kernel library
-</a>
-.
-<br>
-For full documentation visit the
-<a href="https://www.cdslab.org/paramonte/" target="_blank">
-    ParaMonte library's documentation website
-</a>
-.
+To regenerate the ParaMonte documentation from source,
 
-</div>
+1.  If you have not done so already, follow the instructions given in the parent folder [README.md](../README.md).
 
-### Instructions to regenerate the documentation  
+1.  Install [Doxygen](https://www.doxygen.nl/download.html) on your system.
+    Alternatively, install [this version of Doxygen](https://github.com/cdslaborg/doxygen)
+    that is specifically customized by the ParaMonte developers for the
+    documentation needs of the ParaMonte library.
 
-+   Install [Doxygen](https://www.doxygen.nl/download.html) on your system.  
+1.  Navigate to the folder where this README.md file is located.
 
-+   To regenerate the ParaMonte documentation from source,  
-    +   Create a fork of the [ParaMonte project](https://github.com/cdslaborg/paramonte/)
-        on your personal GitHub account and clone the forked ParaMonte repository on your system.  
-    +   Create a fork of the [ParaMonte kernel documentation project](https://github.com/cdslaborg/paramonte-kernel-doc/) on your personal
-        GitHub account and clone it inside the [src folder](https://github.com/cdslaborg/paramonte/tree/main/src) of the ParaMonte repository.  
-    +   When cloning is done, you should see a new subfolder `/paramonte-kernel-doc` in the `/src` folder of your local copy of ParaMonte Project.  
-    +   Make any adjustments/updates as needed to the source of the documentation in the source files in `/src/fortran` subfolder.  
-    +   Open a Bash terminal inside `/external/paramonte-kernel-doc` and make sure you are on the `main` branch of the documentation project,  
-    +   Rebuild the new `ParaMonte::kernel` documentation by calling the following script on the Bash command-line,  
-        ```bash
-        ./build.sh
-        ```  
-    +   Inspect the message warning log of Doxygen in the output file `READ_THESE_BUILD_WARNINGS.txt` for any potential documentation errors.
-    +   Inspect the generated documentation by navigating to the `/src/paramonte-kernel-doc/html` folder and
-        opening the `index.html` via a web browser. Make sure all new changes look fine in the browser.
-    +   If everything looks good, then stage, commit, and push the new documentation to your fork of
-        the `ParaMonte::kernel` documentation repository on GitHub.  
-        ```bash
-        git add --all
-        git commit -m"latest documentation build"
-        git push --all
-        ```  
-    +   Open a pull request (PR) on the [ParaMonte documentation repository](https://github.com/cdslaborg/paramonte-kernel-doc/pulls)
-        to merge your new changes with the repository.  
-
-+   To generate new header, footer, or css stylesheet, 
-    follow the [Doxygen instructions here](https://www.doxygen.nl/manual/config.html#cfg_html_header). 
-    The regeneration command is the following:  
+1.  Rebuild the documentations for the current version of the ParaMonte source in the
+    library's root directory by calling the following script on the Bash command-line,
     ```bash
-    doxygen -w html new_header.html new_footer.html new_stylesheet.css config.txt
-    ```  
+    ./build.sh --lang TARGET_LANG --exam all --bench all
+    ```
+    where `TARGET_LANG` must be replaced by target programming language: `c`, `cpp`, `fortran`.
+    1.  If the library examples and benchmarks have been already built, you can drop the flags ` --exam all --bench all`.
+    1.  Alternative, if you intend to generate only the documentation without the additional examples, benchmarks, and images, try
+        ```bash
+        ./build.sh --lang TARGET_LANG --dryrun
+        ```
+        This will avoid building the library entirely and will only build the library's documentation.
+
+1.  The Doxygen documenter is instructed to redirect all documentation build errors and
+    warnings to a file named `READ_THESE_BUILD_WARNINGS.txt` in the same folder as this `README.md` file is located.
+    Inspect the message warning log of Doxygen in the output file `READ_THESE_BUILD_WARNINGS.txt` for any potential documentation errors.
+
+1.  Inspect the generated documentation by opening the HTML file located at `../paramonte/TARGET_LANG/MAJOR_VERSION/index.html`
+    where you must replace `TARGET_LANG` with the language name for which the library was built and
+    replace `MAJOR_VERSION` with the language source file major version in the ParaMonte repository.
+
+1.  Once the documentation is built for all target programming languages, rerun the build script once more for all languages.
+    Before rerunning the documentation builds, ensure the [generic documentations](../generic/README.md) are up to date.
+    This second documentation rebuild is required for proper linking of different language documentations.
+    To speed up the second runs, you can specify the optional `--dryrun` flag as,
+    ```bash
+    ./build.sh --lang TARGET_LANG --dryrun
+    ```
+
+1.  If everything looks good, then navigate to the folder [../paramonte](../paramonte) and stage, commit,
+    and push the new documentations to the `ParaMonte` documentation repository on GitHub.
+    ```bash
+    git add --all
+    git commit -m"latest documentation build"
+    git push --all
+    ```
+
+> **NOTE**
+>
+> To generate new header, footer, or css stylesheet, follow the
+> [Doxygen instructions here](https://www.doxygen.nl/manual/config.html#cfg_html_header).
+> The regeneration command is the following:
+> ```bash
+> doxygen -w html new_header.html new_footer.html new_stylesheet.css config.txt
+> ```
+
+> **NOTE**
+>
+> The ParaMonte documentation builds have only been tested on Linux system.

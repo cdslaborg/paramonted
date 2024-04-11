@@ -11,6 +11,8 @@ keywords:
         naming
         compiler
         architecture
+        amd64
+        arm64
         x32
         x64
         x86_64

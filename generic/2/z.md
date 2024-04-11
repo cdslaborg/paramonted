@@ -1,5 +1,5 @@
 ---
-#title: Sampling a Multivariate Normal (MVN) distribution
+#title: This page belongs to Zorro.
 #tags: [multivariate, normal, sampling, paradram]
 #keywords: multivariate, normal, sampling, ParaDRAM
 #summary: ""

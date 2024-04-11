@@ -89,7 +89,12 @@ ParaMonte is maintained on GitHub: [https://github.com/cdslaborg/paramonte/](htt
 
 ## What are the origins of ParaMonte?   
 
-The ParaMonte library (hence named ParaMonte) grew out of the need for free, readily accessible, user-friendly, unified, robust, high-performance parallel software for stochastic optimization, sampling, and integration problems in scientific inference and Data Science applications. This project started in 2010 to aid the research goals of the primary author of the package in the field of High Energy Astrophysics and Bioinformatics. It remained in private usage until 2018, when we decided to release the package as an open-source project for public usage and contributions.  
+The Parallel Monte Carlo library (hence named ParaMonte) grew out of the need for free, readily accessible, user-friendly, unified, robust, 
+high-performance parallel software for stochastic optimization, sampling, and integration problems in scientific inference and Data Science applications. 
+This project started in 2010 to aid the research goals of the primary author of the package in the field of High Energy Astrophysics and Bioinformatics. 
+It remained in private usage until 2018, when we decided to release the package as an open-source project for public usage and contributions. 
+The first major release of the library achieved precisely the goals mentioned above. 
+The most recent release 2 of the library, expands the library's scope beyond Monte Carlo simulations to scientific machine learning.
 
 ## What are ParaMonte's design goals?  
 

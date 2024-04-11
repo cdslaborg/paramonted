@@ -26,9 +26,9 @@ Among all build configurations, however, the single most important specification
 
 As such, the code coverage reports are only generated separately for the three library parallelism builds. The corresponding latest code coverage reports are permanently available at,  
 
-+   [ParaMonte serial kernel]({{site.codecov}}/kernel/serial){:target="_blank"}  
-+   [ParaMonte MPI parallel kernel]({{site.codecov}}/kernel/mpi){:target="_blank"}  
-+   [ParaMonte Coarray parallel kernel]({{site.codecov}}/kernel/caf){:target="_blank"}  
++   [ParaMonte serial kernel]({{site.codecov}}/serial){:target="_blank"}  
++   [ParaMonte MPI parallel kernel]({{site.codecov}}/mpi){:target="_blank"}  
++   [ParaMonte Coarray parallel kernel]({{site.codecov}}/caf){:target="_blank"}  
 
 ## The ParaMonte kernel code coverage report generation  
 

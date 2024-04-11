@@ -105,15 +105,15 @@ entries:
           output: web, pdf
 
         - title: ParaDRAM simulation specifications
-          url: /usage/paradram/specifications/
+          url: /usage/sampling/paradram/specifications/
           output: web, pdf
 
         - title: ParaDRAM simulation output files
-          url: /usage/paradram/output/
+          url: /usage/sampling/paradram/output/
           output: web, pdf
 
         - title: ParaDRAM simulation restart
-          url: /usage/paradram/restart/
+          url: /usage/sampling/paradram/restart/
           output: web, pdf
 
   - title: Building ParaMonte application

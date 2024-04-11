@@ -211,17 +211,17 @@ entries:
       url: /codecov/
       output: web, pdf
 
-    - title: Kernel - Serial
-      external_url: https://cdslaborg.github.io/paramonte-codecov/kernel/serial/
-      output: web, pdf
-
-    - title: Kernel - MPI Parallel
-      external_url: https://cdslaborg.github.io/paramonte-codecov/kernel/mpi/
-      output: web, pdf
-
-    - title: Kernel - Coarray Parallel
-      external_url: https://cdslaborg.github.io/paramonte-codecov/kernel/caf/
-      output: web, pdf
+    #- title: Kernel - Serial
+    #  external_url: "https://www.cdslab.org/paramonte/codecov/fortran/1/serial/"
+    #  output: web, pdf
+    #
+    #- title: Kernel - MPI Parallel
+    #  external_url: "https://www.cdslab.org/paramonte/codecov/fortran/1/mpi/"
+    #  output: web, pdf
+    #
+    #- title: Kernel - Coarray Parallel
+    #  external_url: "https://www.cdslab.org/paramonte/codecov/fortran/1/caf/"
+    #  output: web, pdf
 
   - title: Contributing to ParaMonte
     output: web, pdf

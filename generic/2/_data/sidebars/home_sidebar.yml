@@ -21,11 +21,11 @@ entries:
 
   ################################################################
 
-  - title: Overview
+  - title: overview
     output: web, pdf
     folderitems:
 
-    - title: Preface
+    - title: preface
       url: /overview/preface/
       output: web, pdf
       type: homepage
@@ -57,7 +57,7 @@ entries:
 
   ################################################################
 
-  - title: Installation
+  - title: installation
     output: web, pdf
     folderitems:
 
@@ -73,11 +73,11 @@ entries:
       output: web, pdf
       url: /installation/install.md
 
-    - title: ParaMonte installation in Unix Bash 
+    - title: ParaMonte installation in Unix Bash
       output: web, pdf
       url: /installation/install.sh.md
 
-    - title: ParaMonte installation in Windows CMD 
+    - title: ParaMonte installation in Windows CMD
       output: web, pdf
       url: /installation/install.bat.md
 
@@ -85,7 +85,7 @@ entries:
       output: web, pdf
       url: /installation/install.config.md
 
-    - title: ParaMonte installation via CMake 
+    - title: ParaMonte installation via CMake
       output: web, pdf
       url: /installation/CMakeLists.md
 
@@ -121,184 +121,89 @@ entries:
 
     - title: ParaMonte C API
       output: web, pdf
-      #external_url: !site.baseurl!/c/2/
-      external_url: "!site.baseurl!/../../c/2/"
+      external_url: "!site.baseurl!/../../c/!site.pmvmc!/"
 
     - title: ParaMonte C++ API
       output: web, pdf
-      external_url: "!site.baseurl!/../../cpp/2/"
+      external_url: "!site.baseurl!/../../cpp/!site.pmvmcpp!/"
 
     - title: ParaMonte Fortran API
       output: web, pdf
-      external_url: "!site.baseurl!/../../fortran/2/"
+      external_url: "!site.baseurl!/../../fortran/!site.pmvmfortran!/"
 
   ################################################################
 
-  - title: "Usage: ParaDRAM sampler"
+  - title: "usage :: sampling :: ParaDRAM"
     output: web, pdf
     folderitems:
 
     - title: ParaDRAM quick start
-      url: /usage/paradram/interface/
+      url: /usage/sampling/paradram/interface/
       output: web, pdf
 
     - title: ParaDRAM optional input file
-      url: /usage/paradram/input/
+      url: /usage/sampling/paradram/input/
       output: web, pdf
 
-    #- title: ParaDRAM simulation specifications
-    #  url: /usage/paradram/specifications/
-    #  output: web, pdf
+    - title: ParaDRAM simulation specifications
+      url: /usage/sampling/paradram/specifications/
+      output: web, pdf
 
     - title: ParaDRAM simulation output files
-      url: /usage/paradram/output/
+      url: /usage/sampling/paradram/output/
       output: web, pdf
 
     - title: ParaDRAM simulation restart
-      url: /usage/paradram/restart/
+      url: /usage/sampling/paradram/restart/
       output: web, pdf
 
     - title: ParaDRAM parallelization tips
-      url: /usage/paradram/parallelization/
+      url: /usage/sampling/paradram/parallelization/
       output: web, pdf
 
   ################################################################
 
-  #- title: Building ParaMonte application
-  #  output: web, pdf
-  #  folderitems:
-  #
-  #  - title: Building ParaMonte C application
-  #    url: /build/c/
-  #    output: web, pdf
-  #
-  #  - title: Building ParaMonte C++ application
-  #    url: /build/cpp/
-  #    output: web, pdf
-  #
-  #  - title: Building ParaMonte Fortran application
-  #    url: /build/fortran/
-  #    output: web, pdf
-  #
-  #- title: Running ParaMonte application
-  #  output: web, pdf
-  #  folderitems:
-  #
-  #  - title: Running C/C++/Fortran application
-  #    url: /run/default/
-  #    output: web, pdf
-  #
-  #  - title: Running MATLAB application
-  #    url: /run/matlab/
-  #    output: web, pdf
-  #
-  #  - title: Running Python application
-  #    url: /run/python/
-  #    output: web, pdf
-  #
-  #- title: C examples
-  #  output: web, pdf
-  #  folderitems:
-  #
-  #  - title: Sampling a Multivariate Normal distribution
-  #    url: /examples/c/mvn/
-  #    output: web, pdf
-  #
-  #- title: C++ examples
-  #  output: web, pdf
-  #  folderitems:
-  #
-  #  - title: Sampling a Multivariate Normal distribution
-  #    url: /examples/cpp/mvn/
-  #    output: web, pdf
-  #
-  #- title: Fortran examples
-  #  output: web, pdf
-  #  folderitems:
-  #
-  #  - title: Sampling a Multivariate Normal distribution
-  #    url: /examples/fortran/mvn/
-  #    output: web, pdf
-  #
-  #- title: MATLAB examples
-  #  output: web, pdf
-  #  folderitems:
-  #
-  #  - title: MATLAB Live Scripts
-  #    url: /examples/matlab/mlx/
-  #    output: web, pdf
-  #
-  #  - title: Post-processing existing simulations
-  #    url: /examples/matlab/postprocess/
-  #    output: web, pdf
-  #
-  #- title: Python examples
-  #  output: web, pdf
-  #  folderitems:
-  #
-  #  - title: Jupyter Notebooks
-  #    url: /examples/python/jupyter/
-  #    output: web, pdf
-  #
-  #  - title: Post-processing existing simulations
-  #    url: /examples/python/postprocess/
-  #    output: web, pdf
-  #
-  #  # - title: Sampling a Multivariate Normal distribution
-  #    # url: /examples/python/mvn/
-  #    # output: web, pdf
-
-  ################################################################
-
-  - title: Code Coverage Reports
+  - title: code coverage reports
     output: web, pdf
     folderitems:
 
-    - title: Guidelines
+    - title: guidelines
       url: /codecov/
       output: web, pdf
 
-    - title: Kernel - Serial
-      external_url: https://cdslaborg.github.io/paramonte-codecov/kernel/serial/
-      output: web, pdf
-
-    - title: Kernel - MPI Parallel
-      external_url: https://cdslaborg.github.io/paramonte-codecov/kernel/mpi/
-      output: web, pdf
-
-    - title: Kernel - Coarray Parallel
-      external_url: https://cdslaborg.github.io/paramonte-codecov/kernel/caf/
+    - title: "code coverage :: Fortran"
+      url: /codecov/fortran/
       output: web, pdf
 
   ################################################################
 
-  - title: Contributing to ParaMonte
+  - title: contributing to ParaMonte
     output: web, pdf
     folderitems:
 
-    - title: Reporting defects
+    - title: reporting defects
       url: /contributing/defects
       output: web, pdf
 
-    - title: Requesting enhancements
+    - title: requesting enhancements
       url: /contributing/enhancements
       output: web, pdf
 
-    - title: Development guidelines - general
+    - title: development guidelines - general
       url: /contributing/development/general/
       output: web, pdf
 
-    - title: Development guidelines - kernel
+    - title: development guidelines - kernel
       url: /contributing/development/kernel/
       output: web, pdf
 
   ################################################################
 
-  - title: Troubleshooting
+  - title: troubleshooting
     output: web, pdf
     folderitems:
 
-    - title: Enhancement-requests and bug-reports
+    - title: enhancement-requests and bug-reports
       url: /troubleshooting/issues/
       output: web, pdf
 
@@ -357,3 +262,91 @@ entries:
     - title: "Python: segmentation-fault error"
       url: /troubleshooting/python-segmentation-fault/
       output: web, pdf
+
+  ################################################################
+
+  #- title: building ParaMonte application
+  #  output: web, pdf
+  #  folderitems:
+  #
+  #  - title: building ParaMonte C application
+  #    url: /build/c/
+  #    output: web, pdf
+  #
+  #  - title: building ParaMonte C++ application
+  #    url: /build/cpp/
+  #    output: web, pdf
+  #
+  #  - title: building ParaMonte Fortran application
+  #    url: /build/fortran/
+  #    output: web, pdf
+  #
+  #- title: running ParaMonte application
+  #  output: web, pdf
+  #  folderitems:
+  #
+  #  - title: running C/C++/Fortran application
+  #    url: /run/default/
+  #    output: web, pdf
+  #
+  #  - title: running MATLAB application
+  #    url: /run/matlab/
+  #    output: web, pdf
+  #
+  #  - title: running Python application
+  #    url: /run/python/
+  #    output: web, pdf
+  #
+  #- title: C examples
+  #  output: web, pdf
+  #  folderitems:
+  #
+  #  - title: sampling a Multivariate Normal distribution
+  #    url: /examples/c/mvn/
+  #    output: web, pdf
+  #
+  #- title: C++ examples
+  #  output: web, pdf
+  #  folderitems:
+  #
+  #  - title: sampling a Multivariate Normal distribution
+  #    url: /examples/cpp/mvn/
+  #    output: web, pdf
+  #
+  #- title: Fortran examples
+  #  output: web, pdf
+  #  folderitems:
+  #
+  #  - title: sampling a Multivariate Normal distribution
+  #    url: /examples/fortran/mvn/
+  #    output: web, pdf
+  #
+  #- title: MATLAB examples
+  #  output: web, pdf
+  #  folderitems:
+  #
+  #  - title: MATLAB Live Scripts
+  #    url: /examples/matlab/mlx/
+  #    output: web, pdf
+  #
+  #  - title: post-processing existing simulations
+  #    url: /examples/matlab/postprocess/
+  #    output: web, pdf
+  #
+  #- title: Python examples
+  #  output: web, pdf
+  #  folderitems:
+  #
+  #  - title: Jupyter Notebooks
+  #    url: /examples/python/jupyter/
+  #    output: web, pdf
+  #
+  #  - title: post-processing existing simulations
+  #    url: /examples/python/postprocess/
+  #    output: web, pdf
+  #
+  #  # - title: sampling a Multivariate Normal distribution
+  #    # url: /examples/python/mvn/
+  #    # output: web, pdf
+
+  ################################################################

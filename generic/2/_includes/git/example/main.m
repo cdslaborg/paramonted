@@ -53,7 +53,7 @@ pmpd = pm.ParaDRAM();
 
 % NOTE: For a complete list of simulation specifications, see:
 % NOTE:
-% NOTE:     https://www.cdslab.org/paramonte/notes/usage/paradram/specifications/
+% NOTE:     https://www.cdslab.org/paramonte/generic/2/usage/sampling/paradram/specifications/
 
 pmpd.spec.chainSize = 30000;            % the number of uniquely-sampled points
 pmpd.spec.outputFileName = "./out/";    % only the output folder specified here in the above, implying that

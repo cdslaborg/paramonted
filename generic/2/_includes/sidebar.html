@@ -12,7 +12,7 @@
                         {% for folderitem in folder.folderitems %}
                                 {% if folderitem.output contains "web" %}
                                     {% if folderitem.external_url %}
-                                        <li><a title="{{folderitem.title}}" href="{{folderitem.external_url | replace: "!site.companyurl!", site.companyurl | replace: "!site.baseurl!", site.baseurl}}" target="_blank" rel="noopener">{{folderitem.title}}</a></li>
+                                        <li><a title="{{folderitem.title}}" href="{{folderitem.external_url | replace: "!site.companyurl!", site.companyurl | replace: "!site.baseurl!", site.baseurl | replace: "!site.pmvmc!", site.pmvmc | replace: "!site.pmvmcpp!", site.pmvmcpp | replace: "!site.pmvmfortran!", site.pmvmfortran}}" target="_blank" rel="noopener">{{folderitem.title}}</a></li>
                                     {% elsif page.url == folderitem.url %}
                                         <li class="active"><a title="{{folderitem.title}}" href="{{ site.baseurl }}{{folderitem.url | remove: ""}}">{{folderitem.title}}</a></li>
                                     {% elsif folderitem.type == "empty" %}

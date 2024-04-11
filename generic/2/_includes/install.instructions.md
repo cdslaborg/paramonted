@@ -257,7 +257,7 @@ The core of the ParaMonte library is in pure [2018-standard-compliant Fortran](h
     {% if include.os == "Darwin" or include.os == "Linux" %}
     {% include install.instructions.autoCompilerInstall.md %}
     {% endif %}
-    If you intend to build Coarray-parallel applications, then you can optionally download and install the [OpenCoarrays compiler wrapper](http://www.opencoarrays.org/){:target="_blank"} on your system, or again, **you can leave this task to the ParaMonte library build script to install it for you automatically**. You can check which version of the GNU compilers, the MPI library, or OpenCoarrays `caf` compiler wrapper may be already installed on your system by trying the following commands in a Bash shell,  
+    If you intend to build Coarray-parallel applications, then you can **optionally** download and install the [OpenCoarrays compiler wrapper](http://www.opencoarrays.org/){:target="_blank"} on your system, or again, **you can leave this task to the ParaMonte library build script to install it for you automatically**. You can check which version of the GNU compilers, the MPI library, or OpenCoarrays `caf` compiler wrapper may be already installed on your system by trying the following commands in a Bash shell,  
     ```bash
     gcc --version
     ```  
