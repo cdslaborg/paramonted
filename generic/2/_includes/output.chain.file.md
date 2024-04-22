@@ -1,6 +1,6 @@
 ### The output chain file  
 
-Every {{pmSampler}} simulation generates an output chain file whose name ends with either `_chain.txt` (the default suffix) or  `_chain.bin`. When the file extension is `.bin`, the file has been generated in binary format and is unreadable to humans. The output chain file's format can be specified via the input specification variable `chainFileFormat` described [here](../../{{pmSampler}}/specifications/#chainfileformat){:target="_blank"}.  
+Every {{pmSampler}} simulation generates an output chain file whose name ends with either `_chain.txt` (the default suffix) or  `_chain.bin`. When the file extension is `.bin`, the file has been generated in binary format and is unreadable to humans. The output chain file's format can be specified via the input specification variable `outputChainFileFormat` described [here](../../{{pmSampler}}/specifications/#outputchainfileformat){:target="_blank"}.  
 
 The output chain file contains information about all of the useful, non-rejected calls that the {{pmSampler}} routine makes to the user-provided mathematical objective function during the simulation, including,  
 
@@ -29,7 +29,7 @@ processID,delayedRejectionStage,meanAcceptanceRate,adaptationMeasure,burninLocat
 ...
 ```
 
-{% include tip.outputRealPrecision.outputDelimiter.md %}
+{% include tip.outputPrecision.outputSeparator.md %}
 
 {% endif %}
 

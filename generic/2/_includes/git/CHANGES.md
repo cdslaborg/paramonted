@@ -160,7 +160,7 @@ See also,
 
 **Enhancements**  
 
-+   A new simulation specification `overwriteRequested` has 
++   A new simulation specification `outputStatus` has 
     been added to all ParaMonte samplers. If TRUE and the 
     ParaMonte sampler detects an existing set of old simulation 
     output files in the output path of the current simulation with 
@@ -245,7 +245,7 @@ See also,
 **Bug fixes**  
 
 +   The build Batch-script for the ParaMonte examples on Windows now properly builds and runs coarray applications in parallel.
-+   The fully-deterministic restart functionality is now functional also when chainFileFormat="verbose" in ParaDRAM simulations.
++   The fully-deterministic restart functionality is now functional also when outputChainFileFormat="verbose" in ParaDRAM simulations.
 
 **Compiler support**  
 

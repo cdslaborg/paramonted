@@ -28,7 +28,7 @@ Fortran-interface to the {{include.sampler}} sampler. The default value is FALSE
 ```
 <br>
 
-### silentModeRequested  
+### outputSplashMode  
 
 ```text
 A logical (boolean) variable. If TRUE (or .true. or true or .t. from within an input file), then 
@@ -71,34 +71,34 @@ having the following inside the input file,
 The default value for all elements of domainCubeLimitLower is: -1.797693134862316E+307.
 ```  
 See also the input simulation specification 
-[domainUpperLimitVec](#domainupperlimitvec).  
+[domainCubeLimitUpper](#domainupperlimitvec).  
 <br>
 
-### domainUpperLimitVec  
+### domainCubeLimitUpper  
 
 ```text
-domainUpperLimitVec represents the upper boundaries of the cubical domain of the objective function 
+domainCubeLimitUpper represents the upper boundaries of the cubical domain of the objective function 
 to be sampled. It is an ndim-dimensional vector of 64-bit real numbers, where ndim is the number of 
-variables of the objective function. It is also possible to assign only select values of domainUpperLimitVec 
+variables of the objective function. It is also possible to assign only select values of domainCubeLimitUpper 
 and leave the rest of the components to be assigned the default value. This is POSSIBLE ONLY when 
-domainUpperLimitVec is defined inside the input file to the {{include.sampler}} sampler. For example,
+domainCubeLimitUpper is defined inside the input file to the {{include.sampler}} sampler. For example,
 
-    domainUpperLimitVec(3:5) = 100
+    domainCubeLimitUpper(3:5) = 100
 
             will only set the upper limits of the third, fourth, and the fifth dimensions to 100, or,
 
-    domainUpperLimitVec(1) = 100, domainUpperLimitVec(2) = 1.e6 
+    domainCubeLimitUpper(1) = 100, domainCubeLimitUpper(2) = 1.e6 
 
             will set the upper limit on the first dimension to 100, and 1.e6 on the second dimension, 
             or,
 
-    domainUpperLimitVec = 3*2.5e100
+    domainCubeLimitUpper = 3*2.5e100
 
             will only set the upper limits on the first, second, and the third dimensions to 2.5*10^100, 
             while the rest of the upper limits for the missing dimensions will be automatically set 
             to the default value.
 
-The default value for all elements of domainUpperLimitVec is: 1.797693134862316E+307.
+The default value for all elements of domainCubeLimitUpper is: 1.797693134862316E+307.
 ```  
 See also the input simulation specification 
 [domainCubeLimitLower](#domainlowerlimitvec).  
@@ -114,20 +114,20 @@ will be automatically assigned a default name. The default value is 'sampleVaria
 ```
 <br>
 
-### parallelizationModel  
+### parallelism  
 
 ```text
-parallelizationModel is a string variable that represents the parallelization method to be used in 
+parallelism is a string variable that represents the parallelization method to be used in 
 the {{include.sampler}} sampler. The string value must be enclosed by either single or double 
 quotation marks when provided as input. Two options are currently supported:
 
-    parallelizationModel = 'multiChain'
+    parallelism = 'multiChain'
 
             This method uses the Perfect Parallel scheme in which multiple MCMC chains are 
             generated independently of each other. In this case, multiple output MCMC chain files 
             will also be generated.
 
-    parallelizationModel = 'singleChain'
+    parallelism = 'singleChain'
 
             This method uses the fork-style parallelization scheme. A single MCMC chain file will be 
             generated in this case. At each MCMC step multiple proposal steps will be checked in 
@@ -136,17 +136,17 @@ quotation marks when provided as input. Two options are currently supported:
 Note that in serial mode, there is no parallelism. Therefore, this option does not affect non-parallel 
 simulations and its value is ignored. The serial mode is equivalent to either of the parallelism 
 methods with only one simulation image (processor, core, or thread). The default value is 
-parallelizationModel = 'singleChain'. Note that the input values are case-INsensitive and white-space 
+parallelism = 'singleChain'. Note that the input values are case-INsensitive and white-space 
 characters are ignored.
 ```  
 See also the input simulation specification 
-[mpiFinalizeRequested](#mpifinalizerequested).  
+[parallelismMpiFinalizeEnabled](#mpifinalizerequested).  
 <br>
 
-### mpiFinalizeRequested  
+### parallelismMpiFinalizeEnabled  
 
 ```text
-In parallel {{include.sampler}} simulations via MPI communication libraries, if mpiFinalizeRequested = true 
+In parallel {{include.sampler}} simulations via MPI communication libraries, if parallelismMpiFinalizeEnabled = true 
 (or T, both case-INsensitive), then a call will be made to the MPI_Finalize() routine from within the {{include.sampler}} 
 sampler at the end of the simulation to finalize the MPI communications. Set this variable to false (or f, 
 both case-INsensitive) if you do not want the {{include.sampler}} sampler to finalize the MPI communications for you. 
@@ -157,7 +157,7 @@ Coarray-enabled simulations, the value of this variable is completely ignored. T
 TRUE.
 ```  
 See also the input simulation specification 
-[parallelizationModel](#parallelizationmodel).  
+[parallelism](#parallelism).  
 <br>
 
 ### outputFileName  
@@ -177,21 +177,21 @@ convention described above will be used. Also, the given directory will be autom
 it does not exist already.
 ```  
 See also the input simulation specification 
-[overwriteRequested](#overwriterequested).  
+[outputStatus](#overwriterequested).  
 <br>
 
-### overwriteRequested  
+### outputStatus  
 
 ```text
 A logical (boolean) variable. If true (or .true. or TRUE or .t. from within an input file), then any 
 existing old simulation files with the same name as the current simulation will be overwritten with 
-the new simulation output files. Note that if overwriteRequested is set to TRUE, then the restart 
+the new simulation output files. Note that if outputStatus is set to TRUE, then the restart 
 functionality is automatically turned off and any existing old simulation output files with the 
 same name as the current simulation will be overwritten by the {{include.sampler}} sampler. 
 The default value is FALSE.
 ```  
 See also the input simulation specification 
-[restartFileFormat](#restartfileformat), 
+[outputRestartFileFormat](#outputrestartfileformat), 
 [outputFileName](#outputfilename).  
 <br>
 
@@ -209,16 +209,16 @@ within an input file, targetAcceptanceRate can also be a single real number betw
 of the sampler as close to the user-provided target ratio as possible. The success of the {{include.sampler}} sampler 
 in keeping the average acceptance ratio close to the requested target value depends heavily on:
 
-    1) the value of adaptiveUpdatePeriod; the larger, the easier.
-    2) the value of adaptiveUpdateCount; the larger, the easier.
+    1) the value of proposalAdaptationPeriod; the larger, the easier.
+    2) the value of proposalAdaptationCount; the larger, the easier.
 
-Note that the acceptance ratio adjustments will only occur every adaptiveUpdatePeriod sampling 
-steps for a total number of adaptiveUpdateCount. There is no default value for targetAcceptanceRate, 
+Note that the acceptance ratio adjustments will only occur every proposalAdaptationPeriod sampling 
+steps for a total number of proposalAdaptationCount. There is no default value for targetAcceptanceRate, 
 as the acceptance ratio is not directly adjusted during sampling.
 ```  
 {% if include.sampler == "ParaDRAM" or include.sampler == "ParaDISE" %}
 See also the input simulation specification 
-[scaleFactor](#scalefactor).  
+[proposalScale](#proposalscale).  
 {% endif %}
 <br>
 
@@ -292,36 +292,36 @@ outputColumnWidth = 0 will result in the smallest-size for the formatted output 
 format. The default value is 0.
 ```  
 See also the input simulation specification 
-[outputDelimiter](#outputdelimiter), 
-[outputRealPrecision](#outputrealprecision), 
-[chainFileFormat](#chainfileformat).  
+[outputSeparator](#outputseparator), 
+[outputPrecision](#outputprecision), 
+[outputChainFileFormat](#outputchainfileformat).  
 <br>
 
-### outputDelimiter  
+### outputSeparator  
 
 ```text
-outputDelimiter is a string variable, containing a sequence of one or more characters (excluding 
+outputSeparator is a string variable, containing a sequence of one or more characters (excluding 
 digits, the period symbol '.', and the addition and subtraction operators: '+' and '-'), that is used 
 to specify the boundary between separate, independent information elements in the tabular output 
 files of the {{include.sampler}} sampler. The string value must be enclosed by either single or double 
 quotation marks when provided as input. To output in Comma-Separated-Values (CSV) format, set 
-outputDelimiter = ','. If the input value is not provided, the default delimiter ',' will be used when 
+outputSeparator = ','. If the input value is not provided, the default delimiter ',' will be used when 
 input outputColumnWidth = 0, and a single space character, ',' will be used when input 
 outputColumnWidth > 0. A value of '\t' is interpreted as the TAB character. To avoid this interpretation, 
 use '\\t' to yield '\t' without being interpreted as the TAB character. The default value is ','.
 ```  
 See also the input simulation specification 
 [outputColumnWidth](#outputcolumnwidth), 
-[outputRealPrecision](#outputrealprecision), 
-[chainFileFormat](#chainfileformat).  
+[outputPrecision](#outputprecision), 
+[outputChainFileFormat](#outputchainfileformat).  
 <br>
 
-### outputRealPrecision  
+### outputPrecision  
 
 ```text
-The variable outputRealPrecision is a 32-bit integer number that determines the precision - that is, 
+The variable outputPrecision is a 32-bit integer number that determines the precision - that is, 
 the number of significant digits - of the real numbers in the output files of a {{include.sampler}} simulation. 
-Any positive integer is acceptable as the input value of outputRealPrecision. However, any digits of the output 
+Any positive integer is acceptable as the input value of outputPrecision. However, any digits of the output 
 real numbers beyond the accuracy of 64-bit real numbers (approximately 16 digits of significance) 
 will be meaningless and random. Set this variable to 16 (or larger) if full reproducibility of the 
 simulation is needed in the future. But keep in mind that larger precisions will result in larger-size 
@@ -330,18 +330,18 @@ default value is 8.
 ```  
 See also the input simulation specification 
 [outputColumnWidth](#outputcolumnwidth), 
-[outputDelimiter](#outputdelimiter), 
-[chainFileFormat](#chainfileformat).  
+[outputSeparator](#outputseparator), 
+[outputChainFileFormat](#outputchainfileformat).  
 <br>
 
-### chainFileFormat  
+### outputChainFileFormat  
  
 ```text
-chainFileFormat is a string variable that represents the format of the output chain file(s) of a 
+outputChainFileFormat is a string variable that represents the format of the output chain file(s) of a 
 {{include.sampler}} simulation. The string value must be enclosed by either single or double quotation 
 marks when provided as input. Three values are possible:
 
-    chainFileFormat = 'compact'
+    outputChainFileFormat = 'compact'
 
             This is the ASCII (text) file format which is human-readable but does not preserve the 
             full accuracy of the output values. It is also a significantly slower mode of chain file 
@@ -353,7 +353,7 @@ marks when provided as input. Three values are possible:
             will lead to a significantly smaller ASCII chain file and faster output size compared to 
             the verbose chain file format (see below).
 
-    chainFileFormat = 'verbose'
+    outputChainFileFormat = 'verbose'
 
             This is the ASCII (text) file format which is human-readable but does not preserve the 
             full accuracy of the output values. It is also a significantly slower mode of chain file 
@@ -363,7 +363,7 @@ marks when provided as input. Three values are possible:
             than the compact and binary file formats. This is especially true if the target objective 
             function has a very high-dimensional state space.
 
-    chainFileFormat = 'binary'
+    outputChainFileFormat = 'binary'
 
             This is the binary file format which is not human-readable, but preserves the exact values 
             in the output MCMC chain file. It is also often the fastest mode of chain file generation. 
@@ -373,24 +373,24 @@ marks when provided as input. Three values are possible:
             you need full accuracy representation of the output values while having the smallest-size 
             output chain file in the shortest time possible.
 
-The default value is chainFileFormat = 'compact' as it provides a reasonable trade-off between speed 
+The default value is outputChainFileFormat = 'compact' as it provides a reasonable trade-off between speed 
 and output file size while generating human-readable chain file contents. Note that the input values 
 are case-INsensitive.
 ```  
 See also the input simulation specification 
 [outputColumnWidth](#outputcolumnwidth), 
-[outputDelimiter](#outputdelimiter), 
-[outputRealPrecision](#outputrealprecision).  
+[outputSeparator](#outputseparator), 
+[outputPrecision](#outputprecision).  
 <br>
 
-### restartFileFormat  
+### outputRestartFileFormat  
 
 ```text
-restartFileFormat is a string variable that represents the format of the output restart file(s) which 
+outputRestartFileFormat is a string variable that represents the format of the output restart file(s) which 
 are used to restart an interrupted {{include.sampler}} simulation. The string value must be enclosed by either 
 single or double quotation marks when provided as input. Two values are possible:
 
-    restartFileFormat = 'binary'
+    outputRestartFileFormat = 'binary'
 
             This is the binary file format which is not human-readable, but preserves the exact values 
             of the specification variables required for the simulation restart. This full accuracy 
@@ -398,7 +398,7 @@ single or double quotation marks when provided as input. Two values are possible
             format is also normally the fastest mode of restart file generation. Binary restart files 
             will have the .bin file extensions.
 
-    restartFileFormat = 'ASCII'
+    outputRestartFileFormat = 'ASCII'
 
             This is the ASCII (text) file format which is human-readable but does not preserve the 
             full accuracy of the specification variables required for the simulation restart. It is 
@@ -407,51 +407,51 @@ single or double quotation marks when provided as input. Two values are possible
             track the dynamics of simulation specifications throughout the simulation time. ASCII 
             restart file(s) will have the .txt file extensions.
 
-The default value is restartFileFormat = 'binary'. Note that the input values are case-INsensitive.
+The default value is outputRestartFileFormat = 'binary'. Note that the input values are case-INsensitive.
 ```  
 See also the input simulation specification 
 [outputFileName](#outputfilename), 
-[overwriteRequested](#overwriterequested).  
+[outputStatus](#overwriterequested).  
 <br>
 
-### progressReportPeriod  
+### outputReportPeriod  
 
 ```text
-Every progressReportPeriod calls to the objective function, the sampling progress will be reported 
-to the log file. Note that progressReportPeriod must be a positive integer. The default value is 1000.
+Every outputReportPeriod calls to the objective function, the sampling progress will be reported 
+to the log file. Note that outputReportPeriod must be a positive integer. The default value is 1000.
 ```
 <br>
 
-### maxNumDomainCheckToWarn  
+### domainErrCount  
 
 ```text
-maxNumDomainCheckToWarn is an integer number beyond which the user will be warned about the newly-proposed 
+domainErrCount is an integer number beyond which the user will be warned about the newly-proposed 
 points being excessively proposed outside the domain of the objective function. For every 
-maxNumDomainCheckToWarn consecutively-proposed new points that fall outside the domain of the objective 
-function, the user will be warned until maxNumDomainCheckToWarn = maxNumDomainCheckToStop, in which 
+domainErrCount consecutively-proposed new points that fall outside the domain of the objective 
+function, the user will be warned until domainErrCount = domainErrCountMax, in which 
 case the sampler returns a fatal error and the program stops globally. The counter for this warning 
 message is reset after a proposal sample from within the domain of the objective function is obtained. 
 When out-of-domain sampling happens frequently, it is a strong indication of something fundamentally wrong in the 
 simulation. It is, therefore, important to closely inspect and monitor for such frequent out-of-domain samplings. 
-This can be done by setting maxNumDomainCheckToWarn to an appropriate value determined by the user. 
+This can be done by setting domainErrCount to an appropriate value determined by the user. 
 The default value is 1000.
 ```  
 See also the input simulation specification 
-[maxNumDomainCheckToStop](#maxnumdomainchecktostop).  
+[domainErrCountMax](#maxnumdomainchecktostop).  
 <br>
 
-### maxNumDomainCheckToStop  
+### domainErrCountMax  
 
 ```text
-maxNumDomainCheckToStop is an integer number beyond which the program will stop globally with a fatal 
+domainErrCountMax is an integer number beyond which the program will stop globally with a fatal 
 error message declaring that the maximum number of proposal-out-of-domain-bounds has reached. The 
 counter for this global-stop request is reset after a proposal point is accepted as a sample from 
 within the domain of the objective function. 
 When out-of-domain sampling happens frequently, it is a strong indication of something fundamentally wrong in the 
 simulation. It is, therefore, important to closely inspect and monitor for such frequent out-of-domain samplings. 
-This can be done by setting maxNumDomainCheckToStop to an appropriate value determined by the user. 
+This can be done by setting domainErrCountMax to an appropriate value determined by the user. 
 The default value is 10000.
 ```  
 See also the input simulation specification 
-[maxNumDomainCheckToWarn](#maxnumdomainchecktowarn).  
+[domainErrCount](#maxnumdomainchecktowarn).  
 <br>

@@ -27,4 +27,4 @@ sampleLogFunc,sampleVariable1,sampleVariable2,sampleVariable3
 
 {% endif %}
 
-{% include tip.outputRealPrecision.outputDelimiter.md %}
+{% include tip.outputPrecision.outputSeparator.md %}

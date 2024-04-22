@@ -68,7 +68,7 @@ To understand the mechanism behind the restart functionality of the {{pmSampler}
         When a {{pmSampler}} simulation ends prematurely, the interruption virtually always happens before the {{pmSampler}} sampler reaches the final stage of generating the <a href="../../{{pmSampler|downcase}}/output/#the-output-sample-file" target="_blank">output sample file</a>.
         {{site.data.alerts.end}}
     <br>
-    **Scenario 1** -- Suppose you set the specification variable `outputFileName = "./output/MyRestartSimulation"`. Upon starting the simulation, the sampler will generate the following output files ( there will be more than one group of files if [parallelizationModel](../../{{pmSampler|downcase}}/specifications/#parallelizationmodel){:target="_blank"} = `"multiChain"` ),  
+    **Scenario 1** -- Suppose you set the specification variable `outputFileName = "./output/MyRestartSimulation"`. Upon starting the simulation, the sampler will generate the following output files ( there will be more than one group of files if [parallelism](../../{{pmSampler|downcase}}/specifications/#parallelizationmodel){:target="_blank"} = `"multiChain"` ),  
     ```
     MyRestartSimulation_run1_pid1_progress.txt
     MyRestartSimulation_run1_pid1_restart.txt

@@ -269,6 +269,7 @@ for (( idoc=0 ; idoc<${#paramonte_doc_out_dir_list[@]} ; idoc++ )) ; do
 
             #### Define documentation brands for inclusion in XML.
 
+            doc_brand=""
             if [ "${doc_name}" = "c" ]; then
                 doc_brand="C"
             elif [ "${doc_name}" = "cpp" ]; then
@@ -290,37 +291,41 @@ for (( idoc=0 ; idoc<${#paramonte_doc_out_dir_list[@]} ; idoc++ )) ; do
                 exit 1
             fi
 
-            #### Make array.
+            if ! [ "${doc_brand}" = "" ]; then
 
-            doc_version_list=(${doc_version_list})
+                #### Make array.
 
-            #### Remove final forward slash from values and form XML entries.
+                doc_version_list=(${doc_version_list})
 
-            xml_entries="${xml_entries}    <tab type='usergroup' visible='yes' title='${doc_brand}' intro='${doc_brand} Documentation Version History'>"$'\n'
+                #### Remove final forward slash from values and form XML entries.
 
-            for (( iver=${#doc_version_list[@]}-1 ; iver>=0 ; iver-- )) ; do
+                xml_entries="${xml_entries}    <tab type='usergroup' visible='yes' title='${doc_brand}' intro='${doc_brand} Documentation Version History'>"$'\n'
 
-                #### Remove the final forward slash from the doc version.
+                for (( iver=${#doc_version_list[@]}-1 ; iver>=0 ; iver-- )) ; do
 
-                version="${doc_version_list[$iver]}"
-                version="${version%%/}"
-                doc_version_list[$iver]="${version}"
-                xml_entries="${xml_entries}        <tab type='user' url='../../${doc_name}/${version}/index.html' title='${version}' intro=''/>"$'\n'
+                    #### Remove the final forward slash from the doc version.
 
-                # Only for the current target documentation that we are generating,
-                # check if the current library version is also the latest in the folder.
-                if [ "${lang}" = "${doc_name}" ]; then
-                    if ! [ "${version}" = "latest" ]; then
-                        if [[ "${paramonte_lang_version}" < "${version}" ]]; then
-                            is_latest_version_def="false"
+                    version="${doc_version_list[$iver]}"
+                    version="${version%%/}"
+                    doc_version_list[$iver]="${version}"
+                    xml_entries="${xml_entries}        <tab type='user' url='../../${doc_name}/${version}/index.html' title='${version}' intro=''/>"$'\n'
+
+                    # Only for the current target documentation that we are generating,
+                    # check if the current library version is also the latest in the folder.
+                    if [ "${lang}" = "${doc_name}" ]; then
+                        if ! [ "${version}" = "latest" ]; then
+                            if [[ "${paramonte_lang_version}" < "${version}" ]]; then
+                                is_latest_version_def="false"
+                            fi
                         fi
                     fi
-                fi
 
-            done
-            xml_entries="${xml_entries}    </tab>"$'\n'
+                done
+                xml_entries="${xml_entries}    </tab>"$'\n'
 
-            echo "${pmnote} All detected ParaMonte ${doc_brand} documentation versions: ${doc_version_list[@]}"
+                echo "${pmnote} All detected ParaMonte ${doc_brand} documentation versions: ${doc_version_list[@]}"
+
+            fi
 
         fi
 

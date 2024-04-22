@@ -66,14 +66,14 @@ The simulation specifications are all automatically set to the appropriate defau
     pm = paramonte();                       % generate a paramonte class instance
     pmpd = pm.ParaDRAM();                   % generate a ParaDRAM sampler instance
     pmpd.spec.outputFileName = "./out/mvn"; % set the file prefix for the output files of ParaDRAM
-    pmpd.spec.overwriteRequested = true;    % overwrite the output files if they already exist.
+    pmpd.spec.outputStatus = true;    % overwrite the output files if they already exist.
     pmpd.runSampler ( 3 ...                 sample a 3-dimensional MVN
                     , getLogFunc ...        the anonymous function returning the log of MVN
                     );
     ```  
     The following screenshot shows a partial list of the ParaDRAM simulation attributes within the `spec` attribute of the constructed `ParaDRAM` object in MATLAB (to see the full set of ParaDRAM simulation specifications and their descriptions, see [this page](../specifications){:target="_blank"},  
     ![MATLAB ParaDRAM object's specification attributes screenshot]({{site.baseurl}}/images/matlabParadramSpecScreenshot.png)  
-    Use `pmpd.spec.helpme()` to get help on the meanings of the simulation specifications. To get help with a specific simulation attribute, pass the attribute name as a string to the method, for example, `pmpd.spec.helpme("overwriteRequested")`.  
+    Use `pmpd.spec.helpme()` to get help on the meanings of the simulation specifications. To get help with a specific simulation attribute, pass the attribute name as a string to the method, for example, `pmpd.spec.helpme("outputStatus")`.  
 1.  Another way is to provide all simulation specifications in an external input file with the format described on [this page](../input/){:target="_blank"}.  
     {% include tip.html content="Unlike the case for C/C++/Fortran, we **do NOT recommend** specifying the simulation properties via an external input file since hardcoding the simulation specifications in the MATLAB script does not cause long and severe compilation headaches that one gets in compiled languages." %}
 
@@ -87,14 +87,14 @@ The simulation specifications are all automatically set to the appropriate defau
     getLogFunc = lambda x : -np.sum(x**2)       # define a simple log multivariate Normal (MVN) target density.
     pmpd = pm.ParaDRAM()                        # generate a ParaDRAM sampler instance.
     pmpd.spec.outputFileName = "./out/mvn"      # set the file prefix for the output files of ParaDRAM.
-    pmpd.spec.overwriteRequested = True         # overwrite the output files if they already exist.
+    pmpd.spec.outputStatus = True         # overwrite the output files if they already exist.
     pmpd.runSampler ( ndim = 3                  # sample a 3-dimensional MVN.
                     , getLogFunc = getLogFunc   # the anonymous function returning the log of MVN.
                     )
     ```  
     The following screenshot shows a partial list of the ParaDRAM simulation attributes within the `spec` attribute of the constructed `ParaDRAM` object in Python (to see the full set of ParaDRAM simulation specifications and their descriptions see [this page](../specifications){:target="_blank"},  
     ![IPython ParaDRAM object's specification attributes screenshot]({{site.baseurl}}/images/pythonParadramSpecScreenshot.png)  
-    Use `pmpd.spec.helpme()` to get help on the meanings of the simulation specifications. To get help with a specific simulation attribute, pass the attribute name as a string to the method, for example, `pmpd.spec.helpme("overwriteRequested")`.  
+    Use `pmpd.spec.helpme()` to get help on the meanings of the simulation specifications. To get help with a specific simulation attribute, pass the attribute name as a string to the method, for example, `pmpd.spec.helpme("outputStatus")`.  
 1.  providing all simulation specifications in an external input file with the format described on [this page](../input/){:target="_blank"}.
     {% include tip.html content="Unlike the case for C/C++/Fortran, **we do NOT recommend** specifying the simulation properties via an external input file since hardcoding the simulation specifications in the Python script does not cause long and severe compilation headaches as in compiled languages." %}
 {% endcomment %}

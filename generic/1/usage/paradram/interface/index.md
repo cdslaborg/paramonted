@@ -64,7 +64,7 @@ For a complete descriptive example ParaDRAM usage from within C++ see [this samp
 ### Calling the ParaDRAM sampler from Fortran  
 
 The simulation specifications are all automatically set to the appropriate default values. However, if needed, there are two ways to assign non-default values to the simulation specifications from the Fortran language:  
--   passing the specifications as optional arguments to the ParaMonte sampler routine of choice (For example, [here](https://github.com/cdslaborg/paramonte/blob/main/src/kernel/ParaXXXX_mod.inc.f90){:target="_blank"} is the set of input optional arguments to the `runSampler()` method of the `ParaDRAM` sampler class in the ParaMonte library), or,  
+-   passing the specifications as optional arguments to the ParaMonte sampler routine of choice (For example, [here](https://github.com/cdslaborg/paramonte/blob/3548c097f2a25dfc0613061800656d27d0e0ddbe/src/kernel/ParaXXXX_mod.inc.f90){:target="_blank"} is the set of input optional arguments to the `runSampler()` method of the `ParaDRAM` sampler class in the ParaMonte library), or,  
 -   providing all simulation specifications in an external input file in the format described on [this page](../input/){:target="_blank"}.
     {% include tip.html content="When using the ParaMonte Fortran library, we recommend that you always specify the simulation specifications via an external input file. The reasons are detailed [here](../input/#why-is-input-file-the-preferred-method-of-simulation-setup)." %}  
 

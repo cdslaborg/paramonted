@@ -32,7 +32,7 @@ mathjax: true
 
 ## Implementing the objective function in Fortran  
 
-Here is a minimalistic implementation of the 4-D multivariate normal distribution objective function in Fortran, which can also be downloaded as [logfunc.f90](https://raw.githubusercontent.com/cdslaborg/paramonte/main/example/mvn/Fortran/logfunc.f90){:target="_blank"}.  
+Here is a minimalistic implementation of the 4-D multivariate normal distribution objective function in Fortran, which can also be downloaded as [logfunc.f90](https://github.com/cdslaborg/paramonte/blob/3548c097f2a25dfc0613061800656d27d0e0ddbe/example/mvn/Fortran/logfunc.f90){:target="_blank"}.  
 
 ```fortran
 {% include git/example/mvn/Fortran/logfunc.f90 %}

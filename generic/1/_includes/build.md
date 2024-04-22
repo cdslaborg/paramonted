@@ -47,15 +47,15 @@ The above step should generate an MPI-parallelized `main.exe` executable file in
 
 ## Preamble  
 
-Suppose you have written a [file](https://raw.githubusercontent.com/cdslaborg/paramonte/main/example/mvn/{{pmLang}}/logfunc.{{progLangExt}}){:target="_blank"} named `logfunc.{{progLangExt}}` containing an implementation of your mathematical objective function and a `main.{{progLangExt}}` [file](https://raw.githubusercontent.com/cdslaborg/paramonte/main/example/main.{{progLangExt}}){:target="_blank"} containing call(s) to the ParaMonte routines of your choice to sample the objective function.  
+Suppose you have written a [file](https://github.com/cdslaborg/paramonte/blob/3548c097f2a25dfc0613061800656d27d0e0ddbe/example/mvn/{{pmLang}}/logfunc.{{progLangExt}}){:target="_blank"} named `logfunc.{{progLangExt}}` containing an implementation of your mathematical objective function and a `main.{{progLangExt}}` [file](https://github.com/cdslaborg/paramonte/blob/3548c097f2a25dfc0613061800656d27d0e0ddbe/example/main.{{progLangExt}}){:target="_blank"} containing call(s) to the ParaMonte routines of your choice to sample the objective function.  
 
 {% if pmLang == "C" or pmLang == "C++" %}
 
-The corresponding required `logfunc.{{progHeadExt}}` and `paramonte.{{progHeadExt}}` header files can be also downloaded from [here](https://raw.githubusercontent.com/cdslaborg/paramonte/main/example/mvn/{{pmLang}}/logfunc.{{progHeadExt}}){:target="_blank"} and [here](https://raw.githubusercontent.com/cdslaborg/paramonte/main/src/interface/{{pmLang}}/paramonte.{{progHeadExt}}){:target="_blank"}.  
+The corresponding required `logfunc.{{progHeadExt}}` and `paramonte.{{progHeadExt}}` header files can be also downloaded from [here](https://github.com/cdslaborg/paramonte/blob/3548c097f2a25dfc0613061800656d27d0e0ddbe/example/mvn/{{pmLang}}/logfunc.{{progHeadExt}}){:target="_blank"} and [here](https://github.com/cdslaborg/paramonte/blob/3548c097f2a25dfc0613061800656d27d0e0ddbe/src/interface/{{pmLang}}/paramonte.{{progHeadExt}}){:target="_blank"}.  
 
 {% elsif pmLang == "Fortran" %}
 
-The corresponding required `paramonte.f90` module interface file can be also downloaded from [here](https://raw.githubusercontent.com/cdslaborg/paramonte/main/src/interface/{{pmLang}}/paramonte.f90){:target="_blank"}.  
+The corresponding required `paramonte.f90` module interface file can be also downloaded from [here](https://github.com/cdslaborg/paramonte/blob/3548c097f2a25dfc0613061800656d27d0e0ddbe/src/interface/{{pmLang}}/paramonte.f90){:target="_blank"}.  
 
 {% endif %}
 

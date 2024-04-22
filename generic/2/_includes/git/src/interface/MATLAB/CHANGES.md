@@ -138,7 +138,7 @@ https://github.com/cdslaborg/paramonte/issues
 
 **Minor enhancements**  
 
-+   A new simulation specification `overwriteRequested` has 
++   A new simulation specification `outputStatus` has 
     been added to all ParaMonte samplers. If `True` and the 
     ParaMonte sampler detects an existing set of old simulation 
     output files in the output path of the current simulation with 

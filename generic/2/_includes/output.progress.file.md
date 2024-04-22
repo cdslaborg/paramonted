@@ -4,7 +4,7 @@ Every {{pmSampler}} simulation generates an output progress file whose name ends
 
 -   information about the number of calls the {{pmSampler}} sampler makes to the user-provided mathematical objective function,  
 -   information about the overall efficiency of the {{pmSampler}} sampler,  
--   information about the dynamic efficiency of the sampler over the past [progressReportPeriod](../../{{pmSampler|downcase}}/specifications/#progressreportperiod){:target="_blank"} number of calls to the mathematical objective function,  
+-   information about the dynamic efficiency of the sampler over the past [outputReportPeriod](../../{{pmSampler|downcase}}/specifications/#outputreportperiod){:target="_blank"} number of calls to the mathematical objective function,  
 -   information about the timing of the simulation including,  
     -   the time spent since the start of the simulation,  
     -   the time since the last progress report,  
@@ -27,4 +27,4 @@ NumFuncCallTotal,NumFuncCallAccepted,MeanAcceptanceRateSinceStart,MeanAcceptance
 
 {% endif %}
 
-{% include tip.outputRealPrecision.outputDelimiter.md %}
+{% include tip.outputPrecision.outputSeparator.md %}

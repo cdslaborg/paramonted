@@ -65,6 +65,7 @@ issues: "https://github.com/cdslaborg/paramonte/issues"
 
 currentRelease:         "https://github.com/cdslaborg/paramonte/releases/v1.5.1"
 currentReleaseDownload: "https://github.com/cdslaborg/paramonte/releases/download/v1.5.1"
+currentGitHub:          "https://github.com/cdslaborg/paramonte/blob/3548c097f2a25dfc0613061800656d27d0e0ddbe"
 #pmVersion: 1.5
 
 host: 127.0.0.1

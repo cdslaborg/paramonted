@@ -53,7 +53,7 @@ where `_process_1` in the filenames implies that these files have been generated
 {% include note.html content="The processor ID in all ParaMonte simulations starts with number 1 (as opposed to 0)." %}
 
 {{site.data.alerts.important}}
-When the simulation is performed in the multi-chain parallelism mode, specified by the input variable, <b><pre>parallelizationModel = "multiChain"</pre></b> <b>each</b> leader process (that is, all processes in the <b><code>multiChain</code></b> parallel simulation) will generate 5 <b>separate</b> output files in the simulation. Each set of five files contains information about the <b>unique simulation</b> that has been <b>performed by the corresponding process</b>.
+When the simulation is performed in the multi-chain parallelism mode, specified by the input variable, <b><pre>parallelism = "multiChain"</pre></b> <b>each</b> leader process (that is, all processes in the <b><code>multiChain</code></b> parallel simulation) will generate 5 <b>separate</b> output files in the simulation. Each set of five files contains information about the <b>unique simulation</b> that has been <b>performed by the corresponding process</b>.
 {{site.data.alerts.end}}
 
 {% include output.report.file.md %}

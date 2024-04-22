@@ -19,18 +19,18 @@ mathjax: true
 ---
 {% comment %}
 1. [web-link](){:target="_blank"}  
-{% assign examples_root_dir = "https://github.com/cdslaborg/paramontex/blob/main/jupyter/Python" %}
+{% assign examples_root_dir = "https://github.com/cdslaborg/paramontex/blob/fbeca6745684c798ff28c1bf57cfae0c190db478/jupyter/Python" %}
 -   [sampling_multivariate_normal_distribution_via_paradram]({{examples_root_dir}}/sampling_multivariate_normal_distribution_via_paradram.ipynb){:target="_blank"}  
 -   [sampling_univariate_gaussian_distribution_via_paradram]({{examples_root_dir}}/sampling_univariate_gaussian_distribution_via_paradram.ipynb){:target="_blank"}  
 {% endcomment %}
 <div id="toc"></div>  
 <br>
 
-The best way to learn about and interact with the Python interface to the ParaMonte library is via the Jupyter notebooks. The following is a list of example Jupyter Notebooks that are currently kept in the [examples repository of the package on GitHub](https://github.com/cdslaborg/paramontex){:target="_blank"}.  
+The best way to learn about and interact with the Python interface to the ParaMonte library is via the Jupyter notebooks. The following is a list of example Jupyter Notebooks that are currently kept in the [examples repository of the package on GitHub](https://github.com/cdslaborg/paramontex/blob/fbeca6745684c798ff28c1bf57cfae0c190db478){:target="_blank"}.  
 
-{% assign examples_root_dir = "https://nbviewer.jupyter.org/github/cdslaborg/paramontex/blob/main/Python/Jupyter" %}
-{% assign examples_github_dir = "https://github.com/cdslaborg/paramontex/blob/main/Python/Jupyter" %}
-{% assign examples_download_dir = "https://github.com/cdslaborg/paramontex/raw/main/Python/Jupyter" %}
+{% assign examples_root_dir = "https://nbviewer.jupyter.org/github/cdslaborg/paramontex/blob/fbeca6745684c798ff28c1bf57cfae0c190db478/Python/Jupyter" %}
+{% assign examples_github_dir = "https://github.com/cdslaborg/paramontex/blob/fbeca6745684c798ff28c1bf57cfae0c190db478/Python/Jupyter" %}
+{% assign examples_download_dir = "https://github.com/cdslaborg/paramontex/blob/fbeca6745684c798ff28c1bf57cfae0c190db478/Python/Jupyter" %}
 
 ## General topics  
 

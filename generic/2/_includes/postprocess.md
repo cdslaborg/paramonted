@@ -53,7 +53,7 @@ addpath(genpath("./"),"-begin"); % add the ParaMonte library directories to MATL
 pm = paramonte(); % instantiate an object of class paramonte.
 pmpd = pm.ParaDRAM(); % instantiate an object of class ParaDRAM.
 pmpd.spec.outputFileName = "./temp/mvn_serial_process_1_sample.txt";
-pmpd.spec.outputDelimiter = ",";
+pmpd.spec.outputSeparator = ",";
 pmpd.readSample(); % read the downloaded sample file and store it in the newly-created pmpd.sampleList property.
 head(pmpd.sampleList{1}.df) % this newly-created MATLAB-cell property now contains the contents of the sample file and other relevant tools.
 ```  
@@ -85,7 +85,7 @@ pmpd.readSample(file = "./temp/mvn_serial_process_1_sample.txt", delimiter = ","
 import paramonte as pm
 pmpd = pm.ParaDRAM() # instantiate an object of class ParaDRAM.
 pmpd.spec.outputFileName = "./temp/mvn_serial_process_1_sample.txt"
-pmpd.spec.outputDelimiter = ","
+pmpd.spec.outputSeparator = ","
 pmpd.readSample() # read the downloaded sample file and store it in the newly-created pmpd.sampleList property.
 pmpd.sampleList[0].df.head() # this newly-created pmpd.sampleList Python-list property contains the contents of the sample file and other relevant tools.
 ```  

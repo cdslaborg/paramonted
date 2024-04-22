@@ -25,7 +25,7 @@ mathjax: true
 <div id="toc"></div>  
 <br>
 
-The best way to learn about and interact with the MATLAB interface to the ParaMonte library is via the MATLAB live scripts. The following is a list of example MATLAB live scripts in HTML format, that are currently kept in the [examples repository of the package on GitHub](https://github.com/cdslaborg/paramontex){:target="_blank"}.  
+The best way to learn about and interact with the MATLAB interface to the ParaMonte library is via the MATLAB live scripts. The following is a list of example MATLAB live scripts in HTML format, that are currently kept in the [examples repository of the package on GitHub](https://github.com/cdslaborg/paramontex/blob/fbeca6745684c798ff28c1bf57cfae0c190db478){:target="_blank"}.  
 
 {% assign examples_root_dir = "." %}
 

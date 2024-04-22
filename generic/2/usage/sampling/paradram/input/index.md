@@ -82,7 +82,7 @@ Like variables, values within a namelist group can be separated from each other 
 -   Vectors (and arrays) of strings, integers, or real numbers can be specified as comma-separated or space-separated values. For example,  
     ```text
     ! real-valued vector of length 4, specified as the starting point of an MCMC simulation
-    proposalStartPoint = 1.0, -100 3, 5.6e7 8.d1
+    proposalStart = 1.0, -100 3, 5.6e7 8.d1
     ```  
     You may have noticed above that some values are comma-separated while others are space-separated. This is valid. 
 -   Vector (an array) values may be specified separately on multiple lines and in random order like the following,  
@@ -96,12 +96,12 @@ Like variables, values within a namelist group can be separated from each other 
 -   Vector values may be selectively provided in the input file and some values may be missing. For example,  
     ```text
     ! a vector of length 4 specifying the random walker's step sizes along different dimensions of the objective function in a ParaDRAM simulation.
-    proposalStdVec(3) = 3.0
-    proposalStdVec(1:2) = 1.0, 2.0
+    proposalStd(3) = 3.0
+    proposalStd(1:2) = 1.0, 2.0
     ```  
     or,  
     ```text
-    proposalStdVec = 1.0, 2.0, 3.0     ! this is identical to the above representation
+    proposalStd = 1.0, 2.0, 3.0     ! this is identical to the above representation
     ```  
     Notice that the missing fourth variable will not be read from the input file. Instead, the ParaMonte routines will assign it a default value.  
 -   Similar values in a vector that appear sequentially can be represented in abbreviated format via a repetition pattern rule involving `*`. For example,  
@@ -128,21 +128,21 @@ Like variables, values within a namelist group can be separated from each other 
 -   The Array representation rules are identical to the vectors described in the previous section. For example, the following array value assignments are all equivalent,  
     ```text
     ! a symmetric matrix of size 4-by-4 of 64-bit real numbers representing the initial covariance matrix of the ParaDRAM sampler
-    proposalCovMat =   1.0, 0.0, 0.0, 0.0,
+    proposalCov =   1.0, 0.0, 0.0, 0.0,
                             0.0, 1.0, 0.0, 0.0,
                             0.0, 0.0, 1.0, 0.0,
                             0.0, 0.0, 0.0, 1.0,
     ```  
     or,  
     ```text
-    proposalCovMat(:,1) = 1.0, 0.0, 0.0, 0.0,
-    proposalCovMat(:,2) = 0.0, 1.0, 0.0, 0.0,
-    proposalCovMat(:,3) = 0.0, 0.0, 1.0, 0.0,
-    proposalCovMat(:,4) = 0.0, 0.0, 0.0, 1.0,
+    proposalCov(:,1) = 1.0, 0.0, 0.0, 0.0,
+    proposalCov(:,2) = 0.0, 1.0, 0.0, 0.0,
+    proposalCov(:,3) = 0.0, 0.0, 1.0, 0.0,
+    proposalCov(:,4) = 0.0, 0.0, 0.0, 1.0,
     ```  
     or,  
     ```text
-    proposalCovMat(1:4,1:4) = 1.0, 4*0.0, 1.0, 4*0.0, 1.0, 4*0.0, 1.0
+    proposalCov(1:4,1:4) = 1.0, 4*0.0, 1.0, 4*0.0, 1.0, 4*0.0, 1.0
     ```  
     {% include warning.html content= "When dealing with multidimensional arrays, keep in mind that the ParaMonte routines read and store array elements in a [column-major order](https://en.wikipedia.org/wiki/Row-_and_column-major_order){:target='_blank'} from the input file. This is why the columns are represented by `:` in the second matrix representation in the example above (instead of rows). Matrix rows are NOT stored sequentially in the computer memory. **For symmetric positive-definite matrices (like covariance or correlation matrices), this convention is irrelevant and unimportant** and does not have any effects (as is the case in the example above)." %}  
 

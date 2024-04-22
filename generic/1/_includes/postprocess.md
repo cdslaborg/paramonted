@@ -2,10 +2,10 @@
 {% capture alternateMessage %}Alternatively, we could also specify both the filename and delimiter as attributes of the `pmpd` object and avoid passing them directly to the `pmpd.readSample()` method,{% endcapture %}
 
 {% if include.lang == "MATLAB" %}
-{% assign rootURL = "https://github.com/cdslaborg/paramontex/raw/main/MATLAB/mlx/sampling_multivariate_normal_distribution_via_paradram/out" %}
+{% assign rootURL = "https://github.com/cdslaborg/paramontex/blob/fbeca6745684c798ff28c1bf57cfae0c190db478/MATLAB/mlx/sampling_multivariate_normal_distribution_via_paradram/out" %}
 {% assign examplesURL = "../mlx" %}
 {% elsif include.lang == "Python" %}
-{% assign rootURL = "https://github.com/cdslaborg/paramontex/raw/main/Python/Jupyter/sampling_multivariate_normal_distribution_via_paradram/out" %}
+{% assign rootURL = "https://github.com/cdslaborg/paramontex/blob/fbeca6745684c798ff28c1bf57cfae0c190db478/Python/Jupyter/sampling_multivariate_normal_distribution_via_paradram/out" %}
 {% assign examplesURL = "../jupyter" %}
 {% endif %}
 

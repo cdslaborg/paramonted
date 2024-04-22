@@ -44,9 +44,6 @@
         <tab type='user' url='../../c/latest/index.html' title='latest' intro=''/>
         <tab type='user' url='../../c/2/index.html' title='2' intro=''/>
     </tab>
-    <tab type='usergroup' visible='yes' title='C' intro='C Documentation Version History'>
-        <tab type='user' url='../../codecov/fortran/index.html' title='fortran' intro=''/>
-    </tab>
     <tab type='usergroup' visible='yes' title='C++' intro='C++ Documentation Version History'>
         <tab type='user' url='../../cpp/latest/index.html' title='latest' intro=''/>
         <tab type='user' url='../../cpp/2/index.html' title='2' intro=''/>

@@ -5,8 +5,8 @@ To access the latest release of the package, visit [the ParaMonte GitHub reposit
 
 See also,  
 
-+   [CHANGES.md](https://github.com/cdslaborg/paramonte/blob/main/src/interface/MATLAB/CHANGES.md) for the `ParaMonte::MATLAB` release notes.  
-+   [CHANGES.md](https://github.com/cdslaborg/paramonte/blob/main/src/interface/Python/CHANGES.md) for the `ParaMonte::Python` release notes.  
++   [CHANGES.md](https://github.com/cdslaborg/paramonte/blob/3548c097f2a25dfc0613061800656d27d0e0ddbe/src/interface/MATLAB/CHANGES.md) for the `ParaMonte::MATLAB` release notes.  
++   [CHANGES.md](https://github.com/cdslaborg/paramonte/blob/3548c097f2a25dfc0613061800656d27d0e0ddbe/src/interface/Python/CHANGES.md) for the `ParaMonte::Python` release notes.  
 
 
 ## **Version 1.x.x**  

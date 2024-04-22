@@ -32,7 +32,7 @@ The procedure for running {{include.lang}} simulations, whether serial or parall
 {% capture thisCommandPrompt %}the **Anaconda3**{% endcapture %}
 {% endif %}
 
-Suppose you want to run [this {{include.lang}} script named `main.{{langExt}}`](https://raw.githubusercontent.com/cdslaborg/paramonte/main/example/main.{{langExt}}){:target='_blank'} which calls the ParaMonte library routines to sample a mathematical objective function implemented in [this {{include.lang}} file named `logfunc.{{langExt}}`](https://raw.githubusercontent.com/cdslaborg/paramonte/main/example/mvn/{{include.lang}}/logfunc.{{langExt}}){:target='_blank'} on a single processor. Assuming that you have already successfully [installed the ParaMonte {{include.lang}} library](../../installation/{{include.lang|downcase}}/){:target='_blank'} on your system, all you need to do is to,  
+Suppose you want to run [this {{include.lang}} script named `main.{{langExt}}`](https://github.com/cdslaborg/paramonte/blob/3548c097f2a25dfc0613061800656d27d0e0ddbe/example/main.{{langExt}}){:target='_blank'} which calls the ParaMonte library routines to sample a mathematical objective function implemented in [this {{include.lang}} file named `logfunc.{{langExt}}`](https://github.com/cdslaborg/paramonte/blob/3548c097f2a25dfc0613061800656d27d0e0ddbe/example/mvn/{{include.lang}}/logfunc.{{langExt}}){:target='_blank'} on a single processor. Assuming that you have already successfully [installed the ParaMonte {{include.lang}} library](../../installation/{{include.lang|downcase}}/){:target='_blank'} on your system, all you need to do is to,  
 1.  open a {{include.lang}}-aware terminal (e.g., {{thisCommandPrompt}} command-prompt on Windows or the Bash terminal on Linux/macOS),  
 1.  navigate to the folder containing your code, and,  
 1.  type the following on the command line,  
@@ -64,13 +64,13 @@ pm.verify()
 in your {{include.lang}} session.
 {{site.data.alerts.end}}
 
-Suppose you want to run [this MPI-enabled {{include.lang}} script named `main_mpi.{{langExt}}`](https://raw.githubusercontent.com/cdslaborg/paramonte/main/example/main_mpi.{{langExt}}){:target='_blank'} which calls the ParaMonte library parallel routines to sample a mathematical objective function implemented in [this {{include.lang}} file named `logfunc.{{langExt}}`](https://raw.githubusercontent.com/cdslaborg/paramonte/main/example/mvn/{{include.lang}}/logfunc.{{langExt}}){:target='_blank'} on multiple processors. 
+Suppose you want to run [this MPI-enabled {{include.lang}} script named `main_mpi.{{langExt}}`](https://github.com/cdslaborg/paramonte/blob/3548c097f2a25dfc0613061800656d27d0e0ddbe/example/main_mpi.{{langExt}}){:target='_blank'} which calls the ParaMonte library parallel routines to sample a mathematical objective function implemented in [this {{include.lang}} file named `logfunc.{{langExt}}`](https://github.com/cdslaborg/paramonte/blob/3548c097f2a25dfc0613061800656d27d0e0ddbe/example/mvn/{{include.lang}}/logfunc.{{langExt}}){:target='_blank'} on multiple processors. 
 
 {{site.data.alerts.tip}}
 Note that <b>the only difference</b> between 
-<a href="https://raw.githubusercontent.com/cdslaborg/paramonte/main/example/main_mpi.{{langExt}}" target="_blank">the above MPI-enabled {{include.lang}} script <b><code>main_mpi.{{langExt}}</code></b></a>
+<a href="https://github.com/cdslaborg/paramonte/blob/3548c097f2a25dfc0613061800656d27d0e0ddbe/example/main_mpi.{{langExt}}" target="_blank">the above MPI-enabled {{include.lang}} script <b><code>main_mpi.{{langExt}}</code></b></a>
  and 
-<a href="https://raw.githubusercontent.com/cdslaborg/paramonte/main/example/main.{{langExt}}" target="_blank">the corresponding serial {{include.lang}} script <b><code>main.{{langExt}}</code></b></a> 
+<a href="https://github.com/cdslaborg/paramonte/blob/3548c097f2a25dfc0613061800656d27d0e0ddbe/example/main.{{langExt}}" target="_blank">the corresponding serial {{include.lang}} script <b><code>main.{{langExt}}</code></b></a> 
 is the additional simulation attribute,  
 {% if include.lang == "MATLAB" %}
 {% highlight matlab %}

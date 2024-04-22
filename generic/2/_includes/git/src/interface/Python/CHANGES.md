@@ -155,7 +155,7 @@ To access the latest release of the package, visit [the ParaMonte GitHub reposit
 
 **Minor enhancements**  
 
-+   A new simulation specification `overwriteRequested` has 
++   A new simulation specification `outputStatus` has 
     been added to all ParaMonte samplers. If `True` and the 
     ParaMonte sampler detects an existing set of old simulation 
     output files in the output path of the current simulation with 
@@ -216,7 +216,7 @@ To access the latest release of the package, visit [the ParaMonte GitHub reposit
     minor change that will not cause any noticeable change in the 
     behavior of the library in almost in all use cases.
 
-+   A minor bug regarding the input value for the `outputDelimiter` 
++   A minor bug regarding the input value for the `outputSeparator` 
     attribute of the `spec` component of the `ParaMonteSampler()` class,  
     used in the `readTabular()` internal method, is now fixed.
 

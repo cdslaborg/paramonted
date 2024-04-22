@@ -31,7 +31,7 @@ C/C++ examples documentation is currently being developed. Please check back in 
 
 ## Implementing the objective function in C++  
 
-Here is a minimalistic implementation of the 4-D multivariate normal distribution objective function in C++, which can also be downloaded as [logfunc.cpp](https://raw.githubusercontent.com/cdslaborg/paramonte/main/example/mvn/C++/logfunc.cpp){:target="_blank"}.  
+Here is a minimalistic implementation of the 4-D multivariate normal distribution objective function in C++, which can also be downloaded as [logfunc.cpp](https://github.com/cdslaborg/paramonte/blob/3548c097f2a25dfc0613061800656d27d0e0ddbe/example/mvn/C++/logfunc.cpp){:target="_blank"}.  
 
 ```cpp
 {% include git/example/mvn/CPP/logfunc.cpp %}
