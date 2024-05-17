@@ -1,6 +1,6 @@
 ---
 title: "The ParaDRAM sampler specifications"
-#tags: [python, ParaDRAM, API, Fortran, C, C++, interoperation]
+#tags: [Python, ParaDRAM, API, Fortran, C, C++, interoperation]
 keywords: 
         specifications
         simulation

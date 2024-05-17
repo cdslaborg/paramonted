@@ -1,6 +1,6 @@
 ---
 title: "ParaMonte installation on Windows OS"
-#tags: [python, getting_started, installation, windows, author, compiler, operating_system, OS, Fortran, C, C++, interoperation, build]
+#tags: [Python, getting_started, installation, windows, author, compiler, operating_system, OS, Fortran, C, C++, interoperation, build]
 keywords: 
         Windows
         getting_started

@@ -55,7 +55,7 @@ pmpd = pm.ParaDRAM();
 % NOTE:
 % NOTE:     https://www.cdslab.org/paramonte/generic/2/usage/sampling/paradram/specifications/
 
-pmpd.spec.chainSize = 30000;            % the number of uniquely-sampled points
+pmpd.spec.outputChainSize = 30000;            % the number of uniquely-sampled points
 pmpd.spec.outputFileName = "./out/";    % only the output folder specified here in the above, implying that
                                         % the filenames are to be generated automatically by the sampler.
 

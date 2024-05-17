@@ -5,7 +5,7 @@ keywords:
         C
         C++
         Fortran
-        python
+        Python
         input 
         file
         ParaDRAM
@@ -28,20 +28,20 @@ mathjax: true
 
 ## When is the input file needed?
 
-The input files to the ParaMonte library sampler routines are **optional**. If not provided, all simulation specifications will be set to appropriate default values or the ParaMonte routine's best guess for the proper values. However, if the user wants to fine-tune the specifics of a ParaMonte simulation, then depending on the programming language interface to the ParaMonte library, the input file may or may not be the sole method of setting up the simulation specifications,  
+The input files to the ParaMonte library sampler routines are **optional**. If not provided, all simulation specifications will be set to appropriate default values or the ParaMonte samplers' best guess for the proper values. However, if the user wants to fine-tune the specifics of a sampling simulation, then depending on the programming language interface to the ParaMonte library, the input file may or may not be the sole method of setting up the simulation specifications,  
 
 -   The **C/C++** programming language: Providing the path to an **input external file** is **the sole method of simulation setup** by the user.  
--   The **Fortran** programming language: Providing the path to an **input external file** is **the preferred method of simulation setup** by the user. However, the input file is not the sole method of specifying the simulation setup. See [the ParaMonte Fortran documentation]({{site.baseurl}}/../../fortran/2/interfacepm__sampling_1_1getErrSampling.html){:target= "_blank"} for more information about the alternative, less flexible method.  
+-   The **Fortran** programming language: Providing the path to an **input external file** is **the preferred method of simulation setup** by the user. However, the input file is not the sole method of specifying the simulation setup. See [the ParaMonte Fortran documentation]({{site.baseurl}}/../../fortran/2/interfacepm__sampling_1_1getErrSampling.html){:target= "_blank"} of the generic interface `getErrSampling` for more information about the alternative, less flexible method.  
 -   The **MATLAB** programming language: Providing the path to an **input external file** is **NOT the preferred method** of simulation setup by the user. This is because [the ParaMonte MATLAB library](https://www.mathworks.com/matlabcentral/fileexchange/78946-paramonte){:target= "_blank"} already has a much more flexible dynamic method of simulation specifications setup from within the MATLAB programming language. Nevertheless, it is equally possible to specify everything from within an input simulation specifications file.  
-    {% include warning.html content= "When you provide the path to an input file, all other simulation specifications made from the MATLAB programming environment will be ignored in favor of the corresponding values that may or may not be present in the specified external input file." %}
+    {% include warning.html content= "When you provide the path to an input file, all other simulation specifications made within the MATLAB programming environment will be ignored in favor of the corresponding values in the specified external input file, which may or may not be present." %}
 -   The **Python** programming language: Providing the path to an **input external file** is **NOT the preferred method** of simulation setup by the user. This is because [the ParaMonte Python library](https://pypi.org/project/paramonte/){:target= "_blank"} already has a much more flexible dynamic method of simulation specifications setup from within the Python programming language. Nevertheless, it is equally possible to specify everything from within an input simulation specifications file.  
-    {% include warning.html content= "When you provide the path to an input file, all other simulation specifications made from within the Python programming environment will be ignored in favor of the corresponding values that may or may not be present in the specified external input file." %}
+    {% include warning.html content= "When you provide the path to an input file, all other simulation specifications made within the Python programming environment will be ignored in favor of the corresponding values in the specified external input file, which may or may not be present." %}
 
-{% include important.html content= "If an external input file whose path is given to the ParaMonte sampler routine does not exist (or if the path fails to point to the file properly), then the ParaMonte sampler will continue with the simulation; however, with default values assigned to all simulation specification variables. In this case, the ParaMonte routines will print a WARNING message on the screen, highlighting this failure to locate and read the external input file." %}
+{% include important.html content= "If an external input file whose path is given to a ParaMonte sampler routine does not exist (or if the path fails to point to the file properly), then the sampler will continue with the simulation; however, with default values assigned to all simulation specification variables. In this case, the ParaMonte routines will print a WARNING message on the screen, highlighting this failure to locate and read the external input file." %}
 
 ## The structure of the optional input file
 
-Here is a summary of useful guidelines and rules for writing ParaMonte input files.  
+Here is a summary of useful guidelines and rules for writing ParaMonte sampler input files.  
 
 ### **Organization**
 
@@ -63,7 +63,7 @@ Variables within a namelist group can be separated from each other by colon or w
 
 ### **Values**  
 
-Like variables, values within a namelist group can be separated from each other by either a colon or whitespace characters.  
+Like variables, values within a namelist group can be separated by either a colon or whitespace characters.  
 
 -   **Strings**  
     -   String values must be enclosed with single or double quotation marks: `''` or `"  "`.
@@ -71,8 +71,8 @@ Like variables, values within a namelist group can be separated from each other 
 -   **Logical (Boolean)**  
     Logical values are all **case-insensitive** and can be either `.true.`, `true`, or `t` for a `TRUE` value or `.false.`, `false`, or `f` for a `FALSE` value.
 -   **Real (Float)**  
-    +   Real values are by default double-precision in MATLAB and Python programming languages, but can be `single`, `double`, or `quad` precision within the C and C++ programming languages and any precision supported by the processor within the Fortran programming language.  
-    +   The double precision is capable of holding up to `16` digits of precision and representing numbers as large as $\approx 10^{307}$ and as tiny as $\approx 10^{-307}$.  
+    +   Real values are, by default, double-precision in MATLAB and Python programming languages. But they can be `single`, `double`, or `quad` precision within the C and C++ programming languages and any precision supported by the processor within the Fortran programming language.  
+    +   The double precision can hold up to `16` digits of precision and represent numbers as large as $\approx 10^{307}$ and as tiny as $\approx 10^{-307}$.  
     {% include tip.html content= "To keep the representation of numbers accurate up to 16 digits, consider using the letter **`d`** instead of **`e`** for the scientific representation of numbers. The letter **`d`** stands for **double precision** (**`64-bit`** real/float). For example, the value **`1.d0` is guaranteed to be `1.0000000000000000`** in the simulation, whereas `1.e0` is only guaranteed to have single-precision accuracy. However, most compilers will represent this as `1.0000000000000000` upon conversion to a full-precision value. But in general, it won't hurt to use **`d`** in place of **`e`** for the scientific representation of double-precision values **only** within the input files (Outside the input files, the number-representation rules of the specific programming language of your choice, in which you are coding your objective function, must be followed)." %}
 
 ### **Verctors**  
@@ -84,7 +84,7 @@ Like variables, values within a namelist group can be separated from each other 
     ! real-valued vector of length 4, specified as the starting point of an MCMC simulation
     proposalStart = 1.0, -100 3, 5.6e7 8.d1
     ```  
-    You may have noticed above that some values are comma-separated while others are space-separated. This is valid. 
+    You may have noticed above that some values are comma-separated while others are space-separated, which is a valid syntax. 
 -   Vector (an array) values may be specified separately on multiple lines and in random order like the following,  
     ```text
     ! a vector of strings specifying the names of the variables that are going to be sampled in the simulation, 
@@ -93,7 +93,7 @@ Like variables, values within a namelist group can be separated from each other 
     domainAxisName(1) = "FirstVariable"
     domainAxisName(3:4) = "ThirdVariable", "FourthVariable"
     ```  
--   Vector values may be selectively provided in the input file and some values may be missing. For example,  
+-   Vector values may be selectively provided in the input file, and some values may be missing. For example,  
     ```text
     ! a vector of length 4 specifying the random walker's step sizes along different dimensions of the objective function in a ParaDRAM simulation.
     proposalStd(3) = 3.0
@@ -101,7 +101,7 @@ Like variables, values within a namelist group can be separated from each other 
     ```  
     or,  
     ```text
-    proposalStd = 1.0, 2.0, 3.0     ! this is identical to the above representation
+    proposalStd = 1.0, 2.0, 3.0     ! This is identical to the above representation
     ```  
     Notice that the missing fourth variable will not be read from the input file. Instead, the ParaMonte routines will assign it a default value.  
 -   Similar values in a vector that appear sequentially can be represented in abbreviated format via a repetition pattern rule involving `*`. For example,  
@@ -146,7 +146,7 @@ Like variables, values within a namelist group can be separated from each other 
     ```  
     {% include warning.html content= "When dealing with multidimensional arrays, keep in mind that the ParaMonte routines read and store array elements in a [column-major order](https://en.wikipedia.org/wiki/Row-_and_column-major_order){:target='_blank'} from the input file. This is why the columns are represented by `:` in the second matrix representation in the example above (instead of rows). Matrix rows are NOT stored sequentially in the computer memory. **For symmetric positive-definite matrices (like covariance or correlation matrices), this convention is irrelevant and unimportant** and does not have any effects (as is the case in the example above)." %}  
 
-### Example contents of a ParaMonte simulation input file  
+### Example contents of a ParaDRAM simulation input file  
 
 The following box shows an example input specifications file for a ParaDRAM simulation of an objective function defined on a 4-dimensional domain (Notice the group name `&ParaDRAM` at the beginning and `/` at the end). Notice the ample usage of the comment symbol wherever the user deems it appropriate,  
 ```text
@@ -174,7 +174,7 @@ Specifying the properties of a ParaMonte simulation via an **external input file
 
 -   Specifying the simulation properties in an external input file ensures your simulation's highest level of flexibility and portability by avoiding the hardcoding of simulation specifications into your compiled code. Imagine you specify a simulation property inside your code, compile and run it, and then realize that you want to change that property value to something else. **Without an external input file, you would have to recompile your code every time for every property change.**  
 -   Also, the same specification input file can be used to set up the same simulation settings from any programming language without a single line of change in the input file. **The contents of the input files are programming-language-agnostic**.  
-- When specified from the input file, all variable names are case-insensitive across all programming languages.  
+- All variable names are case-insensitive across all programming languages when specified from the input file.  
 -   The order by which the simulation specification variables appear in the input file is irrelevant.  
 -   Multiple simulation namelist groups, each corresponding to an independent call to a different ParaMonte routine, can be placed within a single input file, resulting in a cleaner, more portable organization of the input data for the given simulation problem.  
 

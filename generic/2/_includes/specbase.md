@@ -262,9 +262,9 @@ The default value is sampleSize = -1.
 ```  
 {% if include.sampler == "ParaDRAM" or include.sampler == "ParaDISE" %}
 See also the input simulation specification 
-[chainSize](#chainsize), 
-[sampleRefinementCount](#samplerefinementcount), 
-[sampleRefinementMethod](#samplerefinementmethod).  
+[outputChainSize](#outputchainsize), 
+[sampleRefinementCount](#outputsamplerefinementcount), 
+[sampleRefinementMethod](#outputsamplerefinementmethod).  
 {% endif %}
 <br>
 

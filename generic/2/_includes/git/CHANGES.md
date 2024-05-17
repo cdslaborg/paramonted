@@ -192,7 +192,7 @@ See also,
     +   The parallel simulation summary now also provides the 
         predicted strong-scaling speedup behavior of the parallel 
         ParaDRAM simulations in "single chain" parallelism mode. 
-        This can help make wiser decisions regarding the the number 
+        This can help make wiser decisions regarding the number 
         of processors for similar parallel simulations in the future.  
 
 +   The ParaDRAM restart output file in ASCII mode now contains all 

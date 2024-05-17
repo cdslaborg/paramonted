@@ -1,6 +1,6 @@
 ---
 #title: "Parallel Monte Carlo Library"
-#tags: [python, getting_started, homepage, front_matter, frontpage]
+#tags: [Python, getting_started, homepage, front_matter, frontpage]
 #keywords: ParaMonte, Fortran, C, Python, Julia, MATLAB, getting_started, homepage, front_matter, frontpage
 sidebar: home_sidebar
 permalink: index.html

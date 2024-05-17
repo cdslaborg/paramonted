@@ -2,7 +2,7 @@
 title: "The ParaDRAM simulation parallelization tips"
 #tags: [C, C++, Fortran, MATLAB, python, interoperation, ParaDRAM, API, parallel, parallelization]
 keywords: 
-    python
+    Python
     ParaDRAM
     Fortran
     C
@@ -37,7 +37,7 @@ mathjax: true
 
 ## ParaDRAM parallelization tips  
 
-By default, the ParaDRAM sampler utilizes a Fork-Join parallelism paradigm where multiple proposals are generated and inspected for acceptance at each MCMC iteration. This is in addition to and different from the **perfect-parallelism** paradigm whereby multiple MCMC chains are simulated simultaneously in parallel independently of each other. The choice of parallelism paradigm can be changed from the default Fork-Join via the input simulation specification [parallelism](../specifications/#parallelizationmodel){:target="_blank"}.  
+By default, the ParaDRAM sampler utilizes a Fork-Join parallelism paradigm where multiple proposals are generated and inspected for acceptance at each MCMC iteration. This is in addition to and different from the **perfect-parallelism** paradigm whereby multiple MCMC chains are simulated simultaneously in parallel independently of each other. The choice of parallelism paradigm can be changed from the default Fork-Join via the input simulation specification [parallelism](../specifications/#parallelism){:target="_blank"}.  
 
 ### Running in parallel to check for MCMC convergence  
 
@@ -53,7 +53,7 @@ The output simulation performance analysis contains the predicted optimal number
 
 The efficiency of a parallel ParaDRAM simulation depends heavily on two factors:  
 1.  The time cost of the objective function call (as compared to the inter-process communication cost).  
-1.  The efficiency of the MCMC sampler (i.e., the average acceptance rate). **As a rule of thumb for maximum efficiency**, the number of processors should be set to a number roughly equal to or less than the inverse of the mean efficiency (i.e., the mean acceptance rate) of the MCMC sampler. This holds true only if a single objective function call costs significantly more than the inter-process communication cost. In other words, this is the ideal scenario.  
+1.  The efficiency of the MCMC sampler (i.e., the average acceptance rate). **As a rule of thumb for maximum efficiency**, the number of processors should be set to a number roughly equal to or less than the inverse of the mean efficiency (i.e., the mean acceptance rate) of the MCMC sampler. This holds only if a single objective function call costs significantly more than the inter-process communication cost. In other words, this is the ideal scenario.  
     {% include tip.html content = "Although the optimal average MCMC acceptance rate is generally around $0.234$, lowering the efficiency to increase the number of parallel cores -- and therefore, the parallelization efficiency -- is often a reasonably good strategy. The average MCMC acceptance rate of a given ParaDRAM simulation can be controlled via the input simulation specification [targetAcceptanceRate](../specifications/#targetacceptancerate){:target='_blank'} or more appropriately, adjusted by varying the value of [proposalScale](../specifications/#proposalscale){:target='_blank'} property of the simulation." %}
 
 {% include askme.html %}

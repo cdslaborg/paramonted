@@ -103,7 +103,7 @@ module paramonte
     ! symbols lowercase. 
 
     abstract interface
-        ! C-style Fortran interface for the the objective function
+        ! C-style Fortran interface for the objective function
         ! This is to be used only to bind the ParaMonte library compiled by the 
         ! Intel Compilers with Fortran applications compiled with GNU compilers on Windows.
         function getLogFuncIntelGNU_proc(ndim,Point) result(logFunc) bind(C)

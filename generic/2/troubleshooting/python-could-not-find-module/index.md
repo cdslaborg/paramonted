@@ -5,7 +5,7 @@ keywords:
         troubleshooting
         mpi
         intel
-        python
+        Python
         parallel
         dependency
         shared

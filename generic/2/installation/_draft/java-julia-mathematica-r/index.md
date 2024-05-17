@@ -1,6 +1,6 @@
 ---
 title: "The ParaMonte Java/Julia/Mathematica/MATLAB/R library interfaces"
-#tags: [python, getting_started, installation, windows, author, compiler, operating_system, OS, Fortran, C, C++, interoperation, build]
+#tags: [Python, getting_started, installation, windows, author, compiler, operating_system, OS, Fortran, C, C++, interoperation, build]
 keywords: 
         Java
         Julia

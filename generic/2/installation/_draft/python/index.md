@@ -1,6 +1,6 @@
 ---
 title: "Installation instructions for the ParaMonte Python library"
-#tags: [python, getting_started, installation, windows, author, compiler, operating_system, OS, Fortran, C, C++, interoperation, build]
+#tags: [Python, getting_started, installation, windows, author, compiler, operating_system, OS, Fortran, C, C++, interoperation, build]
 keywords: 
         python
         Windows
@@ -70,7 +70,7 @@ import paramonte as pm
     +   for **Linux**: [libparamonte_python_linux_x64.tar.gz]({{site.currentReleaseDownload}}/libparamonte_python_linux_x64.tar.gz).  
     +   for **macOS**: [libparamonte_python_darwin_x64.tar.gz]({{site.currentReleaseDownload}}/libparamonte_python_darwin_x64.tar.gz).  
         {{site.data.alerts.important}}
-        If you are a <b>macOS user</b>, we <b>strongly recommend you to NOT download</b> the library directly from the the library's GitHub release page and <b>NOT by clicking directly on the above link</b>. Instead, use the <b><code>curl</code></b> command line program to download your the library from the release page. To do so, first make sure you have <b><code>curl</code></b> installed on your system. If it is not installed, you can install it via <a href="https://brew.sh/" target="_blank">Homebrew</a>,
+        If you are a <b>macOS user</b>, we <b>strongly recommend you to NOT download</b> the library directly from the library's GitHub release page and <b>NOT by clicking directly on the above link</b>. Instead, use the <b><code>curl</code></b> command line program to download your the library from the release page. To do so, first make sure you have <b><code>curl</code></b> installed on your system. If it is not installed, you can install it via <a href="https://brew.sh/" target="_blank">Homebrew</a>,
         <br>
         <pre>
         brew install curl

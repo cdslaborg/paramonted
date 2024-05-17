@@ -1,6 +1,6 @@
 ---
 title: "ParaMonte installation on Linux OS"
-#tags: [python, getting_started, installation, Linux, author, compiler, operating_system, OS, Fortran, C, C++, interoperation, build]
+#tags: [Python, getting_started, installation, Linux, author, compiler, operating_system, OS, Fortran, C, C++, interoperation, build]
 keywords: 
         Linux
         getting_started

@@ -1,6 +1,6 @@
 ---
 title: "ParaMonte installation on macOS (Darwin)"
-#tags: [python, getting_started, installation, author, compiler, operating_system, OS, Fortran, C, C++, interoperation, build]
+#tags: [Python, getting_started, installation, author, compiler, operating_system, OS, Fortran, C, C++, interoperation, build]
 keywords: 
         macOS
         Darwin

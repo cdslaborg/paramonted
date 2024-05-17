@@ -3,7 +3,7 @@
 Every {{pmSampler}} simulation generates an output sample file whose name ends with `_sample.txt`. **This is the final gem** produced by the {{pmSampler}} sampler routine and contains a refined, decorrelated, [independent and identically-distributed (i.i.d.)](https://en.wikipedia.org/wiki/Independent_and_identically_distributed_random_variables){:target="_blank"} set of random states (points) sampled from the user-provided mathematical objective function. This file contains only two pieces of information,  
 
 -   `sampleLogFunc` -- the value of the user-provided mathematical objective function at the currently-sampled state on each row of the file,  
--   **the sampled state** -- a row-wise vector of values that represents the current state that has been sampled. The variable names corresponding to each of these state values can be specified via the input specification attribute `domainAxisName` as described [here](../../{{pmSampler|downcase}}/specifications/#variablenamelist){:target="_blank"}.  
+-   **the sampled state** -- a row-wise vector of values that represents the current state that has been sampled. The variable names corresponding to each of these state values can be specified via the input specification attribute `domainAxisName` as described [here](../../{{pmSampler|downcase}}/specifications/#domainaxisname){:target="_blank"}.  
 
 {% include note.html content='**Each row** in the output sample file represents information about a **visited state** during the simulation. **Each column** in the sample file represents information about **one attribute of the visited state**.' %}  
 

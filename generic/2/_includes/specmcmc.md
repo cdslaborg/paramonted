@@ -1,13 +1,13 @@
 
-### chainSize 
+### outputchainsize 
 
 ```text
-chainSize determines the number of non-refined, potentially auto-correlated, but unique, samples 
-drawn by the MCMC sampler before stopping {{include.sampler}}. For example, if you specify chainSize = 10000, 
+outputChainSize determines the number of non-refined, potentially auto-correlated, but unique, samples 
+drawn by the MCMC sampler before stopping {{include.sampler}}. For example, if you specify outputChainSize = 10000, 
 then 10000 unique sample points (with no duplicates) will be drawn from the target objective function 
-that the user has provided. The input value for chainSize must be a positive integer of a minimum value 
+that the user has provided. The input value for outputChainSize must be a positive integer of a minimum value 
 ndim + 1 or larger, where ndim is the number of dimensions of the domain of the objective function to be sampled. 
-Note that chainSize is different from and always smaller than the length of the constructed MCMC chain. 
+Note that outputChainSize is different from and always smaller than the length of the constructed MCMC chain. 
 The default value is 100000.
 ```  
 {% if include.sampler == "ParaDRAM" or include.sampler == "ParaDISE" %}
@@ -187,7 +187,7 @@ it will be ignored. The default value is sampleRefinementCount = 1073741823.
 ```  
 {% if include.sampler == "ParaDRAM" or include.sampler == "ParaDISE" %}
 See also the input simulation specification 
-[sampleRefinementMethod](#samplerefinementmethod).  
+[sampleRefinementMethod](#outputsamplerefinementmethod).  
 {% endif %}
 <br>
 
@@ -209,7 +209,7 @@ Options that are currently supported include:
             will provide reliable estimates of the IAC. 
             Note that the refinement strategy involves two separate phases of sample decorrelation. At the first stage, 
             the Markov chain is decorrelated recursively (for as long as needed) based on the IAC of its compact format, 
-            where only the the uniquely-visited states are kept in the (compact) chain. Once the Markov chain is refined 
+            where only the uniquely-visited states are kept in the (compact) chain. Once the Markov chain is refined 
             such that its compact format is fully decorrelated, the second phase of the decorrelation begins during which 
             the Markov chain is decorrelated based on the IAC of the chain in its verbose (Markov) format. This process 
             is repeated recursively for as long as there is any residual autocorrelation in the refined sample.
@@ -249,7 +249,7 @@ Note that the input values are case-INsensitive and white-space characters are i
 ```  
 {% if include.sampler == "ParaDRAM" or include.sampler == "ParaDISE" %}
 See also the input simulation specification 
-[sampleRefinementCount](#samplerefinementcount).  
+[sampleRefinementCount](#outputsamplerefinementcount).  
 {% endif %}
 <br>
 

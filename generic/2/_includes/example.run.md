@@ -28,115 +28,91 @@ If the executable `main.exe` has been built for serial simulations (using one pr
 ```text  
 D:\example>main.exe
 
-************************************************************************************************************************************
-************************************************************************************************************************************
-****                                                                                                                            ****
-****                                                                                                                            ****
-****                                                         ParaMonte                                                          ****
-****                                                       Version 1.0.0                                                        ****
-****                                                        May 23 2018                                                         ****
-****                                                                                                                            ****
-****                                                   Department of Physics                                                    ****
-****                                              Computational & Data Science Lab                                              ****
-****                                          Data Science Program, College of Science                                          ****
-****                                            The University of Texas at Arlington                                            ****
-****                                                                                                                            ****
-****                                                  originally developed at                                                   ****
-****                                                                                                                            ****
-****                                                 Multiscale Modeling Group                                                  ****
-****                                          Center for Computational Oncology (CCO)                                           ****
-****                                 Oden Institute for Computational Engineering and Sciences                                  ****
-****                               Department of Aerospace Engineering and Engineering Mechanics                                ****
-****                                     Department of Neurology, Dell-Seton Medical School                                     ****
-****                                            Department of Biomedical Engineering                                            ****
-****                                             The University of Texas at Austin                                              ****
-****                                                                                                                            ****
-****                                   For questions and further information, please contact:                                   ****
-****                                                                                                                            ****
-****                                                      Amir Shahmoradi                                                       ****
-****                                                                                                                            ****
-****                                                   shahmoradi@utexas.edu                                                    ****
-****                                                  amir.shahmoradi@uta.edu                                                   ****
-****                                                   ashahmoradi@gmail.com                                                    ****
-****                                                                                                                            ****
-****                                                       cdslab.org/pm                                                        ****
-****                                                                                                                            ****
-****                                             https://www.cdslab.org/paramonte/                                              ****
-****                                                                                                                            ****
-****                                                                                                                            ****
-************************************************************************************************************************************
-************************************************************************************************************************************
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%                                                                                                                        %%%%
+%%%%                                                                                                                        %%%%
+%%%%                                                       ParaMonte                                                        %%%%
+%%%%                                                Parallel Monte Carlo and                                                %%%%
+%%%%                                                Machine Learning Library                                                %%%%
+%%%%                                                                                                                        %%%%
+%%%%                                                     Version 2.0.0                                                      %%%%
+%%%%                                                                                                                        %%%%
+%%%%                                            Build: Sun Apr 21 01:52:14 2024                                             %%%%
+%%%%                                                                                                                        %%%%
+%%%%                                                      Developed by                                                      %%%%
+%%%%                                                                                                                        %%%%
+%%%%                                           The computational Data Science Lab                                           %%%%
+%%%%                                                                                                                        %%%%
+%%%%                                                           at                                                           %%%%
+%%%%                                                                                                                        %%%%
+%%%%                                                 Department of Physics                                                  %%%%
+%%%%                                        Data Science Program, College of Science                                        %%%%
+%%%%                                          The University of Texas at Arlington                                          %%%%
+%%%%                                                                                                                        %%%%
+%%%%                                               Multiscale Modeling Group                                                %%%%
+%%%%                                           Center for Computational Oncology                                            %%%%
+%%%%                               Oden Institute for Computational Engineering and Sciences                                %%%%
+%%%%                             Department of Aerospace Engineering and Engineering Mechanics                              %%%%
+%%%%                                   Department of Neurology, Dell-Seton Medical School                                   %%%%
+%%%%                                          Department of Biomedical Engineering                                          %%%%
+%%%%                                           The University of Texas at Austin                                            %%%%
+%%%%                                                                                                                        %%%%
+%%%%                             For questions and further information, please contact the PI:                              %%%%
+%%%%                                                                                                                        %%%%
+%%%%                                                    Amir Shahmoradi                                                     %%%%
+%%%%                                                 shahmoradi@utexas.edu                                                  %%%%
+%%%%                                                     cdslab.org/pm                                                      %%%%
+%%%%                                                                                                                        %%%%
+%%%%                                                                                                                        %%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+    ParaDRAM - NOTE: Setting up the Fortran programming language environment for a ParaDRAM simulation...
+    ParaDRAM - NOTE:
+    ParaDRAM - NOTE: The user-specified input file for ParaDRAM specifications detected.
+    ParaDRAM - NOTE: All ParaDRAM simulation specifications will be read from:
+    ParaDRAM - NOTE: "input.nml"
 
-************************************************************************************************************************************
-****                                                                                                                            ****
-****                                              Setting up ParaDRAM environment                                               ****
-****                                                                                                                            ****
-************************************************************************************************************************************
+    ParaDRAM - NOTE: Variable `outputFileName` detected among the user-supplied specifications of the ParaDRAM sampler:
+    ParaDRAM - NOTE: "./out/mvn"
+    ParaDRAM - NOTE:
+    ParaDRAM - NOTE: Path to the current working directory:
+    ParaDRAM - NOTE: "/home/amir/git/paramonte/bld/linux/amd64/intel/2021.11.1/release/shared/heap/serial/nocheck/fortran/pkg/example/pm_sampling/mvn"
+    ParaDRAM - NOTE:
+    ParaDRAM - NOTE: Generating the requested directory for the ParaDRAM simulation output files:
+    ParaDRAM - NOTE: "/home/amir/git/paramonte/bld/linux/amd64/intel/2021.11.1/release/shared/heap/serial/nocheck/fortran/pkg/example/pm_sampling/mvn/./out/"
+    ParaDRAM - NOTE:
+    ParaDRAM - NOTE: 0 count of preexisting complete simulation runs with the same name prefix were detected.
+    ParaDRAM - NOTE:
+    ParaDRAM - NOTE: The last complete simulation run #1 will be overwritten as requested.
+    ParaDRAM - NOTE: Starting a fresh simulation run #1...
+    ParaDRAM - NOTE:
+    ParaDRAM - NOTE: Running the simulation in serial on 1 process...
+    ParaDRAM - NOTE:
+    ParaDRAM - NOTE: Generating the new output report file:
+    ParaDRAM - NOTE:
+    ParaDRAM - NOTE: "/home/amir/git/paramonte/bld/linux/amd64/intel/2021.11.1/release/shared/heap/serial/nocheck/fortran/pkg/example/pm_sampling/mvn/./out/mvn_run1_pid1_report.txt"
+    ParaDRAM - NOTE:
+    ParaDRAM - NOTE: Please see the output *_pid1_report.txt and *_pid1_progress.txt files for further realtime simulation details...
 
-
-        ParaDRAM - NOTE: Variable outputFileName detected among the input variables to ParaDRAM:
-        ParaDRAM - NOTE: ./out/
-        ParaDRAM - NOTE:
-        ParaDRAM - NOTE: Absolute path to the current working directory:
-        ParaDRAM - NOTE: D:\example
-        ParaDRAM - NOTE:
-        ParaDRAM - NOTE: Generating the requested directory for ParaDRAM output files:
-        ParaDRAM - NOTE: .\out\
-        ParaDRAM - NOTE:
-        ParaDRAM - NOTE: No user-input filename prefix for ParaDRAM output files detected.
-        ParaDRAM - NOTE: Generating appropriate filenames for ParaDRAM output files from the current date and time...
-        ParaDRAM - NOTE:
-        ParaDRAM - NOTE: ParaDRAM output files will be prefixed with:
-        ParaDRAM - NOTE: .\out\ParaDRAM_run_20240322_002335_512
-
-
-
-        ParaDRAM - NOTE: Searching for previous runs of ParaDRAM...
-
-
-
-        ParaDRAM - NOTE: No pre-existing ParaDRAM run detected.
-        ParaDRAM - NOTE: Starting a fresh ParaDRAM run...
-
-
-
-        ParaDRAM - NOTE: Generating the output report file:
-        ParaDRAM - NOTE: .\out\ParaDRAM_run_20240322_002335_512_process_1_report.txt
+    Accepted/Total Func. Call   Dynamic/Overall Acc. Rate   Elapsed/Remained Time [s]
+    =========================   =========================   =========================
+                10000 / 24435             0.1930 / 0.4092             0.0656 / 0.0000
 
 
+    ParaDRAM - NOTE: Computing the statistical properties of the Markov chain...
 
-        ParaDRAM - NOTE: Please see the output report and progress files for further realtime simulation details.
+    ParaDRAM - NOTE: Computing the final refined i.i.d. sample size...
 
+    ParaDRAM - NOTE: Generating the output sample file:
+    ParaDRAM - NOTE: /home/amir/git/paramonte/bld/linux/amd64/intel/2021.11.1/release/shared/heap/serial/nocheck/fortran/pkg/example/pm_sampling/mvn/./out/mvn_run1_pid1_sample.txt
 
-
-                         Accepted/Total Func. Call   Dynamic/Overall Acc. Rate   Elapsed/Remained Time [s]
-                         =========================   =========================   =========================
-                                    30000 / 130490              0.179 / 0.2291              2.2880 / 0.000
-
-
-
-        ParaDRAM - NOTE: Computing the Markov chain's statistical properties...
+    ParaDRAM - NOTE: Computing the statistical properties of the final output sample...
 
 
-
-        ParaDRAM - NOTE: Computing the final decorrelated sample size...
-
-
-
-        ParaDRAM - NOTE: Generating the output sample file:
-        ParaDRAM - NOTE: .\out\ParaDRAM_run_20240322_002335_512_process_1_sample.txt
-
-
-
-        ParaDRAM - NOTE: Computing the output sample's statistical properties...
-
-
-
-
-
-        ParaDRAM - NOTE: Mission Accomplished.
+    ParaDRAM - NOTE: Mission Accomplished.
 ```  
 
 ### Running the ParaMonte simulations in parallel on multiple processors  
@@ -290,7 +266,7 @@ This indicates that the simulation in parallel does not lead to any efficiency g
 
 {{site.data.alerts.tip}}
 
-The optimal number of processors for parallel simulations can vary widely from one MPI-implementation, processor architecture, and simulation problem to another. For large-scale simulations, it is therefore advisable that you run a small simulation for a limited number of samples that can be specified by the appropriate input simulation variable in the input file  (e.g., <b><code>chainSize=2000</code></b> for MCMC simulations performed via ParaDRAM sampler). In general, the number of sampled points should be small enough to finish the test-simulation in a few minutes. Then, check the contents of the output file for this small simulation that has the suffix <b><code>_report.txt</code></b> and look up the part corresponding to the following simulation information near the bottom of the file,
+The optimal number of processors for parallel simulations can vary widely from one MPI-implementation, processor architecture, and simulation problem to another. For large-scale simulations, it is therefore advisable that you run a small simulation for a limited number of samples that can be specified by the appropriate input simulation variable in the input file  (e.g., <b><code>outputChainSize=2000</code></b> for MCMC simulations performed via ParaDRAM sampler). In general, the number of sampled points should be small enough to finish the test-simulation in a few minutes. Then, check the contents of the output file for this small simulation that has the suffix <b><code>_report.txt</code></b> and look up the part corresponding to the following simulation information near the bottom of the file,
 {% highlight text %}
 Average time cost of inter-process communications per used (accepted or rejected or delayed-rejection) function call, in seconds:
 2.446639524998980E-005
