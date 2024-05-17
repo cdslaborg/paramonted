@@ -111,7 +111,7 @@ PROJECT_BRIEF          = "Parallel Monte Carlo and Machine Learning Library"
 # pixels and the maximum width should not exceed 200 pixels. Doxygen will copy
 # the logo to the output directory.
 
-PROJECT_LOGO           = "./img/$(paramonte_lang)/logo.png"
+PROJECT_LOGO           = "$(doxygen_src_dir)/img/$(paramonte_lang)/logo.png"
 
 # The OUTPUT_DIRECTORY tag is used to specify the (relative or absolute) path
 # into which the generated documentation will be written. If a relative path is
@@ -690,7 +690,7 @@ OPTIMIZE_OUTPUT_SLICE  = NO
 
 # Doxygen-MATLAB extension mapping.
 
-EXTENSION_MAPPING      =.m=C++
+EXTENSION_MAPPING      = .m=C++
 
 # If the MARKDOWN_SUPPORT tag is enabled then doxygen pre-processes all comments
 # according to the Markdown format, which allows for more readable
@@ -1197,7 +1197,7 @@ WARN_FORMAT            = "$file:$line: $text"
 # messages should be written. If left blank the output is written to standard
 # error (stderr).
 
-WARN_LOGFILE = "./READ_THESE_BUILD_WARNINGS.$(paramonte_lang).txt"
+WARN_LOGFILE = "$(doxygen_src_dir)/READ_THESE_BUILD_WARNINGS.$(paramonte_lang).txt"
 
 #---------------------------------------------------------------------------
 # Configuration options related to the input files
@@ -1328,8 +1328,8 @@ EXCLUDE_PATTERNS   += */__*__.*
 EXCLUDE_PATTERNS   += */test/input/*
 EXCLUDE_PATTERNS   += */*.txt
 EXCLUDE_PATTERNS   += */*.md
-EXCLUDE_PATTERNS   += */*.py
-EXCLUDE_PATTERNS   += */*.m
+#EXCLUDE_PATTERNS   += */*.py
+#EXCLUDE_PATTERNS   += */*.m
 
 # temporary excludes to expedite documentation build.
 #EXCLUDE_PATTERNS   += */*.c
@@ -1387,7 +1387,7 @@ EXAMPLE_RECURSIVE      = NO
 # \image command).
 
 IMAGE_PATH      ="$(paramonte_bld_pkg_dir)/"
-IMAGE_PATH     +="./img/$(paramonte_lang)/"
+IMAGE_PATH     +="$(doxygen_src_dir)/img/$(paramonte_lang)/"
 
 # The INPUT_FILTER tag can be used to specify a program that doxygen should
 # invoke to filter for each input file. Doxygen will invoke the filter program
@@ -1408,7 +1408,7 @@ IMAGE_PATH     +="./img/$(paramonte_lang)/"
 # need to set EXTENSION_MAPPING for the extension otherwise the files are not
 # properly processed by doxygen.
 
-INPUT_FILTER           =
+INPUT_FILTER           = 
 
 # The FILTER_PATTERNS tag can be used to specify filters on a per file pattern
 # basis. Doxygen will compare the file name with each pattern and apply the
@@ -1423,7 +1423,8 @@ INPUT_FILTER           =
 
 # Doxygen-MATLAB FILTER_PATTERN.
 
-FILTER_PATTERNS        =*m=./m2cpp.pl
+#FILTER_PATTERNS        = *.m=$(doxygen_src_dir)/m2cpp.pl
+FILTER_PATTERNS        = *.m=/home/amir/git/paramonte/external/paramonted/doxygen/m2cpp.pl
 
 # If the FILTER_SOURCE_FILES tag is set to YES, the input filter (if set using
 # INPUT_FILTER) will also be used to filter the input files that are used for
@@ -2974,3 +2975,6 @@ GENERATE_LEGEND        = YES
 # This tag requires that the tag HAVE_DOT is set to YES.
 
 DOT_CLEANUP            = YES
+
+#PERL_PATH=/usr/bin/
+#STRIP_FORM_PATH=$(paramonte_dir)/src/$(paramonte_lang)/main

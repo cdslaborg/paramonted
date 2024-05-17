@@ -17,6 +17,7 @@
 
 caller_name="Doxygen"; source ../build.init.sh
 source_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
+export doxygen_src_dir="${source_dir}"
 cd "${source_dir}"
 
 echo >&2 "${pmnote} The ParaMonte root directory: ${paramonte_dir}"
