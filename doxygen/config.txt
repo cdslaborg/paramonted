@@ -537,9 +537,6 @@ ALIASES += specdram{1}="See the generic documentation at: <a href='\pmdoc_usage_
 ALIASES += docedit{1}="If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> \
 <a href='\1/\fileinfo#L\lineinfo' target='_blank'><b>to edit this page's documentation and source file on GitHub</b></a>.<br>"
 
-#ALIASES += fremark{1}="<hr> \docedit{\1} \abbr \conventions \license \date Last updated by the <a href='https://www.cdslab.org' target='_blank'>Computational Data Science Lab</a> on \showdate '%A %d-%m-%Y %H:%M:%S'"
-ALIASES += fremark{1}="<hr> \docedit{\1} \abbr \conventions \license \copyright <a href='https://www.cdslab.org' target='_blank'>Computational Data Science Lab</a>"
-
 #########################################################################
 ALIASES += finrem{1}="<hr> \docedit{\1} \abbr \conventions \license \copyright <a href='https://www.cdslab.org' target='_blank'>Computational Data Science Lab</a>"
 ALIASES += editing{1}="If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> \
@@ -548,14 +545,14 @@ ALIASES += final="<br><a id='final'><b>Final Remarks</b></a> [⛓](#final) \finr
 ALIASES += final{1}="<br><a id='final-\1'><b>Final Remarks</b></a> [⛓](#final-\1) \finrem{\baseurl}"
 #########################################################################
 
-ALIASES += finmain="<br><a id='finmain'><b>Final Remarks</b></a> [⛓](#finmain) \fremark{\mainurl}"
-ALIASES += finmain{1}="<br><a id='finmain-\1'><b>Final Remarks</b></a> [⛓](#finmain-\1) \fremark{\mainurl}"
-
+#####ALIASES += fremark{1}="<hr> \docedit{\1} \abbr \conventions \license \date Last updated by the <a href='https://www.cdslab.org' target='_blank'>Computational Data Science Lab</a> on \showdate '%A %d-%m-%Y %H:%M:%S'"
+####ALIASES += fremark{1}="<hr> \docedit{\1} \abbr \conventions \license \copyright <a href='https://www.cdslab.org' target='_blank'>Computational Data Science Lab</a>"
+####ALIASES += finmain="<br><a id='finmain'><b>Final Remarks</b></a> [⛓](#finmain) \fremark{\mainurl}"
+####ALIASES += finmain{1}="<br><a id='finmain-\1'><b>Final Remarks</b></a> [⛓](#finmain-\1) \fremark{\mainurl}"
 ####ALIASES += finminc="<br><a id='finminc'><b>Final Remarks</b></a> [⛓](#finminc) \fremark{\mincurl}"
 ####ALIASES += finminc{1}="<br><a id='finminc-\1'><b>Final Remarks</b></a> [⛓](#finminc-\1) \fremark{\mincurl}"
-
-ALIASES += fintest="<br><a id='fintest'><b>Final Remarks</b></a> [⛓](#fintest) \fremark{\mainurl/test}"
-ALIASES += fintest{1}="<br><a id='fintest-\1'><b>Final Remarks</b></a> [⛓](#fintest-\1) \fremark{\mainurl/test}"
+####ALIASES += fintest="<br><a id='fintest'><b>Final Remarks</b></a> [⛓](#fintest) \fremark{\mainurl/test}"
+####ALIASES += fintest{1}="<br><a id='fintest-\1'><b>Final Remarks</b></a> [⛓](#fintest-\1) \fremark{\mainurl/test}"
 
 ALIASES += SK="[SK](@ref        pm_kind::SK)"
 ALIASES += SK1="[SK1](@ref      pm_kind::SK1)"
