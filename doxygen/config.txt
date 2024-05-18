@@ -230,7 +230,7 @@ FULL_PATH_NAMES        = YES
 # will be relative from the directory where doxygen is started.
 # This tag requires that the tag FULL_PATH_NAMES is set to YES.
 
-STRIP_FROM_PATH        =
+STRIP_FROM_PATH        = $(paramonte_dir)
 
 # The STRIP_FROM_INC_PATH tag can be used to strip a user-defined part of the
 # path mentioned in the documentation of a class, which tells the reader which
@@ -522,6 +522,8 @@ ALIASES += giturl="https://github.com/cdslaborg/paramonte"
 ALIASES += pmdoc="https://www.cdslab.org/paramonte/generic/$(paramonte_version_major)"
 ALIASES += pmdoc_usage="\pmdoc/usage"
 ALIASES += pmdoc_usage_sampling="\pmdoc_usage/sampling"
+ALIASES += baseurl="\giturl/tree/main"
+ALIASES += langurl="\giturl/tree/main/src/$(paramonte_lang)"
 ALIASES += incurl="\giturl/tree/main/src/$(paramonte_lang)/main"
 ALIASES += mainurl="\giturl/tree/main/src/$(paramonte_lang)/main"
 ALIASES += mincurl="\giturl/tree/main/src/$(paramonte_lang)/main/inc"
@@ -533,15 +535,25 @@ ALIASES += specdram{1}="See the generic documentation at: <a href='\pmdoc_usage_
 </a>"
 
 ALIASES += docedit{1}="If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> \
-<a href='\1/\fileinfo{filename}#L\lineinfo' target='_blank'><b>to edit this page's documentation and source file on GitHub</b></a>.<br>"
+<a href='\1/\fileinfo#L\lineinfo' target='_blank'><b>to edit this page's documentation and source file on GitHub</b></a>.<br>"
 
 #ALIASES += fremark{1}="<hr> \docedit{\1} \abbr \conventions \license \date Last updated by the <a href='https://www.cdslab.org' target='_blank'>Computational Data Science Lab</a> on \showdate '%A %d-%m-%Y %H:%M:%S'"
 ALIASES += fremark{1}="<hr> \docedit{\1} \abbr \conventions \license \copyright <a href='https://www.cdslab.org' target='_blank'>Computational Data Science Lab</a>"
 
+#########################################################################
+ALIASES += finrem{1}="<hr> \docedit{\1} \abbr \conventions \license \copyright <a href='https://www.cdslab.org' target='_blank'>Computational Data Science Lab</a>"
+ALIASES += editing{1}="If you believe this algorithm or its documentation can be improved, <b>we appreciate your contribution and help</b> \
+<a href='\1/\fileinfo#L\lineinfo' target='_blank'><b>to edit this page's documentation and source file on GitHub</b></a>.<br>"
+ALIASES += final="<br><a id='final'><b>Final Remarks</b></a> [⛓](#final) \finrem{\baseurl}"
+ALIASES += final{1}="<br><a id='final-\1'><b>Final Remarks</b></a> [⛓](#final-\1) \finrem{\baseurl}"
+#########################################################################
+
 ALIASES += finmain="<br><a id='finmain'><b>Final Remarks</b></a> [⛓](#finmain) \fremark{\mainurl}"
 ALIASES += finmain{1}="<br><a id='finmain-\1'><b>Final Remarks</b></a> [⛓](#finmain-\1) \fremark{\mainurl}"
-ALIASES += finminc="<br><a id='finminc'><b>Final Remarks</b></a> [⛓](#finminc) \fremark{\mincurl}"
-ALIASES += finminc{1}="<br><a id='finminc-\1'><b>Final Remarks</b></a> [⛓](#finminc-\1) \fremark{\mincurl}"
+
+####ALIASES += finminc="<br><a id='finminc'><b>Final Remarks</b></a> [⛓](#finminc) \fremark{\mincurl}"
+####ALIASES += finminc{1}="<br><a id='finminc-\1'><b>Final Remarks</b></a> [⛓](#finminc-\1) \fremark{\mincurl}"
+
 ALIASES += fintest="<br><a id='fintest'><b>Final Remarks</b></a> [⛓](#fintest) \fremark{\mainurl/test}"
 ALIASES += fintest{1}="<br><a id='fintest-\1'><b>Final Remarks</b></a> [⛓](#fintest-\1) \fremark{\mainurl/test}"
 
@@ -1408,7 +1420,7 @@ IMAGE_PATH     +="$(doxygen_src_dir)/img/$(paramonte_lang)/"
 # need to set EXTENSION_MAPPING for the extension otherwise the files are not
 # properly processed by doxygen.
 
-INPUT_FILTER           = 
+INPUT_FILTER           =
 
 # The FILTER_PATTERNS tag can be used to specify filters on a per file pattern
 # basis. Doxygen will compare the file name with each pattern and apply the

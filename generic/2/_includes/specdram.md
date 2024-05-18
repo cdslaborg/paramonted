@@ -15,23 +15,23 @@ The simulation specification `domain` is a scalar string of maximum length `63`,
 
 +   `domain = 'cube'`
 
-    This is equivalent to an `ndim`-dimensional hyper-cube (n-cube) whose upper and lower bounds are specified by the input simulation specifications `domainCubeLimitUpper` and `domainCubeLimitLower` respectively.
+    This is equivalent to a `ndim`-dimensional hyper-cube (n-cube) whose upper and lower bounds are specified by the input simulation specifications `domainCubeLimitUpper` and `domainCubeLimitLower` respectively.
 
 +   `domain = 'ball'`
 
-    This is equivalent to an `ndim`-dimensional hyper-ellipsoid (n-ball) whose center and covariance matrix can be specified by the input simulation specification `domainBallAvg` and `domainBallCov` respectively. Alternatively, the user can let the ParaMonte samplers construct the covariance matrix of the ellipsoidal domain from the input values for the `domainBallCor` and `domainBallStd` simulation specifications. Note that a spherical domain can be defined by dropping the `domainBallCov` and `domainBallCor` specifications from the input and setting all elements of `domainBallStd` to the desired radius of the domain.
+    This is equivalent to a `ndim`-dimensional hyper-ellipsoid (n-ball) whose center and covariance matrix can be specified by the input simulation specification `domainBallAvg` and `domainBallCov` respectively. Alternatively, the user can let the ParaMonte samplers construct the covariance matrix of the ellipsoidal domain from the input values for the `domainBallCor` and `domainBallStd` simulation specifications. Note that a spherical domain can be defined by dropping the `domainBallCov` and `domainBallCor` specifications from the input and setting all elements of `domainBallStd` to the desired radius of the domain.
 
-The default value for `domain` is an infinite cube in the case of the ParaDRAM and ParaDISE samplers, and a unit-sized cube for the ParaNest sampler.
+The default value for `domain` is an infinite cube for the ParaDRAM and ParaDISE samplers, and a unit-sized cube for the ParaNest sampler.
 
 Related specifications: [domain](#domain), [domainBallAvg](#domainballavg), [domainBallCor](#domainballcor), [domainBallCor](#domainballcor), [domainBallCov](#domainballcov), [domainBallStd](#domainballstd), [domainCubeLimitLower](#domaincubelimitlower), [domainCubeLimitUpper](#domaincubelimitupper).<br>
 
 ### domainAxisName
 
-The simulation specification `domainAxisName` is a vector of scalar string values, each element of which contains the names of the corresponding axis of the density function domain (to be explored/sampled). It is used to construct the headers of the simulation output files. Any element of `domainAxisName` not set by the user will automatically be assigned a default name. If all elements of `domainAxisName` are set to the same value, then a number will be suffixed to each element representing the ID of the corresponding dimension of the domain of the density function. The default value for `domainAxisName` is 'sampleStatei' where integer `'i'` at the end of the name is replaced by the index of the corresponding domain axis.
+The simulation specification `domainAxisName` is a vector of scalar string values, each element of which contains the names of the corresponding axis of the density function domain (to be explored/sampled). It is used to construct the headers of the simulation output files. Any element of `domainAxisName` not set by the user will automatically be assigned a default name. If all elements of `domainAxisName` are set to the same value, then a number will be suffixed to each element representing the ID of the corresponding dimension of the domain of the density function. The default value for `domainAxisName` is 'sampleStatei', where the integer `'i'` at the end of the name is replaced by the index of the corresponding domain axis.
 
 ### domainBallAvg
 
-The simulation specification `domainBallAvg` is a vector of type `real` of highest precision supported by the ParaMonte library, of size `ndim` containing the coordinates of the center of the hyper-ellipsoidal (or spherical) `ndim`-dimensional domain of the objective function, such that all states `X(1 : ndim)` visited by the sampler would obey the following inequality:
+The simulation specification `domainBallAvg` is a vector of type `real` of the highest precision supported by the ParaMonte library, of size `ndim` containing the coordinates of the center of the hyper-ellipsoidal (or spherical) `ndim`-dimensional domain of the objective function, such that all states `X(1 : ndim)` visited by the sampler would obey the following inequality:
 
 $$
 (X - \mu)^T \Sigma^{-1} (X - \mu) \leq 1.
@@ -39,13 +39,13 @@ $$
 
 where $$\mu$$ represents the specification `domainBallAvg` and $$\Sigma^{-1}$$ is the inverse of the specification `domainBallCov`.
 
-When passed to the sampler from within an external input file, every missing element of `domainBallAvg` will be set to the origin (zero). Together with `domainBallCov`, or with `domainBallCor` and `domainBallStd`, it forms a hyper-ellipsoidal or hyper-spherical domain for the ParaMonte samplers. Note that an ellipsoidal/spherical domain is used if only if the input simulation specification `domain` is set to 'ellipsoid' or 'sphere' or `ball`. Otherwise, a cubical domain will be used. The key `Avg` (standing for `Average`) is used in the name of this variable to denote the center of the hyper-ellipsoid. The default value for `domainBallAvg` is the origin (i.e., a zero-valued vector of size `ndim`).
+When passed to the sampler from within an external input file, every missing element of `domainBallAvg` will be set to the origin (zero). Together with `domainBallCov`, or with `domainBallCor` and `domainBallStd`, it forms a hyper-ellipsoidal or hyper-spherical domain for the ParaMonte samplers. Note that an ellipsoidal/spherical domain is used if and only if the input simulation specification `domain` is set to 'ellipsoid' or 'sphere' or `ball`. Otherwise, a cubical domain will be used. The key `Avg` (standing for `Average`) is used in the name of this variable to denote the center of the hyper-ellipsoid. The default value for `domainBallAvg` is the origin (i.e., a zero-valued vector of size `ndim`).
 
 Related specifications: [domain](#domain), [domainBallAvg](#domainballavg), [domainBallCor](#domainballcor), [domainBallCor](#domainballcor), [domainBallCov](#domainballcov), [domainBallStd](#domainballstd).<br>
 
 ### domainBallCor
 
-The simulation specification `domainBallCor` is a positive-definite matrix of type `real` of highest precision available in the ParaMonte Library of size `(ndim, ndim)` representing the correlation matrix of the domain of the objective function, where `ndim` is the dimension of the domain, such that all states `X(1 : ndim)` visited by the sampler would obey the following inequality:
+The simulation specification `domainBallCor` is a positive-definite matrix of type `real` of the highest precision available in the ParaMonte Library of size `(ndim, ndim)` representing the correlation matrix of the domain of the objective function, where `ndim` is the dimension of the domain, such that all states `X(1 : ndim)` visited by the sampler would obey the following inequality:
 
 $$
 (X - \mu)^T \Sigma^{-1} (X - \mu) \leq 1.
@@ -59,7 +59,7 @@ $$
 
 where $$\rho$$ stands for specification `domainBallCor` and $$\mathrm{eye}(V)$$ stands for diagonal matrix whose diagonals are set to the specification `domainBallStd`.
 
-Combined with the input simulation specification `domainBallStd` it defines the objective function's hyper-ellipsoidal (or spherical) domain. If the input simulation specification `domainBallCov` is provided by the user, then any values set for `domainBallCor` and `domainBallStd` will be automatically ignored. The input specification `domainBallCor` along with `domainBallStd` are especially useful when covariance matrix computation is non-trivial. When passed to the sampler from within an external input sampler specification file, any missing element of `domainBallCov` will be set to the appropriate default value. The default value for `domainBallCor` is an `ndim`-by-`ndim` Identity matrix.
+Combined with the input simulation specification `domainBallStd` it defines the objective function's hyper-ellipsoidal (or spherical) domain. If the input simulation specification `domainBallCov` is provided by the user, then any values set for `domainBallCor` and `domainBallStd` will be automatically ignored. The input specification `domainBallCor` along with `domainBallStd` are especially useful when covariance matrix computation is non-trivial. When passed to the sampler from within an external input sampler specification file, any missing element of `domainBallCov` will be set to the appropriate default value. The default value for `domainBallCor` is a `ndim`-by-`ndim` Identity matrix.
 
 Related specifications: [domain](#domain), [domainBallAvg](#domainballavg), [domainBallCor](#domainballcor), [domainBallCor](#domainballcor), [domainBallCov](#domainballcov), [domainBallStd](#domainballstd).<br>
 
@@ -73,7 +73,7 @@ $$
 
 where $$\mu$$ represents the specification `domainBallAvg` and $$\Sigma^{-1}$$ is the inverse of the specification `domainBallCov`.
 
-If the user provides this input simulation specification, then any values set for the input simulation specifications `domainBallCor` and `domainBallStd` will be automatically ignored. When set from inside an external input ParaMonte specification file, any missing element of `domainBallCov` will be set to the appropriate default value. To specify an ndim-dimensional spherical domain, set `domainBallCov` to the identity matrix whose diagonal elements are radius-squared of the desired hyper-sphere (n-ball). The default value for `domainBallCov` is an `ndim`-by-`ndim` Identity matrix for simulations (such as the ParaNest integrator) that require a finite domain and an `ndim`-by-`ndim` diagonal matrix whose diagonals are practically set to infinity for simulations that do not require a finite domain (such as the ParaDRAM and ParaDISE MCMC samplers).
+If the user provides this input simulation specification, any values set for the input simulation specifications `domainBallCor` and `domainBallStd` will be automatically ignored. When set from inside an external input ParaMonte specification file, any missing element of `domainBallCov` will be set to the appropriate default value. To specify a `ndim`-dimensional spherical domain, set `domainBallCov` to the identity matrix whose diagonal elements are radius-squared of the desired hyper-sphere (n-ball). The default value for `domainBallCov` is a `ndim`-by-`ndim` Identity matrix for simulations (such as the ParaNest integrator) that require a finite domain and a `ndim`-by-`ndim` diagonal matrix whose diagonals are practically set to infinity for simulations that do not require a finite domain (such as the ParaDRAM and ParaDISE MCMC samplers).
 
 > **Note**: The use of `Cov` in the name of this simulation specification is theoretically incorrect as the domain of the objective function is not a distribution. Even if it is considered a hyper-ellipsoidal uniform distribution this specification would still not represent its covariance matrix because it represents the Gramian matrix. However, the decision was made to name this specification as `Cov` because of its nice fit to the rest of the relevant simulation specifications and user familiarity with keywords.
 
@@ -95,19 +95,19 @@ $$
 
 where $$\rho$$ stands for specification `domainBallCor` and $$\mathrm{eye}(V)$$ stands for diagonal matrix whose diagonals are set to the specification `domainBallStd`.
 
-If the covariance matrix of the ellipsoidal/spherical domain (`domainBallCov`) is missing from the input specifications to the sampler, then `domainBallStd` (along with the input specification `domainBallCor`) will be used to construct the covariance matrix of the domain of the objective function. However, if `domainBallCov` is present among the input specifications to the sampler, then the input values for `domainBallStd` and `domainBallCor` will be ignored and `domainBallCov` will be used to construct the domain of the user-specified objective function. To specify an `ndim`-dimensional spherical domain, drop `domainBallCov` and `domainBallCor` from the input and set all elements of `domainBallStd` to the desired radius of the hyper-spherical domain. The default value for any missing elements of `domainBallStd` is `1` for simulations requiring a finite domain (such as the ParaNest integrator) and `+Infinity` for simulations not requiring a finite domain (such as the ParaDRAM and ParaDISE samplers).
+If the covariance matrix of the ellipsoidal/spherical domain (`domainBallCov`) is missing from the input specifications to the sampler, then `domainBallStd` (along with the input specification `domainBallCor`) will be used to construct the covariance matrix of the domain of the objective function. However, if `domainBallCov` is present among the input specifications to the sampler, then the input values for `domainBallStd` and `domainBallCor` will be ignored, and `domainBallCov` will be used to construct the domain of the user-specified objective function. To specify a `ndim`-dimensional spherical domain, drop `domainBallCov` and `domainBallCor` from the input and set all elements of `domainBallStd` to the desired radius of the hyper-spherical domain. The default value for any missing elements of `domainBallStd` is `1` for simulations requiring a finite domain (such as the ParaNest integrator) and `+Infinity` for simulations not requiring a finite domain (such as the ParaDRAM and ParaDISE samplers).
 
-> **Note**: The use of `Std` in the name of this simulation specification is theoretically incorrect as the domain of the objective function is not a distribution. Even if it is considered a hyper-ellipsoidal uniform distribution this specification would still not represent its vector of standard deviations. However, the decision was made to name this specification as `Std` because of its nice fit to the rest of the relevant simulation specifications and user familiarity with keywords.
+> **Note**: The use of `Std` in the name of this simulation specification is theoretically incorrect as the domain of the objective function is not a distribution. Even if it is considered a hyper-ellipsoidal uniform distribution, this specification would still not represent its vector of standard deviations. However, the decision was made to name this specification as `Std` because of its nice fit to the rest of the relevant simulation specifications and user familiarity with keywords.
 
 Related specifications: [domain](#domain), [domainBallAvg](#domainballavg), [domainBallCor](#domainballcor), [domainBallCor](#domainballcor), [domainBallCov](#domainballcov), [domainBallStd](#domainballstd).<br>
 
 ### domainCubeLimitLower
 
-The simulation specification `domainCubeLimitLower` is a vector of type `real` of the highest precision available within by the ParaMonte library, of size `ndim` where `ndim` is the number of dimensions of the domain of the target density function. It contains the lower boundaries of the cubical domain of the objective function to be sampled. When `domainCubeLimitLower` is specified inside an external input file supplied to the sampler, it is also possible to assign only select values of `domainCubeLimitLower` and leave the rest of the components to be assigned the default value. For example, having the following inside the input file, 
+The simulation specification `domainCubeLimitLower` is a vector of type `real` of the highest precision available within the ParaMonte library, of size `ndim` where `ndim` is the number of dimensions of the domain of the target density function. It contains the lower boundaries of the cubical domain of the objective function to be sampled. When `domainCubeLimitLower` is specified inside an external input file supplied to the sampler, it is also possible to assign only select values of `domainCubeLimitLower` and leave the rest of the components to be assigned the default value. For example, having the following inside the input file, 
 
 +   `domainCubeLimitLower(3:5) = -100`
 
-    will only set the lower limits of the third, fourth, and the fifth dimensions to `-100`, or,
+    will only set the lower limits of the third, fourth, and fifth dimensions to `-100`, or,
 
 +   `domainCubeLimitLower(1) = -100, domainCubeLimitLower(2) = -1.e6`
 
@@ -115,10 +115,10 @@ The simulation specification `domainCubeLimitLower` is a vector of type `real` o
 
 +   `domainCubeLimitLower = 3*-2.5e100`
 
-    will only set the lower limits on the first, second, and third dimensions to `-2.5*10^100`, while the rest of the lower limits for the missing dimensions will be automatically set to the default value.
+    will only set the lower limits on the first, second, and third dimensions to `-2.5*10^100`, while the remaining lower limits for the missing dimensions will be automatically set to the default value.
 
 The default value for all elements of `domainCubeLimitLower` is `-0.13407807929942596E+155`.
-Beware that some ParaMonte samplers such as ParaNest require the user to explicitly specify the domain boundaries.
+Beware that some ParaMonte samplers, such as ParaNest, require the user to specify the domain boundaries explicitly.
 
 Related specifications: [domain](#domain), [domainCubeLimitLower](#domaincubelimitlower), [domainCubeLimitUpper](#domaincubelimitupper).<br>
 
@@ -128,7 +128,7 @@ The simulation specification `domainCubeLimitUpper` is a vector of type `real` o
 
 +   `domainCubeLimitUpper(3:5) = 100`
 
-    will only set the upper limits of the third, fourth, and the fifth dimensions to 100, or,
+    will only set the upper limits of the third, fourth, and fifth dimensions to 100, or,
 
 +   `domainCubeLimitUpper(1) = 100, domainCubeLimitUpper(2) = 1.e6`
 
@@ -136,16 +136,16 @@ The simulation specification `domainCubeLimitUpper` is a vector of type `real` o
 
 +   `domainCubeLimitUpper = 3 * 2.5e100`
 
-    will only set the upper limits on the first, second, and third dimensions to `2.5*10^100`, while the rest of the upper limits for the missing dimensions will be automatically set to the default value.
+    will only set the upper limits on the first, second, and third dimensions to `2.5*10^100`, while the remaining upper limits for the missing dimensions will be automatically set to the default value.
 
 The default value for all elements of `domainCubeLimitUpper` is `0.13407807929942596E+155`.
-Beware that some ParaMonte samplers such as ParaNest require the user to specify the domain boundaries explicitly.
+Beware that some ParaMonte samplers, such as ParaNest, require the user to specify the domain boundaries explicitly.
 
 Related specifications: [domain](#domain), [domainCubeLimitLower](#domaincubelimitlower), [domainCubeLimitUpper](#domaincubelimitupper).<br>
 
 ### domainErrCount
 
-The simulation specification `domainErrCount` is a scalar of type `integer` beyond which the user will be warned about the newly proposed points excessively falling outside the domain of the objective function. For every `domainErrCount` consecutively-proposed new points that fall outside the domain of the objective function the user will be warned until `domainErrCount = domainErrCountMax`, in which case the sampler returns a fatal error and the program stops globally. The counter for this warning is reset after a proposal sample from within the domain of the objective function is obtained. When out-of-domain sampling happens frequently, it strongly indicates something fundamentally wrong in the simulation. It is, therefore, important to closely inspect and monitor for frequent out-of-domain samplings. This can be done by setting `domainErrCount` to an appropriate value determined by the user. The default value for `domainErrCount` is `10000`.
+The simulation specification `domainErrCount` is a scalar of type `integer` beyond which the user will be warned about the newly proposed points excessively falling outside the domain of the objective function. For every `domainErrCount` consecutively-proposed new points that fall outside the domain of the objective function, the user will be warned until `domainErrCount = domainErrCountMax`, in which case the sampler returns a fatal error and the program stops globally. The counter for this warning is reset after a proposal sample from within the domain of the objective function is obtained. When out-of-domain sampling happens frequently, it strongly indicates something fundamentally wrong in the simulation. It is, therefore, important to closely inspect and monitor for frequent out-of-domain samplings. This can be done by setting `domainErrCount` to an appropriate value determined by the user. The default value for `domainErrCount` is `10000`.
 
 Related specifications: [domainErrCount](#domainerrcount), [domainErrCountMax](#domainerrcountmax).<br>
 
@@ -175,13 +175,13 @@ The simulation specification `outputChainFileFormat` is a scalar string of maxim
 
     This is the binary file format, which is not human-readable but preserves the exact values in the output chain file. It is also often the fastest mode of chain file generation. If the binary file format is chosen, the chain will be automatically output in the compact format (but as binary) to ensure the production of the smallest possible output chain file. Binary chain files will have the .bin file extensions. Use the binary format if you need full accuracy representation of the output values while having the smallest-size output chain file in the shortest time possible.
 
-The default value for `outputChainFileFormat` is `'compact'` as it provides a reasonable trade-off between speed and output file size for the specified simulation task. The input values are case-INsensitive.
+The default value for `outputChainFileFormat` is `'compact'`, which provides a reasonable trade-off between speed and output file size for the specified simulation task. The input values are case-INsensitive.
 
 Related specifications: [outputChainFileFormat](#outputchainfileformat), [outputRestartFileFormat](#outputrestartfileformat).<br>
 
 ### outputColumnWidth
 
-The simulation specification `outputColumnWidth` is a non-negative scalar of type `integer` that determines the width of the data columns in the formatted tabular files by output the sampler. If it is set to zero, the sampler will ensure to set the width of each output element to the minimum possible width without losing the requested output precision. In other words, setting `outputColumnWidth = 0` will result in the smallest-size for the formatted output files that are in ASCII format. The default value for `outputColumnWidth` is `0`.
+The simulation specification `outputColumnWidth` is a non-negative scalar of type `integer` that determines the width of the data columns in the formatted tabular files outputted by the sampler. If it is set to zero, the sampler will ensure that the width of each output element is the minimum possible value without losing the requested output precision. In other words, setting `outputColumnWidth = 0` will result in the smallest size for the formatted output files in ASCII format. The default value for `outputColumnWidth` is `0`.
 
 Related specifications: [outputColumnWidth](#outputcolumnwidth), [outputPrecision](#outputprecision), [outputSeparator](#outputseparator).<br>
 
@@ -193,7 +193,7 @@ The simulation specification `outputFileName` is a scalar string of maximum leng
 
 where `sampler` is replaced with the name of the ParaMonte sampler invoked, and `yyyy`, `mm`, `dd`, `hh`, `mm`, `ss`, and `mmm` are replaced with the current year, month, day, hour, minute, second, and millisecond. In such a case, the output files' default directory will be the sampler's current working directory. If `outputFileName` is provided but ends with a separator character '/' or '\' (as in Unix or Windows OS), then its value will be used as the directory to which the sampler output files will be written. In this case, the default output file naming convention described above will be used. The specified directory will be automatically created if it does not exist already. Note that the specified path is left-adjusted and right-padded, erasing all trailing whitespace characters. The value of `outputFileName` is always automatically suffixed with `_run<i>_pid<j>_<type>.<ext>` where 
 
-+   `<ext>` is replaced with an appropriate file extension, typically `.txt` or `.bin` depending on the type of the file contents,
++   `<ext>` is replaced with an appropriate file extension, typically `.txt` or `.bin`, depending on the type of the file contents,
 
 +   `<type>` is replaced with the simulation file type (e.g., `chain`, `report`, `sample`, `restart`, etc),
 
@@ -205,13 +205,13 @@ Related specifications: [outputFileName](#outputfilename), [outputStatus](#outpu
 
 ### outputPrecision
 
-The simulation specification `outputPrecision` is a scalar of type `integer` representing the precision (i.e., the number of significant digits) of the real and complex numbers in the output simulation files. Any positive integer is acceptable as the input value of `outputPrecision`. However, any digits of the output real numbers beyond the actual accuracy of floating-point numbers (e.g., ~16 digits of significance for 64-bit `real`) will be meaningless and random. Set this variable to the precision of the requested floating point precision in the simulation (or to larger values) if full reproducibility of the simulation is needed in the future. However, keep in mind that higher precisions result in larger-size output files. This variable is ignored for binary output (if any occurs during the simulation). The binary output files preserve the full precision of numbers. The default value for `outputPrecision` depends on the `real` precision, e.g., `18`.
+The simulation specification `outputPrecision` is a scalar of type `integer` representing the precision (i.e., the number of significant digits) of the real and complex numbers in the output simulation files. Any positive integer is acceptable as the input value of `outputPrecision`. However, any digits of the output real numbers beyond the actual accuracy of floating-point numbers (e.g., ~16 digits of significance for 64-bit `real`) will be meaningless and random. Set this variable to the precision of the requested floating point precision in the simulation (or to larger values) if full reproducibility of the simulation is needed in the future. However, keep in mind that higher precisions result in larger output files. This variable is ignored for binary output (if any occurs during the simulation). The binary output files preserve the full precision of numbers. The default value for `outputPrecision` depends on the `real` precision, e.g., `18`.
 
 Related specifications: [outputColumnWidth](#outputcolumnwidth), [outputPrecision](#outputprecision), [outputSeparator](#outputseparator).<br>
 
 ### outputReportPeriod
 
-The simulation specification `outputReportPeriod` is a positive-valued scalar of type `integer`. Every `outputReportPeriod` calls to the objective function, the sampling progress will be reported to the progress file. The default value for `outputReportPeriod` is `1000`.
+The simulation specification `outputReportPeriod` is a positive-valued scalar of type `integer`. Every `outputReportPeriod` calls to the objective function, sampling progress will be reported to the progress file. The default value for `outputReportPeriod` is `1000`.
 
 ### outputRestartFileFormat
 
@@ -231,7 +231,7 @@ Related specifications: [outputChainFileFormat](#outputchainfileformat), [output
 
 ### outputSampleSize
 
-The simulation specification `outputSampleSize` is a non-zero scalar of type `integer` whose value dictates the number of (hopefully, independent and identically distributed [i.i.d.]) samples to be drawn from the user-provided objective function.Three ranges of values are possible. If
+The simulation specification `outputSampleSize` is a non-zero scalar of type `integer` whose value dictates the number of (hopefully, independent and identically distributed [i.i.d.]) samples to be drawn from the user-provided objective function. Three ranges of values are possible. If
 
 +   `outputSampleSize < 0`,
 
@@ -261,7 +261,7 @@ The simulation specification `outputSplashMode` is a scalar string of maximum le
 
 +   `outputSplashMode = 'normal'`
 
-    Under this option, the simulation splash and progress bar will be shown on screen as well as all post-processing details. This is the default behavior in compiled language environments (e.g., C, C++, Fortran, ...).
+    Under this option, the simulation splash and progress bar will be shown on screen in addition to all post-processing details. This is the default behavior in compiled language environments (e.g., C, C++, Fortran, ...).
 
 +   `outputSplashMode = 'quiet'`
 
@@ -269,25 +269,25 @@ The simulation specification `outputSplashMode` is a scalar string of maximum le
 
 +   `outputSplashMode = 'silent'`
 
-    Under this option, no information about the simulation will be shown on screen. Use this option if the simulations are expected to be short and straightforward or there is a limit on the amount of text allowed for display in standard output. This situation happens, for example, in online code coverage and CI platforms.
+    Under this option, no information about the simulation will be shown on screen. Use this option if the simulations are expected to be short and straightforward or if the amount of text allowed for display in standard output is limited. This situation happens, for example, in online code coverage and CI platforms.
 
 The default value for `outputSplashMode` is `'normal'` in compiled programming language environments and `'quiet'` in dynamic programming language environments. Note that the input values are case-INsensitive.
 
 ### outputStatus
 
-The simulation specification `outputStatus` is a scalar string of maximum `15` characters, whose value describes the protocol for dealing with and handling the simulation output files concerning potentially existing past simulations. The string value must be enclosed by single or double quotation marks when provided as input in an external input file. Three values are possible:
+The simulation specification `outputStatus` is a scalar string with a maximum length of `15` characters, whose value describes the protocol for dealing with and handling the simulation output files concerning potentially existing past simulations. The string value must be enclosed by single or double quotation marks when provided as input in an external input file. Three values are possible:
 
 +   `outputStatus = 'extend'`
 
-    This is the default behavior where the sampler will search for any prior simulation output files with the same user-specified file name prefix in the working directory to restart the simulation. If an old interrupted set of simulation output files exists in the working directory, the sampler will attempt to restart the simulation from the last recorded simulation state. The restart operation may fail if the user has modified or tampered with the old simulation output files. If prior simulation files exist and represent a complete simulation, a new simulation run will be performed with a new set of output files starting from the last successful run. The parameters of the new simulation are initialized based on the output of the most recent successful simulation. For MCMC type of simulations, this means starting from the last sampled point in the output sample file of the previous simulation and using an initial proposal covariance matrix constructed from the output sample of the previous simulation. A new simulation will start if the sampler does not find any prior simulations with the same output file names. This default behavior allows seamless restart functionality while ensuring old potentially valuable computationally expensive simulations are not inadvertently erased and replaced by the new simulation output files.
+    This is the default behavior where the sampler will search for any prior simulation output files with the same user-specified file name prefix in the working directory to restart the simulation. If an old interrupted set of simulation output files exists in the working directory, the sampler will attempt to restart the simulation from the last recorded simulation state. The restart operation may fail if the user has modified or tampered with the old simulation output files. If prior simulation files exist and represent a complete simulation, a new simulation run will be performed with a new set of output files starting from the last successful run. The parameters of the new simulation are initialized based on the output of the most recent successful simulation. For MCMC simulations, this means starting from the last sampled point in the output sample file of the previous simulation and using an initial proposal covariance matrix constructed from the output sample of the previous simulation. A new simulation will start if the sampler does not find any prior simulations with the same output file names. This default behavior allows seamless restart functionality while ensuring old potentially valuable computationally expensive simulations are not inadvertently erased and replaced by the new simulation output files.
 
 +   `outputStatus = 'repeat'`
 
-    This option is nearly identical to 'extend' except for the fact that the new simulation specifications are not initialized from the specifications of the last successful simulation run (if any exists). Instead, a new set of simulation files will be generated as if the last simulation run is replicated. If the simulation configuration has not changed since the last successful simulation run, then the new simulation output sample, chain, and restart files will be identical to those of the last successful simulation. This outputting is primarily useful for cross-platform or cross-compiler testing and development.
+    This option is nearly identical to 'extend' except that the new simulation specifications are not initialized from the specifications of the last successful simulation run (if any exist). Instead, a new set of simulation files will be generated as if the last simulation run is replicated. If the simulation configuration has not changed since the last successful simulation run, then the new simulation output sample, chain, and restart files will be identical to those of the last successful simulation. This outputting is primarily useful for cross-platform or cross-compiler testing and development.
 
 +   `outputStatus = 'retry'`
 
-    This option is nearly identical to 'repeat' except for the fact that the new simulation starts afresh and overwrites any potentially existing output files from the most recent simulation with the same names without ever using them. There is no restart functionality with this option. The most recent simulation files are deleted regardless of completion status. This option is effectively equivalent to deleting the set of output files from the last simulation run and rerunning the simulation with the default value 'extend' for the specification `outputStatus`. Use this option for quick tests or small exploratory problems where lots of quick runs must be performed.
+    This option is nearly identical to 'repeat' except that the new simulation starts afresh and overwrites any potentially existing output files from the most recent simulation with the same names without ever using them. There is no restart functionality with this option. The most recent simulation files are deleted regardless of completion status. This option is effectively equivalent to deleting the set of output files from the last simulation run and rerunning the simulation with the default value 'extend' for the specification `outputStatus`. Use this option for quick tests or small exploratory problems where lots of quick runs must be performed.
 
 The default value for `outputStatus` is `'extend'`. The input values are case-INsensitive.
 
@@ -299,7 +299,7 @@ The simulation specification `parallelism` is a scalar string of maximum length 
 
 +   `parallelism = 'multiChain'`
 
-    This method uses the Prefect Parallelism scheme in which multiple MCMC chains are generated independently of each other. In this case, multiple output MCMC chain files will also be generated. The Perfect parallelism is available only in Coarray/MPI-enabled parallel simulations (not in OpenMP or other shared-memory). However, it can be readily emulated by running multiple independent simulations concurrently in any programming environment.
+    This method uses the Perfect Parallelism scheme, in which multiple MCMC chains are generated independently of each other. In this case, multiple output MCMC chain files will also be generated. The Perfect parallelism option is available only in Coarray/MPI-enabled parallel simulations (not in OpenMP or other shared-memory). However, it can be readily emulated by running multiple independent simulations concurrently in any programming environment.
 
 +   `parallelism = 'singleChain'`
 
@@ -311,13 +311,13 @@ Related specifications: [parallelism](#parallelism), [parallelismMpiFinalizeEnab
 
 ### parallelismMpiFinalizeEnabled
 
-The simulation specification `parallelismMpiFinalizeEnabled` is a scalar of type `logical` (Boolean). In MPI parallel simulations, if `parallelismMpiFinalizeEnabled` is set to the logical/Boolean true value, then a call will be made to the `MPI_Finalize()` routine from inside the ParaMonte routine at the end of the simulation to finalize the MPI communications. Set this variable to the logical/Boolean if you do not want the ParaMonte library to finalize the MPI communications for you. When this specification is set within an external input file, the values `F`, `False`, `false`, `FALSE`, and `.false.` all represent the logical true value and the values `T`, `True`, `true`, `TRUE`, and `.true.` all represent the logical true value. This is a low-level simulation specification variable relevant to MPI parallelism simulations. If you do not use MPI-routine calls in your main program, you can safely ignore this variable with its default value. If you intend the ParaMonte samplers or other MPI-enabled ParaMonte routines repeatedly in one run then you will have to `parallelismMpiFinalizeEnabled` to the logical `false` value to prevent early finalization of the MPI-library. Note that in non-MPI-enabled simulations, such as serial and Coarray-enabled simulations, the value of this variable is completely ignored. The default value for `parallelismMpiFinalizeEnabled` is `TRUE`.
+The simulation specification `parallelismMpiFinalizeEnabled` is a scalar of type `logical` (Boolean). In MPI parallel simulations, if `parallelismMpiFinalizeEnabled` is set to the logical/Boolean true value, then a call will be made to the `MPI_Finalize()` routine from inside the ParaMonte routine at the end of the simulation to finalize the MPI communications. Set this variable to the logical/Boolean if you do not want the ParaMonte library to finalize the MPI communications for you. When this specification is set within an external input file, the values `F`, `False`, `false`, `FALSE`, and `.false.` all represent the logical true value, and the values `T`, `True`, `true`, `TRUE`, and `.true.` all represent the logical true value. This is a low-level simulation specification variable relevant to MPI parallelism simulations. If you do not use MPI-routine calls in your main program, you can safely ignore this variable with its default value. If you intend the ParaMonte samplers or other MPI-enabled ParaMonte routines repeatedly in one run, then you will have to `parallelismMpiFinalizeEnabled` to the logical `false` value to prevent early finalization of the MPI-library. Note that in non-MPI-enabled simulations, such as serial and Coarray-enabled simulations, the value of this variable is completely ignored. The default value for `parallelismMpiFinalizeEnabled` is `TRUE`.
 
 Related specifications: [parallelism](#parallelism), [parallelismMpiFinalizeEnabled](#parallelismmpifinalizeenabled), [parallelismNumThread](#parallelismnumthread).<br>
 
 ### parallelismNumThread
 
-The simulation specification `parallelismNumThread` is a non-negative scalar of type `integer` of kind 32-bit, representing the number of parallel user-specified objective function evaluations in a Fork-Join shared-memory parallelism. Such parallelism paradigms include OpenMP-enabled shared-memory parallel simulations in C, C++, and Fortran or shared-memory simulations in higher-level programming language environments such as MATLAB, Python, and R. This specification is currently relevant to only OpenMP-enabled parallel ParaMonte library builds or in the context of dynamic interpreted programming languages such as those mentioned above. As such, its value or presence is ignored in serial simulations or Coarray/MPI -enabled parallel simulations. Specifying `0` leads to using all available CPU threads for the requested simulation. The default value for `parallelismNumThread` is `0`, which implies using the maximum number of available threads in concurrent or OpenMP-enabled builds of the ParaMonte library.
+The simulation specification `parallelismNumThread` is a non-negative scalar of type `integer` of kind 32-bit, representing the number of parallel user-specified objective function evaluations in a Fork-Join shared-memory parallelism. Such parallelism paradigms include OpenMP-enabled shared-memory parallel simulations in C, C++, and Fortran or shared-memory simulations in higher-level programming language environments such as MATLAB, Python, and R. This specification is currently relevant to only OpenMP-enabled parallel ParaMonte library builds or in the context of dynamic interpreted programming languages such as those mentioned above. As such, its value or presence is ignored in serial simulations or Coarray/MPI-enabled parallel simulations. Specifying `0` leads to using all available CPU threads for the requested simulation. The default value for `parallelismNumThread` is `0`, which implies using the maximum number of available threads in concurrent or OpenMP-enabled builds of the ParaMonte library.
 
 Related specifications: [parallelism](#parallelism), [parallelismMpiFinalizeEnabled](#parallelismmpifinalizeenabled), [parallelismNumThread](#parallelismnumthread).<br>
 
@@ -327,12 +327,12 @@ The simulation specification `randomSeed` is a positive scalar of type `integer`
 
 ### targetAcceptanceRate
 
-The simulation specification `targetAcceptanceRate` is a vector of type `real` of size `2` of the highest precision available within the ParaMonte library whose values (in the range `[0, 1]`) determine the optimal target range for the simulation efficiency, defined as the ratio of the number of accepted objective function calls to the total number of function calls made through the simulation. The first and the second elements of `targetAcceptanceRate` determine the lower and upper bounds of the desired acceptance rate, respectively. When the acceptance rate of the sampler is outside the specified limits, the simulation settings will be automatically adjusted to bring the overall acceptance rate to within the user-specified limits given by `targetAcceptanceRate`. When assigned from within a dynamic-language programming environment (such as MATLAB, Python, or R) or from within an input file, `targetAcceptanceRate` can also be a scalar real number in the range `[0, 1]`. In such a case, the sampler will constantly attempt (albeit with no guarantee of success) to bring the average acceptance ratio of the sampler as close to the user-provided target ratio as possible. Specifically, the success of the adaptive MCMC samplers (e.g., ParaDRAM) in keeping the average acceptance ratio close to the requested target value depends heavily on:
+The simulation specification `targetAcceptanceRate` is a vector of type `real` of size `2` of the highest precision available within the ParaMonte library whose values (in the range `[0, 1]`) determine the optimal target range for the simulation efficiency, defined as the ratio of the number of accepted objective function calls to the total number of function calls made through the simulation. The first and the second elements of `targetAcceptanceRate` determine the lower and upper bounds of the desired acceptance rate, respectively. When the acceptance rate of the sampler is outside the specified limits, the simulation settings will be automatically adjusted to bring the overall acceptance rate to within the user-specified limits given by `targetAcceptanceRate`. When assigned from within a dynamic-language programming environment (such as MATLAB, Python, or R) or within an input file, `targetAcceptanceRate` can also be a scalar real number in the range `[0, 1]`. In such a case, the sampler will constantly attempt (albeit with no guarantee of success) to bring the average acceptance ratio of the sampler as close to the user-provided target ratio as possible. Specifically, the success of the adaptive MCMC samplers (e.g., ParaDRAM) in keeping the average acceptance ratio close to the requested target value depends heavily on:
 
 +   the specified value of `proposalAdaptationPeriod`; the larger, the easier.
 +   the specified value of `proposalAdaptationCount`; the larger, the easier.
 
-Note that the acceptance ratio adjustments will only occur every `proposalAdaptationPeriod` sampling steps for a total number of `proposalAdaptationCount` in adaptive MCMC samplings. The default value for `targetAcceptanceRate` is the range `[0, 1]`.
+Note that the acceptance ratio adjustments will only occur in every `proposalAdaptationPeriod` sampling step for a total number of `proposalAdaptationCount` in adaptive MCMC samplings. The default value for `targetAcceptanceRate` is the range `[0, 1]`.
 
 ## MCMC specifications
 
@@ -352,7 +352,7 @@ The simulation specification `outputSampleRefinementCount` is a positive-valued 
 
 +   if `outputSampleRefinementCount = 1`,
 
-    the refinement of the output MCMC chain will be done only once if needed, and no more, even though some residual autocorrelation in the output MCMC sample may still exist. In practice, only one refinement of the final output MCMC chain should be enough to remove the existing autocorrelations in the final output sample. Exceptions occur when the integrated Autocorrelation (ACT) of the output MCMC chain is comparable to or larger than the length of the chain. In such cases, neither the BatchMeans method nor any other method of ACT computation will be able to accurately compute the ACT. Consequently, the samples generated based on the computed ACT values will likely not be i.i.d. and will still be significantly autocorrelated. In such scenarios, more than one refinement of the MCMC chain will be necessary. Very small sample size resulting from multiple refinements of the sample could be a strong indication of the bad mixing of the MCMC chain and the lack of convergence to the target objective function.
+    the refinement of the output MCMC chain will be done only once if needed, and no more, even though some residual autocorrelation in the output MCMC sample may still exist. In practice, only one refinement of the final output MCMC chain should be enough to remove the existing autocorrelations in the final output sample. Exceptions occur when the integrated Autocorrelation (ACT) of the output MCMC chain is comparable to or larger than the length of the chain. In such cases, neither the BatchMeans method nor any other method of ACT computation will be able to compute the ACT accurately. Consequently, the samples generated based on the computed ACT values will likely not be i.i.d. and will still be significantly autocorrelated. In such scenarios, more than one refinement of the MCMC chain will be necessary. A tiny small sample size resulting from multiple refinements of the sample could be a strong indication of the bad mixing of the MCMC chain and the lack of convergence to the target objective function.
 
 +   if `outputSampleRefinementCount > 1`,
 
@@ -360,9 +360,9 @@ The simulation specification `outputSampleRefinementCount` is a positive-valued 
 
 +   if `outputSampleRefinementCount >> 1` (e.g., comparable to or larger than the length of the MCMC chain),
 
-    the refinement of the output MCMC chain will continue until the integrated autocorrelation of the resulting final sample is less than 2, virtually implying that an independent identically-distributed (i.i.d.) sample from the target objective function has finally been obtained.
+    the refinement of the output MCMC chain will continue until the integrated autocorrelation of the resulting final sample is less than 2, virtually implying that an independent identically distributed (i.i.d.) sample from the target objective function has finally been obtained.
 
-Note that to obtain i.i.d. samples from a multidimensional chain, the sampler will, by default, use the maximum of integrated Autocorrelation (ACT) among all chain dimensions to refine the chain. Note that the value specified for `outputSampleRefinementCount` is used only when the variable `outputSampleSize < 0`, otherwise, it will be ignored. The default value for `outputSampleRefinementCount` is `2147483647`.
+Note that to obtain i.i.d. samples from a multidimensional chain, the sampler will, by default, use the maximum of integrated Autocorrelation (ACT) among all chain dimensions to refine the chain. Note that the value specified for `outputSampleRefinementCount` is used only when the variable `outputSampleSize < 0`; otherwise, it will be ignored. The default value for `outputSampleRefinementCount` is `2147483647`.
 
 Related specifications: [outputSampleSize](#outputsamplesize), [outputSampleRefinementCount](#outputsamplerefinementcount), [outputSampleRefinementMethod](#outputsamplerefinementmethod).<br>
 
@@ -380,13 +380,13 @@ The simulation specification `outputSampleRefinementMethod` is a scalar string o
 
 +   `outputSampleRefinementMethod = 'BatchMeans-compact'`
 
-    This is the same as the first case in the above, except that only the first phase of the sample refinement described in the above will be performed; that is, the (verbose) Markov chain is refined only based on the ACT computed from the compact format of the Markov chain. This will lead to a larger, final, refined sample. However, the final sample will likely not be fully decorrelated.
+    This is the same as the first case above, except that only the first phase of the sample refinement described above will be performed; that is, the (verbose) Markov chain is refined only based on the ACT computed from the compact format of the Markov chain. This will lead to a larger, final, refined sample. However, the final sample will likely not be fully decorrelated.
 
 +   `outputSampleRefinementMethod = 'BatchMeans-verbose'`
 
-    This is the same as the first case in the above, except that only the second phase of the sample refinement described in the above will be performed; that is, the (verbose) Markov chain is refined only based on the ACT computed from the verbose format of the Markov chain. While the resulting refined sample will be fully decorrelated, the size of the refined sample may be smaller than the default choice in the first case in the above.
+    This is the same as the first case above, except that only the second phase of the sample refinement described above will be performed; that is, the (verbose) Markov chain is refined only based on the ACT computed from the verbose format of the Markov chain. While the resulting refined sample will be fully decorrelated, the size of the refined sample may be smaller than the default choice in the first case above.
 
-Note that to obtain i.i.d. samples from a multidimensional chain, the sampler will use the average of the ACT among all dimensions of the chain to refine the chain. If the maximum, minimum, or the median of IACs is preferred add `'-max'` (or `'-maximum'`), `'-min'` (or `'-minimum'`), `'-med'` (or `'-median'`), respectively, to the value of `outputSampleRefinementMethod`. For example, 
+Note that to obtain i.i.d. samples from a multidimensional chain, the sampler will use the average of the ACT among all dimensions of the chain to refine the chain. If the maximum, minimum, or median of IACs is preferred add `'-max'` (or `'-maximum'`), `'-min'` (or `'-minimum'`), `'-med'` (or `'-median'`), respectively, to the value of `outputSampleRefinementMethod`. For example, 
 
 +   `outputSampleRefinementMethod = 'BatchMeans-max'`
 
@@ -408,7 +408,7 @@ The simulation specification `proposal` is a scalar string of maximum length `63
 
 +   `proposal = 'normal'`
 
-    This is equivalent to the multivariate normal distribution, which is the most widely-used proposal model along with MCMC samplers.
+    This is equivalent to the multivariate normal distribution, which, for MCMC samplers, is the most widely used proposal model.
 
 +   `proposal = 'uniform'`
 
@@ -426,7 +426,7 @@ Related specifications: [proposal](#proposal), [proposalCor](#proposalcor), [pro
 
 ### proposalCov
 
-The simulation specification `proposalCov` is a square positive-definite matrix of type `real` of the highest precision available within the ParaMonte library, of shape `(ndim, ndim)`, where `ndim` is the number of dimensions of the sampling space. It serves as the best-guess starting covariance matrix of the proposal distribution. To bring the sampling efficiency of the sampler to within the desired requested range, the covariance matrix will be adaptively updated throughout the simulation, according to the user-specified schedule. If `proposalCov` is not provided by the user or it is completely missing from the input file, its value will be automatically computed via the input variables `proposalCor` and `proposalStd` (or via their default values, if not provided). If the simulation specification `outputStatus` is set to "extend" and a successful prior simulation run exists, then `proposalCov` will be set to the covariance matrix of the output sample from the most recent simulation run. In this case, the computed `proposalCov` will override any user-specified value. Otherwise, the default value for `proposalCov` is a square Identity matrix of rank `ndim`.
+The simulation specification `proposalCov` is a square positive-definite matrix of type `real` of the highest precision available within the ParaMonte library, of shape `(ndim, ndim)`, where `ndim` is the number of dimensions of the sampling space. It serves as the best-guess starting covariance matrix of the proposal distribution. To bring the sampling efficiency of the sampler to within the desired requested range, the covariance matrix will be adaptively updated throughout the simulation according to the user-specified schedule. If `proposalCov` is not provided by the user or it is completely missing from the input file, its value will be automatically computed via the input variables `proposalCor` and `proposalStd` (or via their default values, if not provided). If the simulation specification `outputStatus` is set to "extend" and a successful prior simulation run exists, then `proposalCov` will be set to the covariance matrix of the output sample from the most recent simulation run. In this case, the computed `proposalCov` will override any user-specified value. Otherwise, the default value for `proposalCov` is a square Identity matrix of rank `ndim`.
 
 Related specifications: [proposal](#proposal), [proposalCor](#proposalcor), [proposalCov](#proposalcov), [proposalStd](#proposalstd).<br>
 
@@ -440,7 +440,7 @@ The paper finds that the optimal scaling factor for a Multivariate Gaussian prop
 
     proposalScale = 2.38 / sqrt(ndim)  ,  in the limit of ndim -> Infinity.
 
-Multiples of the Gelman scale factors are also acceptable as input and can be specified like the following examples:
+Multiples of the Gelman scale factors are also acceptable as input and can be specified as in the following examples:
 
 +   `proposalScale = '1'`
 
@@ -466,11 +466,11 @@ Multiples of the Gelman scale factors are also acceptable as input and can be sp
 
     equivalent to gelmanFactor-squared multiplied by `5`.
 
-Note, however, that the result of Gelman et al. paper applies only to multivariate normal proposal distributions, in the limit of infinite dimensions. Therefore, care must be taken when using Gelman's scaling factor with non-Gaussian proposals and target objective functions. Only the product symbol `*` can be parsed in the string value of `proposalScale`. The presence of other mathematical symbols or multiple appearances of the product symbol will lead to a simulation crash. Also, note that the prescription of an acceptance range specified by the input variable `targetAcceptanceRate` will lead to dynamic modification of the initial input value of `proposalScale` throughout sampling for `proposalAdaptationCount` times. The default string value for `proposalScale` is `"gelman"` (for all proposal distributions), which is subsequently converted to `2.38 / sqrt(ndim)`.
+Note, however, that the result of Gelman et al. paper applies only to multivariate normal proposal distributions in the limit of infinite dimensions. Therefore, care must be taken when using Gelman's scaling factor with non-Gaussian proposals and target objective functions. Only the product symbol `*` can be parsed in the string value of `proposalScale`. The presence of other mathematical symbols or multiple appearances of the product symbol will lead to a simulation crash. Also, note that the prescription of an acceptance range specified by the input variable `targetAcceptanceRate` will lead to dynamic modification of the initial input value of `proposalScale` throughout sampling for `proposalAdaptationCount` times. The default string value for `proposalScale` is `"1"` (for all proposal distributions).
 
 ### proposalStart
 
-The simulation specification `proposalStart` is a vector type of `real` of the highest precision available within the ParaMonte library of length `ndim` where `ndim` is the dimension of the domain of the objective function. For every element of `proposalStart` that is not provided as input, the default value will be the center of the sampling domain as determined by `domainCubeLimitLower` and `domainCubeLimitUpper` input specifications. If the condition `proposalStartRandomized` is set to the logical/Boolean true value, then the missing elements of `proposalStart` will be initialized to values drawn randomly from within the corresponding ranges specified by the input variables `proposalStartDomainCubeLimitLower` and `proposalStartDomainCubeLimitUpper`. If the simulation specification `outputStatus` is set to "extend" and a prior successful simulation run exists, then `proposalStart` will be set to the average of the sampled states of the most recent successful run. In this case, any user-specified value will be overridden by the computed `proposalStart`.
+The simulation specification `proposalStart` is a vector type of `real` of the highest precision available within the ParaMonte library of length `ndim` where `ndim` is the dimension of the domain of the objective function. For every element of `proposalStart` not provided as input, the default value will be the center of the sampling domain as determined by `domainCubeLimitLower` and `domainCubeLimitUpper` input specifications. If the condition `proposalStartRandomized` is set to the logical/Boolean true value, then the missing elements of `proposalStart` will be initialized to values drawn randomly from within the corresponding ranges specified by the input variables `proposalStartDomainCubeLimitLower` and `proposalStartDomainCubeLimitUpper`. If the simulation specification `outputStatus` is set to "extend" and a prior successful simulation run exists, then `proposalStart` will be set to the average of the sampled states of the most recent successful run. In this case, any user-specified value will be overridden by the computed `proposalStart`.
 
 Related specifications: [proposalStart](#proposalstart), [proposalStartDomainCubeLimitLower](#proposalstartdomaincubelimitlower), [proposalStartDomainCubeLimitUpper](#proposalstartdomaincubelimitupper), [proposalStartRandomized](#proposalstartrandomized).<br>
 
@@ -480,7 +480,7 @@ The simulation specification `proposalStartDomainCubeLimitLower` is a vector of 
 
 +   `proposalStartDomainCubeLimitLower(3:5) = -100`
 
-    will only set the lower limits of the third, fourth, and the fifth dimensions to -100, or,
+    will only set the lower limits of the third, fourth, and fifth dimensions to -100, or,
 
 +   `proposalStartDomainCubeLimitLower(1) = -100, proposalStartDomainCubeLimitLower(2) = -1.e6`
 
@@ -488,9 +488,9 @@ The simulation specification `proposalStartDomainCubeLimitLower` is a vector of 
 
 +   `proposalStartDomainCubeLimitLower = 3*-2.5e100`
 
-    will only set the lower limits on the first, second, and the third dimensions to `-2.5*10^100`, while the rest of the lower limits for the missing dimensions will be automatically set to the default value.
+    will only set the lower limits on the first, second, and third dimensions to `-2.5*10^100`, while the rest of the lower limits for the missing dimensions will be automatically set to the default value.
 
-The default for all `proposalStartDomainCubeLimitLower` elements are taken from the corresponding elements of `domainCubeLimitLower`.
+The default for all `proposalStartDomainCubeLimitLower` elements is taken from the corresponding elements of `domainCubeLimitLower`.
 
 Related specifications: [proposalStart](#proposalstart), [proposalStartDomainCubeLimitLower](#proposalstartdomaincubelimitlower), [proposalStartDomainCubeLimitUpper](#proposalstartdomaincubelimitupper), [proposalStartRandomized](#proposalstartrandomized).<br>
 
@@ -500,7 +500,7 @@ The simulation specification `proposalStartDomainCubeLimitUpper` is a vector of 
 
 +   `proposalStartDomainCubeLimitUpper(3:5) = -100`
 
-    will only set the upper limits of the third, fourth, and the fifth dimensions to `-100`, or,
+    will only set the upper limits of the third, fourth, and fifth dimensions to `-100`, or,
 
 +   `proposalStartDomainCubeLimitUpper(1) = -100, proposalStartDomainCubeLimitUpper(2) = -1.e6`
 
@@ -508,7 +508,7 @@ The simulation specification `proposalStartDomainCubeLimitUpper` is a vector of 
 
 +   `proposalStartDomainCubeLimitUpper = 3*-2.5e100`
 
-    will only set the upper limits on the first, second, and the third dimensions to `-2.5*10**100`, while the rest of the upper limits for the missing dimensions will be automatically set to the default value.
+    will only set the upper limits on the first, second, and third dimensions to `-2.5*10**100`, while the rest of the upper limits for the missing dimensions will be automatically set to the default value.
 
 The default values for all elements of `proposalStartDomainCubeLimitUpper` are taken from the corresponding values in the input variable `domainCubeLimitUpper`.
 
@@ -516,7 +516,7 @@ Related specifications: [proposalStart](#proposalstart), [proposalStartDomainCub
 
 ### proposalStartRandomized
 
-The simulation specification `proposalStartRandomized` is scalar of type `logical` (Boolean). If `true` (or `.true.` or `TRUE` or `.t.` from within an external input file), then the variable `proposalStart` will be initialized randomly for each MCMC chain that is to be generated by the sampler. The random values will be drawn from the specified or the default domain of `proposalStart`, given by `proposalStartDomainCubeLimitLower` and `proposalStartDomainCubeLimitUpper` variable. Note that the value of `proposalStart`, if provided, has precedence over random initialization. In other words, only uninitialized elements of `proposalStart` will be randomly initialized only if `proposalStartRandomized` is set to the logical true value. Note that even if `proposalStart` is randomly initialized, its random value will be deterministic between different independent simulation runs if the input variable `randomSeed` is specified by the user. The default value is `FALSE`.
+The simulation specification `proposalStartRandomized` is a scalar of type `logical` (Boolean). If `true` (or `.true.` or `TRUE` or `.t.` from within an external input file), then the variable `proposalStart` will be initialized randomly for each MCMC chain that is to be generated by the sampler. The random values will be drawn from the specified or the default domain of `proposalStart`, given by `proposalStartDomainCubeLimitLower` and `proposalStartDomainCubeLimitUpper` variables. Note that the value of `proposalStart`, if provided, has precedence over random initialization. In other words, only uninitialized elements of `proposalStart` will be randomly initialized only if `proposalStartRandomized` is set to the logical true value. Note that even if `proposalStart` is randomly initialized, its random value will be deterministic between different independent simulation runs if the input variable `randomSeed` is specified by the user. The default value is `FALSE`.
 
 Related specifications: [proposalStart](#proposalstart), [proposalStartDomainCubeLimitLower](#proposalstartdomaincubelimitlower), [proposalStartDomainCubeLimitUpper](#proposalstartdomaincubelimitupper), [proposalStartRandomized](#proposalstartrandomized).<br>
 
@@ -528,13 +528,13 @@ Related specifications: [proposal](#proposal), [proposalCor](#proposalcor), [pro
 
 ## DRAM specifications
 
-### burninAdaptationMeasure
+### proposalAdaptationBurnin
 
-The simulation specification `burninAdaptationMeasure` is a scalar of type `real` of the highest precision available within the ParaMonte library whose value, between 0 and 1, represents the adaptation measure threshold below which the simulated Markov chain will be used to generate the output sample. In other words, any point in the output Markov chain that has been sampled during significant adaptation of the proposal distribution (set by `burninAdaptationMeasure`) will not be included in constructing the final MCMC output sample. This is to ensure that the generation of the output sample will be based only on the part of the simulated chain that is practically guaranteed to be Markovian and ergodic. If this variable is set to 0, then the output sample will be generated from the part of the chain where no proposal adaptation has occurred. This non-adaptive or minimally-adaptive part of the chain may not even exist if the total adaptation period of the simulation, set by `proposalAdaptationCount` and `proposalAdaptationPeriod` input variables, is longer than the total length of the output MCMC chain. In such cases, the resulting output sample may be zero size. In general, when good mixing occurs (e.g., when the input variable `outputChainSize` is reasonably large), then any specific value of `burninAdaptationMeasure` becomes practically irrelevant. The default value for `burninAdaptationMeasure` is `1.0000000000000000`, implying that the entire chain (excluding of an initial automatically-determined burnin period) will be used to generate the final output sample.
+The simulation specification `proposalAdaptationBurnin` is a scalar of type `real` of the highest precision available within the ParaMonte library whose value, between 0 and 1, represents the adaptation measure threshold below which the simulated Markov chain will be used to generate the output sample. In other words, any point in the output Markov chain sampled during significant adaptation of the proposal distribution (set by `proposalAdaptationBurnin`) will not be included in constructing the final MCMC output sample. This is to ensure that the generation of the output sample will be based only on the part of the simulated chain that is practically guaranteed to be Markovian and ergodic. If this variable is set to 0, then the output sample will be generated from the part of the chain where no proposal adaptation has occurred. This non-adaptive or minimally-adaptive part of the chain may not even exist if the total adaptation period of the simulation, set by `proposalAdaptationCount` and `proposalAdaptationPeriod` input variables, is longer than the total length of the output MCMC chain. In such cases, the resulting output sample may be zero size. Generally, when good mixing occurs (e.g., when the input variable `outputChainSize` is reasonably large), then any specific value of `proposalAdaptationBurnin` becomes practically irrelevant. The default value for `proposalAdaptationBurnin` is `1.0000000000000000`, implying that the entire chain (excluding an initial automatically-determined burnin period) will be used to generate the final output sample.
 
 ### proposalAdaptationCount
 
-The simulation specification `proposalAdaptationCount` is a scalar of type `integer` representing the total number of adaptive updates that will be made to the parameters of the proposal distribution to increase the efficiency of the sampler thus increasing the overall sampling efficiency of the simulation. Every `proposalAdaptationPeriod` number of calls to the objective function, the parameters of the proposal distribution will be updated until either the total number of adaptive updates reaches the value of `proposalAdaptationCount`. This variable must be a non-negative integer. As a rule of thumb, it may be appropriate to ensure the condition `outputChainSize >> proposalAdaptationPeriod * proposalAdaptationCount` holds to improve the ergodicity and stationarity of the MCMC sampler. If `proposalAdaptationCount` is zero, then the proposal distribution parameters will be fixed to the initial input values throughout the entire MCMC sampling. The default value is `2147483647`.
+The simulation specification `proposalAdaptationCount` is a scalar of type `integer` representing the total number of adaptive updates that will be made to the parameters of the proposal distribution to increase the efficiency of the sampler, thus increasing the overall sampling efficiency of the simulation. Every `proposalAdaptationPeriod` number of calls to the objective function, the parameters of the proposal distribution will be updated until either the total number of adaptive updates reaches the value of `proposalAdaptationCount`. This variable must be a non-negative integer. As a rule of thumb, it may be appropriate to ensure the condition `outputChainSize >> proposalAdaptationPeriod * proposalAdaptationCount` holds to improve the ergodicity and stationarity of the MCMC sampler. If `proposalAdaptationCount` is zero, then the proposal distribution parameters will be fixed to the initial input values throughout the entire MCMC sampling. The default value is `2147483647`.
 
 Related specifications: [proposalAdaptationCount](#proposaladaptationcount), [proposalAdaptationCountGreedy](#proposaladaptationcountgreedy), [proposalAdaptationPeriod](#proposaladaptationperiod).<br>
 
@@ -546,13 +546,13 @@ Related specifications: [proposalAdaptationCount](#proposaladaptationcount), [pr
 
 ### proposalAdaptationPeriod
 
-The simulation specification `proposalAdaptationPeriod` is a positive-valued scalar of type `integer`. Every `proposalAdaptationPeriod` calls to the objective function, the parameters of the proposal distribution will be updated. The smaller the value of `proposalAdaptationPeriod`, the easier it will be for the sampler kernel to adapt the proposal distribution to the covariance structure of the objective function. However, this will happen at the expense of slower simulation runtime as the adaptation process can become computationally expensive, particularly for very high dimensional objective functions (`ndim >> 1`). The larger the value of `proposalAdaptationPeriod`, the easier it will be for the sampler kernel to keep the sampling efficiency close to the requested target acceptance rate range (if specified via the input variable targetAcceptanceRate). However, too large values for `proposalAdaptationPeriod` will only delay the adaptation of the proposal distribution to the global structure of the objective function that is being sampled. If `outputChainSize <= proposalAdaptationPeriod` holds, then no adaptive updates to the proposal distribution will be made. The default value is `4 * ndim`, where `ndim` is the dimension of the domain of the objective function to be sampled.
+The simulation specification `proposalAdaptationPeriod` is a positive-valued scalar of type `integer`. Every `proposalAdaptationPeriod` calls to the objective function, the parameters of the proposal distribution will be updated. The smaller the value of `proposalAdaptationPeriod`, the easier for the sampler kernel to adapt the proposal distribution to the covariance structure of the objective function. However, this will happen at the expense of slower simulation runtime as the adaptation process can become computationally expensive, particularly for very high dimensional objective functions (`ndim >> 1`). The larger the value of `proposalAdaptationPeriod`, the easier it will be for the sampler kernel to keep the sampling efficiency close to the requested target acceptance rate range (if specified via the input variable targetAcceptanceRate). However, too large values for `proposalAdaptationPeriod` will only delay the adaptation of the proposal distribution to the global structure of the objective function that is being sampled. If `outputChainSize <= proposalAdaptationPeriod` holds, no adaptive updates to the proposal distribution will be made. The default value is `4 * ndim`, where `ndim` is the dimension of the domain of the objective function to be sampled.
 
 Related specifications: [proposalAdaptationCount](#proposaladaptationcount), [proposalAdaptationCountGreedy](#proposaladaptationcountgreedy), [proposalAdaptationPeriod](#proposaladaptationperiod).<br>
 
 ### proposalDelayedRejectionCount
 
-The simulation specification `proposalAdaptationPeriod` is a non-negative-valued scalar of type `integer` representing the total number of stages for which rejections of new proposals will be tolerated by MCMC sampler before going back to the previously accepted point (state). The condition `0 <= proposalDelayedRejectionCount <= 1000` must hold. Possible values are:
+The simulation specification `proposalAdaptationPeriod` is a non-negative-valued scalar of type `integer` representing the total number of stages for which rejections of new proposals will be tolerated by the MCMC sampler before going back to the previously accepted point (state). The condition `0 <= proposalDelayedRejectionCount <= 1000` must hold. Possible values are:
 
 +   `proposalDelayedRejectionCount = 0`
 
@@ -562,13 +562,13 @@ The simulation specification `proposalAdaptationPeriod` is a non-negative-valued
 
     which implies a maximum proposalDelayedRejectionCount number of rejections will be tolerated.
 
-For example, setting `proposalDelayedRejectionCount` to `1` means that at any point during the sampling, if a proposal is rejected, the MCMC sampler will not go back to the last sampled state. Instead, it will continue to propose a new state from the last rejected proposal. If the new state is again rejected based on the rules of the MCMC sampler, then the algorithm will not tolerate further rejections, because the maximum number of rejections to be tolerated has been set by the user to be `proposalDelayedRejectionCount = 1`. The algorithm then goes back to the original last-accepted state and will begin proposing new states from that location. The default value is `0`.
+For example, setting `proposalDelayedRejectionCount` to `1` means that at any point during the sampling, if a proposal is rejected, the MCMC sampler will not return to the last sampled state. Instead, it will continue to propose a new state from the last rejected proposal. If the new state is again rejected based on the rules of the MCMC sampler, then the algorithm will not tolerate further rejections because the maximum number of rejections to be tolerated has been set by the user to be `proposalDelayedRejectionCount = 1`. The algorithm then returns to the original last-accepted state and will begin proposing new states from that location. The default value is `0`.
 
 Related specifications: [proposalDelayedRejectionCount](#proposaldelayedrejectioncount), [proposalDelayedRejectionScale](#proposaldelayedrejectionscale).<br>
 
 ### proposalDelayedRejectionScale
 
-The simulation specification `proposalDelayedRejectionScale` is a positive-valued vector of type `real` of the highest precision available within the ParaMonte library, of length `(1 : proposalDelayedRejectionCount)`, by which the covariance matrix of the proposal distribution of the MCMC sampler is scaled when the Delayed Rejection (DR) scheme is activated (by setting `proposalDelayedRejectionCount` to a positive value). At each `i`th stage of the DR process, the proposal distribution from the last stage is scaled by the factor `proposalDelayedRejectionScale(i)`. Missing elements of the `proposalDelayedRejectionScale` in the input external file to the sampler will be set to the default value. The default value at all stages is `0.5**(1 / ndim)` where `ndim` is the number of dimensions of the domain of the objective function. This default value effectively reduces the volume of the covariance matrix of the proposal distribution by half compared to the last DR stage.
+The simulation specification `proposalDelayedRejectionScale` is a positive-valued vector of type `real` of the highest precision available within the ParaMonte library, of length `(1 : proposalDelayedRejectionCount)`, by which the covariance matrix of the proposal distribution of the MCMC sampler is scaled when the Delayed Rejection (DR) scheme is activated (by setting `proposalDelayedRejectionCount` to a positive value). At each `i`th stage of the DR process, the proposal distribution from the last stage is scaled by the factor `proposalDelayedRejectionScale(i)`. Missing elements of the `proposalDelayedRejectionScale` in the input external file to the sampler will be set to the default value. The default value at all stages is `0.5**(1 / ndim)`, where `ndim` is the number of dimensions of the domain of the objective function. This default value effectively reduces the volume of the covariance matrix of the proposal distribution by half compared to the last DR stage.
 
 Related specifications: [proposalDelayedRejectionCount](#proposaldelayedrejectioncount), [proposalDelayedRejectionScale](#proposaldelayedrejectionscale).<br>
 

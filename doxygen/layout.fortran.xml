@@ -57,6 +57,10 @@
         <tab type='user' url='../../generic/2/index.html' title='2' intro=''/>
         <tab type='user' url='../../generic/1/index.html' title='1' intro=''/>
     </tab>
+    <tab type='usergroup' visible='yes' title='MATLAB' intro='MATLAB Documentation Version History'>
+        <tab type='user' url='../../matlab/latest/index.html' title='latest' intro=''/>
+        <tab type='user' url='../../matlab/3/index.html' title='3' intro=''/>
+    </tab>
 
 
 
