@@ -100,11 +100,11 @@ entries:
     #- title: ParaMonte C/C++/Fortran - Linux
     #  url: /installation/linux/
     #  output: web, pdf
-    #
-    #- title: ParaMonte MATLAB
-    #  output: web, pdf
-    #  url: /installation/matlab/
-    #
+
+    - title: ParaMonte installation for MATLAB
+      output: web, pdf
+      url: /installation/matlab/
+
     #- title: ParaMonte Python
     #  output: web, pdf
     #  url: /installation/python/
@@ -130,6 +130,10 @@ entries:
     - title: ParaMonte Fortran API
       output: web, pdf
       external_url: "!site.baseurl!/../../fortran/!site.pmvmfortran!/"
+
+    - title: ParaMonte MATLAB API (in progress)
+      output: web, pdf
+      external_url: "!site.baseurl!/../../matlab/!site.pmvmmatlab!/"
 
   ################################################################
 

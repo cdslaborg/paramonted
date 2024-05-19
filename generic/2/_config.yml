@@ -72,6 +72,8 @@ codecov: "https://www.cdslab.org/paramonte/codecov"
 
 currentRelease:         "https://github.com/cdslaborg/paramonte/releases/2024.03.14"
 currentReleaseDownload: "https://github.com/cdslaborg/paramonte/releases/download/2024.03.14"
+pmvmpython: 3
+pmvmmatlab: 3
 pmvmfortran: 2
 pmvmcpp: 2
 pmvmc: 2
