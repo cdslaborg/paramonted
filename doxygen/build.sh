@@ -371,9 +371,17 @@ elif [ "${lang}" = "cpp" ]; then
 elif [ "${lang}" = "fortran" ]; then
     export paramonte_optimize_for_fortran="YES"
     export paramonte_project_name="${paramonte_project_name} Fortran"
+elif [ "${lang}" = "matlab" ]; then
+    export paramonte_optimize_for_c="YES"
+    export paramonte_project_name="${paramonte_project_name} MATLAB"
+elif [ "${lang}" = "python" ]; then
+    export paramonte_project_name="${paramonte_project_name} Python"
 elif [ "${lang}" = "java" ]; then
     export paramonte_project_name="${paramonte_project_name} Java"
     export paramonte_optimize_for_java="YES"
+else
+    echo >&2 "${pmfatal} Unrecognized ParaMonte library language: ${lang}"
+    exit 1
 fi
 
 echo >&2 "${pmnote} paramonte_lang_version=${paramonte_lang_version}"
