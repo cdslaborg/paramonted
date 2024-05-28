@@ -219,16 +219,8 @@ entries:
       url: /troubleshooting/bash-matlab-command-not-found/
       output: web, pdf
 
-    - title: "catastrophic error: cannot open source file"
-      url: /troubleshooting/catastrophic-error-cannot-open-source-file/
-      output: web, pdf
-
     - title: "Catastrophic error: could not set locale"
       url: /troubleshooting/catastrophic-error-could-not-set-locale/
-      output: web, pdf
-
-    - title: 'xcrun: error: unable to find utility "clang"'
-      url: /troubleshooting/xcrun-error-unable-to-find-utility-clang/
       output: web, pdf
 
     - title: changing directory on Windows CMD
@@ -251,8 +243,20 @@ entries:
       url: /troubleshooting/libgfortran-not-found/
       output: web, pdf
 
+    - title: "macOS: catastrophic error: cannot open source"
+      url: /troubleshooting/macos-catastrophic-error-cannot-open-source/
+      output: web, pdf
+
     - title: "macOS: developer cannot be verified"
       url: /troubleshooting/macos-developer-cannot-be-verified/
+      output: web, pdf
+
+    - title: 'macOS: unsupported tapi file type'
+      url: /troubleshooting/macos-unsupported-tapi-file-type/
+      output: web, pdf
+
+    - title: 'macOS: xcrun: unable to find utility "clang"'
+      url: /troubleshooting/macos-xcrun-error-unable-to-find-utility-clang/
       output: web, pdf
 
     - title: "Python: could not find module"
