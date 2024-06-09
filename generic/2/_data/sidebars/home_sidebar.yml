@@ -251,6 +251,10 @@ entries:
       url: /troubleshooting/macos-developer-cannot-be-verified/
       output: web, pdf
 
+    - title: "macOS: ld: library not found"
+      url: /troubleshooting/macos-ld-library-not-found/
+      output: web, pdf
+
     - title: 'macOS: unsupported tapi file type'
       url: /troubleshooting/macos-unsupported-tapi-file-type/
       output: web, pdf

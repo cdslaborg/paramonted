@@ -66,9 +66,10 @@ import paramonte as pm
 ## The fast way  
 
 1.  Download and unzip the prebuilt Python package for ParaMonte from the project repository's release page on GitHub:  
-    +   for **Windows**: [libparamonte_python_windows_x64.zip]({{site.currentReleaseDownload}}/libparamonte_python_windows_x64.zip).    
-    +   for **Linux**: [libparamonte_python_linux_x64.tar.gz]({{site.currentReleaseDownload}}/libparamonte_python_linux_x64.tar.gz).  
-    +   for **macOS**: [libparamonte_python_darwin_x64.tar.gz]({{site.currentReleaseDownload}}/libparamonte_python_darwin_x64.tar.gz).  
+    +   for **Windows**: [libparamonte_python_windows_amd64.zip]({{site.currentReleaseDownload}}/libparamonte_python_windows_amd64.zip).    
+    +   for **Linux**: [libparamonte_python_linux_amd64.tar.gz]({{site.currentReleaseDownload}}/libparamonte_python_linux_amd64.tar.gz).  
+    +   for **macOS**: [libparamonte_python_darwin_amd64.tar.gz]({{site.currentReleaseDownload}}/libparamonte_python_darwin_amd64.tar.gz).  
+    +   for **macOS**: [libparamonte_python_darwin_arm64.tar.gz]({{site.currentReleaseDownload}}/libparamonte_python_darwin_arm64.tar.gz).  
         {{site.data.alerts.important}}
         If you are a <b>macOS user</b>, we <b>strongly recommend you to NOT download</b> the library directly from the library's GitHub release page and <b>NOT by clicking directly on the above link</b>. Instead, use the <b><code>curl</code></b> command line program to download your the library from the release page. To do so, first make sure you have <b><code>curl</code></b> installed on your system. If it is not installed, you can install it via <a href="https://brew.sh/" target="_blank">Homebrew</a>,
         <br>
@@ -77,7 +78,7 @@ import paramonte as pm
         </pre>
         Then, copy the web-link to the ParaMonte Python library and download it via <b><code>curl</code></b> to the current folder. For example,  
         <pre class="language-bash highlighter-rouge">
-        libname=libparamonte_python_darwin_x64
+        libname=libparamonte_python_darwin_amd64
         curl -OL {{site.currentReleaseDownload}}/$libname.tar.gz
         tar xvzf $libname.tar.gz && cd $libname
         </pre>

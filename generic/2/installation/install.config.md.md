@@ -1,6 +1,6 @@
 ---
 title: "ParaMonte installation configuration flags"
-#tags: [installation, getting_started, Windows, macOS, Linux, naming, compiler, architecture, x64, x86_64, operating_system, OS, Fortran, C, C++, interoperation, build]
+#tags: [installation, getting_started, Windows, macOS, Linux, naming, compiler, architecture, amd64, arm64, x64, x86_64, operating_system, OS, Fortran, C, C++, interoperation, build]
 keywords: 
         installation
         getting_started
@@ -11,10 +11,10 @@ keywords:
         naming
         compiler
         architecture
-        amd64
-        arm64
         x32
         x64
+        amd64
+        arm64
         x86_64
         operating_system
         OS

@@ -51,10 +51,10 @@ There are two ways to install and use the ParaMonte library from MATLAB on your 
 ## The fast way  
 
 1.  **Download** and unzip the prebuilt MATLAB package for ParaMonte from the project repository's release page on GitHub:
-    +   For **Windows**: [**libparamonte_matlab_windows_x64.zip**]({{site.currentReleaseDownload}}/libparamonte_matlab_windows_x64.zip).  
-    +   For **Linux**: [**libparamonte_matlab_linux_x64.tar.gz**]({{site.currentReleaseDownload}}/libparamonte_matlab_linux_x64.tar.gz).  
-    +   For **macOS** (**Darwin**): Follow the instruction below to download this compressed file: [**libparamonte_matlab_darwin_x64.tar.gz**]({{site.currentReleaseDownload}}/libparamonte_matlab_darwin_x64.tar.gz) (do **NOT** download this file by directly clicking on this link. Follow the instructions below).  
-        {% include tip.important.download.method.md lang="matlab" %}
+    +   For **Windows**: [**libparamonte_matlab_windows_amd64.zip**]({{site.currentReleaseDownload}}/libparamonte_matlab_windows_amd64.zip).  
+    +   For **Linux**: [**libparamonte_matlab_linux_amd64.tar.gz**]({{site.currentReleaseDownload}}/libparamonte_matlab_linux_amd64.tar.gz).  
+    +   For **macOS** (**Darwin**): Follow the instruction below to download this compressed file: [**libparamonte_matlab_darwin_amd64.tar.gz**]({{site.currentReleaseDownload}}/libparamonte_matlab_darwin_amd64.tar.gz) (do **NOT** download this file by directly clicking on this link. Follow the instructions below).  
+        {% include tip.important.download.method.md lang="matlab" arch="amd64" %}
 1.  Depending on your operating system,  
     -   on **Windows**:  
             -   Open a MATLAB session.  

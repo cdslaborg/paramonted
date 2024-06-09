@@ -34,7 +34,7 @@ C/C++ examples documentation is currently being developed. Please check back in 
 {{site.data.alerts.note}}
 The latest release of the prebuilt ParaMonte libraries for dynamic linking for the Linux Operating System has been built via the <b>GNU Compiler Collection <code>version {{site.gnuVersionLinux}}</code></b>. As a result, when using these specific GNU-based prebuilt ParaMonte libraries, you may encounter C/C++/Fortran application compilation and linking errors, similar in nature to the following error message,  
 <pre>
-/opt/apps/gcc/6.3.0/bin/ld: warning: libgfortran.so.5, needed by libparamonte_c_linux_x64_gnu_release_shared_heap.so, not found
+/opt/apps/gcc/6.3.0/bin/ld: warning: libgfortran.so.5, needed by libparamonte_c_linux_amd64_gnu_release_shared_heap.so, not found
 </pre>
 All of such errors imply that the compiler/linker cannot locate the required <b><code>libgfortran</code></b> or other shared library files on your system, or if they exist, they are not compatible with the required missing shared file and therefore cannot serve as a substitute. The possible resolutions are the following,  
 

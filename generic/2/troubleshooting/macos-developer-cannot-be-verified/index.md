@@ -47,16 +47,16 @@ asking you to either move this file to trash because macOS does not know its dev
 
 There is still an indirect method of overriding the macOS SIP's authoritarian decision to not run the ParaMonte libraries on your system. We will explain these steps for the case of using the ParaMonte prebuilt libraries for the C programming language. However, these steps are identical in all programming languages, in particular, the MATLAB programming language, in which, one often encounters this issue.  
 
-1.  Suppose you have downloaded one of the ParaMonte prebuilt libraries from the ParaMonte release page on GitHub, for example, [libparamonte_c_darwin_x64_gnu_release_shared_heap.tar.gz]({{site.currentReleaseDownload}}/libparamonte_c_darwin_x64_gnu_release_shared_heap.tar.gz).  
+1.  Suppose you have downloaded one of the ParaMonte prebuilt libraries from the ParaMonte release page on GitHub, for example, [libparamonte_c_darwin_amd64_gnu_release_shared_heap.tar.gz]({{site.currentReleaseDownload}}/libparamonte_c_darwin_amd64_gnu_release_shared_heap.tar.gz).  
   
 1.  When you untar this file and run the `build.sh` command in the uncompressed folder, a `run.sh` script will be generated which you can call to run the supplied ParaMonte example application.  
     ```bash  
     ./build.sh 
     ```  
     ```text  
-    -- ParaMonteExampleC - ParaMonte library's full path: /Users/shahmoradia/Downloads/libparamonte_c_darwin_x64_gnu_release_shared_heap/libparamonte_c_darwin_x64_gnu_release_shared_heap.dylib
-    -- ParaMonteExampleC - ParaMonte library's full name: libparamonte_c_darwin_x64_gnu_release_shared_heap.dylib
-    -- ParaMonteExampleC - ParaMonte library's base name: libparamonte_c_darwin_x64_gnu_release_shared_heap
+    -- ParaMonteExampleC - ParaMonte library's full path: /Users/shahmoradia/Downloads/libparamonte_c_darwin_amd64_gnu_release_shared_heap/libparamonte_c_darwin_amd64_gnu_release_shared_heap.dylib
+    -- ParaMonteExampleC - ParaMonte library's full name: libparamonte_c_darwin_amd64_gnu_release_shared_heap.dylib
+    -- ParaMonteExampleC - ParaMonte library's base name: libparamonte_c_darwin_amd64_gnu_release_shared_heap
     -- ParaMonteExampleC - ParaMonte build type: release
     -- ParaMonteExampleC - ParaMonte library type: shared
     -- ParaMonteExampleC - MPI_ENABLED: false
@@ -67,10 +67,10 @@ There is still an indirect method of overriding the macOS SIP's authoritarian de
     -- ParaMonteExampleC - inferred compiler/linker flags(s):  -O3
         
     -- ParaMonteExampleC - compiling ParaMonte example with gcc
-    -- ParaMonteExampleC - gcc  -O3  logfunc.c main.c /Users/shahmoradia/Downloads/libparamonte_c_darwin_x64_gnu_release_shared_heap/libparamonte_c_darwin_x64_gnu_release_shared_heap.dylib -o main.exe
+    -- ParaMonteExampleC - gcc  -O3  logfunc.c main.c /Users/shahmoradia/Downloads/libparamonte_c_darwin_amd64_gnu_release_shared_heap/libparamonte_c_darwin_amd64_gnu_release_shared_heap.dylib -o main.exe
         
     -- ParaMonteExampleC - linking ParaMonte example with gcc
-    -- ParaMonteExampleC - gcc  -O3  logfunc.o main.o /Users/shahmoradia/Downloads/libparamonte_c_darwin_x64_gnu_release_shared_heap/libparamonte_c_darwin_x64_gnu_release_shared_heap.dylib -o main.exe
+    -- ParaMonteExampleC - gcc  -O3  logfunc.o main.o /Users/shahmoradia/Downloads/libparamonte_c_darwin_amd64_gnu_release_shared_heap/libparamonte_c_darwin_amd64_gnu_release_shared_heap.dylib -o main.exe
     -- ParaMonteExampleC - example build appears to have succeeded.
         
     -- ParaMonteExampleC - To run the example's executable with the proper environmental setup, try:

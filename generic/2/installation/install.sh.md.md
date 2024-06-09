@@ -1,6 +1,6 @@
 ---
 title: "ParaMonte installation within Unix Bash environment"
-#tags: [installation, getting_started, Windows, macOS, Linux, naming, compiler, architecture, x64, x86_64, operating_system, OS, Fortran, C, C++, interoperation, build]
+#tags: [installation, getting_started, Windows, macOS, Linux, naming, compiler, architecture, amd64, arm64, x64, x86_64, operating_system, OS, Fortran, C, C++, interoperation, build]
 keywords: 
         installation
         getting_started

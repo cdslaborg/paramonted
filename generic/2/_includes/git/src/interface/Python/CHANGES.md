@@ -42,9 +42,10 @@ To access the latest release of the package, visit [the ParaMonte GitHub reposit
     to lower the overall size of `ParaMonte::Python` by only keeping the relevant 
     files in each packaging of the library. The current release contains three 
     separate packages for `ParaMonte::Python`,
-    +   `libparamonte_python_windows_x64`,  
-    +   `libparamonte_python_darwin_x64`,  
-    +   `libparamonte_python_linux_x64`.  
+    +   `libparamonte_python_windows_amd64`,  
+    +   `libparamonte_python_darwin_amd64`,  
+    +   `libparamonte_python_darwin_arm64`,  
+    +   `libparamonte_python_linux_amd64`.  
 
 ### Version  2.4.0 -- December 17, 2020  
 

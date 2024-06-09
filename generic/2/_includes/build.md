@@ -91,7 +91,7 @@ To build and link your application, we recommend installing the following compil
 
 {% capture pmLibNameLinuxIntelRelease       %}libparamonte_{{pmLang|downcase|replace:"+","p"}}_linux_x64_intel_release_shared_heap{% endcapture %}
 {% capture pmLibNameLinuxIntelReleaseMPI    %}{{pmLibNameLinuxIntelRelease}}_impi{% endcapture %}
-{% capture pmLibNameDarwinIntelRelease      %}libparamonte_{{pmLang|downcase|replace:"+","p"}}_darwin_x64_intel_release_shared_heap{% endcapture %}
+{% capture pmLibNameDarwinIntelRelease      %}libparamonte_{{pmLang|downcase|replace:"+","p"}}_darwin_amd64_intel_release_shared_heap{% endcapture %}
 {% capture pmLibNameDarwinIntelReleaseMPI   %}{{pmLibNameDarwinIntelRelease}}_impi{% endcapture %}
 
 In brief, the process of building your {{progLang}} application involves the following steps,  

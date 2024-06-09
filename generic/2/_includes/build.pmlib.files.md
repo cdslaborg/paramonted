@@ -26,9 +26,9 @@
     {% if pmLang == "C" or pmLang == "C++" %}
     ```  
     build.bat
-    libparamonte_{{pmLang|downcase|replace:"+","p"}}_{{osname|downcase}}_x64_{{include.pmcs|downcase}}_release_shared_heap{{ptype}}.dll
-    libparamonte_{{pmLang|downcase|replace:"+","p"}}_{{osname|downcase}}_x64_{{include.pmcs|downcase}}_release_shared_heap{{ptype}}.exp
-    libparamonte_{{pmLang|downcase|replace:"+","p"}}_{{osname|downcase}}_x64_{{include.pmcs|downcase}}_release_shared_heap{{ptype}}.lib
+    libparamonte_{{pmLang|downcase|replace:"+","p"}}_{{osname|downcase}}_amd64_{{include.pmcs|downcase}}_release_shared_heap{{ptype}}.dll
+    libparamonte_{{pmLang|downcase|replace:"+","p"}}_{{osname|downcase}}_amd64_{{include.pmcs|downcase}}_release_shared_heap{{ptype}}.exp
+    libparamonte_{{pmLang|downcase|replace:"+","p"}}_{{osname|downcase}}_amd64_{{include.pmcs|downcase}}_release_shared_heap{{ptype}}.lib
     logfunc.{{pmLang|downcase|replace:"+","p"}}
     logfunc.{{progHeadExt|replace:"+","p"}}
     main.{{pmLang|downcase|replace:"+","p"}}
@@ -39,9 +39,9 @@
     {% elsif pmLang == "Fortran" %}
     ```  
     build.bat
-    libparamonte_{{pmLang|downcase|replace:"+","p"}}_{{osname|downcase}}_x64_{{include.pmcs|downcase}}_release_shared_heap{{ptype}}.dll
-    libparamonte_{{pmLang|downcase|replace:"+","p"}}_{{osname|downcase}}_x64_{{include.pmcs|downcase}}_release_shared_heap{{ptype}}.exp
-    libparamonte_{{pmLang|downcase|replace:"+","p"}}_{{osname|downcase}}_x64_{{include.pmcs|downcase}}_release_shared_heap{{ptype}}.lib
+    libparamonte_{{pmLang|downcase|replace:"+","p"}}_{{osname|downcase}}_amd64_{{include.pmcs|downcase}}_release_shared_heap{{ptype}}.dll
+    libparamonte_{{pmLang|downcase|replace:"+","p"}}_{{osname|downcase}}_amd64_{{include.pmcs|downcase}}_release_shared_heap{{ptype}}.exp
+    libparamonte_{{pmLang|downcase|replace:"+","p"}}_{{osname|downcase}}_amd64_{{include.pmcs|downcase}}_release_shared_heap{{ptype}}.lib
     logfunc.{{pmLang|downcase|replace:"+","p"}}
     main.{{pmLang|downcase|replace:"+","p"}}
     paramonte.in
@@ -56,7 +56,7 @@
     {% if pmLang == "C" or pmLang == "C++" %}
     ```  
     build.sh
-    libparamonte_{{pmLang|downcase|replace:"+","p"}}_{{osname|downcase}}_x64_{{include.pmcs|downcase}}_release_shared_heap{{ptype}}.{{pmLibExt}}
+    libparamonte_{{pmLang|downcase|replace:"+","p"}}_{{osname|downcase}}_amd64_{{include.pmcs|downcase}}_release_shared_heap{{ptype}}.{{pmLibExt}}
     logfunc.{{progLangExt}}
     logfunc.{{progHeadExt}}
     main.{{progLangExt}}
@@ -67,7 +67,7 @@
     {% elsif pmLang == "Fortran" %}
     ```  
     build.sh
-    libparamonte_{{pmLang|downcase|replace:"+","p"}}_{{osname|downcase}}_x64_{{include.pmcs|downcase}}_release_shared_heap{{ptype}}.{{pmLibExt}}
+    libparamonte_{{pmLang|downcase|replace:"+","p"}}_{{osname|downcase}}_amd64_{{include.pmcs|downcase}}_release_shared_heap{{ptype}}.{{pmLibExt}}
     logfunc.f90
     main.f90
     paramonte.in

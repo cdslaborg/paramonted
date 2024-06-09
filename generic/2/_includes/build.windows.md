@@ -8,8 +8,8 @@
     {% assign pmLibExt = "dll" %}
 {% endif %}
 
-{% capture pmLibName %}libparamonte_{{pmLang|downcase|replace:"+","p"}}_{{osname|downcase}}_x64_{{include.pmcs|downcase}}_release_shared_heap{% endcapture %}
-{% capture pmLibNameMPI %}libparamonte_{{pmLang|downcase|replace:"+","p"}}_{{osname|downcase}}_x64_{{include.pmcs|downcase}}_release_shared_heap_impi{% endcapture %}
+{% capture pmLibName %}libparamonte_{{pmLang|downcase|replace:"+","p"}}_{{osname|downcase}}_amd64_{{include.pmcs|downcase}}_release_shared_heap{% endcapture %}
+{% capture pmLibNameMPI %}libparamonte_{{pmLang|downcase|replace:"+","p"}}_{{osname|downcase}}_amd64_{{include.pmcs|downcase}}_release_shared_heap_impi{% endcapture %}
 
 ### Building the executable on **Windows** via the **Intel {{progLang}} compiler**  
 
@@ -155,7 +155,7 @@ Open an instance of the **x64 Native Tools Command Prompt** which is automatical
 
 #### Building the executable on Windows via the Microsoft Visual {{progLang}} compiler for **serial applications**  
 
-{% capture pmLibName    %}libparamonte_{{pmLang|downcase|replace:"+","p"}}_windows_x64_intel_release_shared_heap{% endcapture %}
+{% capture pmLibName    %}libparamonte_{{pmLang|downcase|replace:"+","p"}}_windows_amd64_intel_release_shared_heap{% endcapture %}
 {% capture pmLibNameMPI %}{{pmLibName}}_impi{% endcapture %}
 
 -   {{ donwloadParaMonteFrom }} [here]({{site.currentReleaseDownload}}/{{pmLibName}}.zip).  

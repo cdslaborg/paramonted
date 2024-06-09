@@ -85,7 +85,7 @@
     {% assign pmLibExt = "dylib" %}
 {% endif %}
 
-{% capture pmLibName %}libparamonte_{{pmLang|downcase|replace:"+","p"}}_{{osname|downcase}}_x64_{{include.pmcs|downcase}}_release_shared_heap{{ptype}}{% endcapture %}
+{% capture pmLibName %}libparamonte_{{pmLang|downcase|replace:"+","p"}}_{{osname|downcase}}_amd64_{{include.pmcs|downcase}}_release_shared_heap{{ptype}}{% endcapture %}
 
 #### Building the executable on {{include.os}} via the {{include.pmcs}} {{progLang}} compiler for **{{thisApplicationParallelism}}**  
 

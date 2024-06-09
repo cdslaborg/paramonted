@@ -76,12 +76,12 @@ There are two ways to install and use the ParaMonte library from MATLAB on your 
         +   For **macOS** (**Darwin**) for : Follow the instruction below to download this compressed file: 
             [**libparamonte_matlab_darwin_amd64.tar.gz**]({{site.currentReleaseDownload}}/libparamonte_matlab_darwin_amd64.tar.gz) 
             (do **NOT** download this file by directly clicking on this link. Follow the instructions below).  
-            {% include tip.important.download.method.md lang="matlab" %}
+            {% include tip.important.download.method.md lang="matlab" arch="amd64" %}
     +   For `ARM64` architecture (which currently only includes the new macOS `M1`, `M2`, and `M3` chips.)
         +   For **macOS** (**Darwin**) for : Follow the instruction below to download this compressed file: 
             [**libparamonte_matlab_darwin_arm64.tar.gz**]({{site.currentReleaseDownload}}/libparamonte_matlab_darwin_arm64.tar.gz) 
             (do **NOT** download this file by directly clicking on this link. Follow the instructions below).  
-            {% include tip.important.download.method.md lang="matlab" %}
+            {% include tip.important.download.method.md lang="matlab" arch="arm64" %}
 1.  Follow further instructions below for the [first-time usage](#first-time-usage).
 
 ### The long way  
