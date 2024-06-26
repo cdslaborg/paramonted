@@ -37,13 +37,13 @@ We have taken special care to develop a highly similar (if not the same) Applica
 
 ### Calling the ParaDRAM sampler from C  
 
-The [simulation specifications](../specifications/){:target="_blank"} are all automatically set to the appropriate default values. However, to assign non-default values to the [simulation specifications](../specifications/){:target="_blank"} from the C languages, the user must provide all [simulation specifications](../specifications/){:target="_blank"} as an external input file in the format described on [this page](../input/){:target="_blank"}. The benefits of using an external file to specify the properties of a ParaMonte simulation are also detailed [here](../input/#why-is-input-file-the-preferred-method-of-simulation-setup){:target="_blank"}.  
+The [simulation specifications](../specifications/){:target="_blank"} are all automatically set to the appropriate default values. However, to assign non-default values to the [simulation specifications](../specifications/){:target="_blank"} from the C languages, the user must provide all or any [simulation specifications](../specifications/){:target="_blank"} as an external input file in the format described on [this page](../input/){:target="_blank"}. The benefits of using an external file to specify the properties of a ParaMonte simulation are also detailed [here](../input/#why-is-input-file-the-preferred-method-of-simulation-setup){:target="_blank"}.  
 
 For a complete descriptive example of ParaDRAM usage from within C, see [the ParaMonte C documentation]({{site.baseurl}}/../../c/2/group__pm__sampling.html){:target="_blank"}.  
 
 ### Calling the ParaDRAM sampler from C++  
 
-The [simulation specifications](../specifications/){:target="_blank"} are all automatically set to the appropriate default values. However, to assign non-default values to the [simulation specifications](../specifications/){:target="_blank"} from the C++ languages, the user must provide all [simulation specifications](../specifications/){:target="_blank"} as an external input file in the format described on [this page](../input/){:target="_blank"}. The benefits of using an external file to specify the properties of a ParaMonte simulation are also detailed [here](../input/#why-is-input-file-the-preferred-method-of-simulation-setup){:target="_blank"}.  
+The [simulation specifications](../specifications/){:target="_blank"} are all automatically set to the appropriate default values. However, to assign non-default values to the [simulation specifications](../specifications/){:target="_blank"} from the C++ languages, the user must provide all or any [simulation specifications](../specifications/){:target="_blank"} as an external input file in the format described on [this page](../input/){:target="_blank"}. The benefits of using an external file to specify the properties of a ParaMonte simulation are also detailed [here](../input/#why-is-input-file-the-preferred-method-of-simulation-setup){:target="_blank"}.  
 
 For a complete descriptive example of ParaDRAM usage from within C++, see [the ParaMonte C++ documentation]({{site.baseurl}}/../../cpp/2/group__pm__sampling.html){:target="_blank"}.  
 
@@ -59,7 +59,7 @@ For a complete descriptive example of ParaDRAM usage from within Fortran, see [t
 ### Calling the ParaDRAM sampler from MATLAB  
 
 The [simulation specifications](../specifications/){:target="_blank"} are all automatically set to the appropriate default values. However, if needed, there are two ways to assign non-default values to the [simulation specifications](../specifications/){:target="_blank"} from the MATLAB language (somewhat similar to the Fortran interface to the ParaMonte library as the two languages have very similar syntax rules):  
-1.  The recommended way is to assign all [simulation specifications](../specifications/){:target="_blank"} as attributes of the ParaMonte sampler object you constructed. For example, here is a simple ParaDRAM simulation in MATLAB,  
+1.  The recommended way is to assign all or any [simulation specifications](../specifications/){:target="_blank"} as attributes of the ParaMonte sampler object you constructed. For example, here is a simple ParaDRAM simulation in MATLAB,  
     ```matlab  
     addpath(genpath("./"),"-begin");        % path to the paramonte library
     getLogFunc = @(x) -sum(x.^2);           % define a simple log multivariate Normal (MVN) target density
@@ -74,13 +74,13 @@ The [simulation specifications](../specifications/){:target="_blank"} are all au
     The following screenshot shows a partial list of the ParaDRAM simulation attributes within the `spec` attribute of the constructed `ParaDRAM` object in MATLAB (to see the full set of ParaDRAM [simulation specifications](../specifications/){:target="_blank"} and their descriptions, see [this page](../specifications){:target="_blank"},  
     ![MATLAB ParaDRAM object's specification attributes screenshot]({{site.baseurl}}/images/matlabParadramSpecScreenshot.png)  
     Use `pmpd.spec.helpme()` to get help on the meanings of the simulation specifications. To get help with a specific simulation attribute, pass the attribute name as a string to the method, for example, `pmpd.spec.helpme("outputStatus")`.  
-1.  Another way is to provide all [simulation specifications](../specifications/){:target="_blank"} in an external input file with the format described on [this page](../input/){:target="_blank"}.  
+1.  Another way is to provide all or any [simulation specifications](../specifications/){:target="_blank"} in an external input file with the format described on [this page](../input/){:target="_blank"}.  
     {% include tip.html content="Unlike the case for C/C++/Fortran, we **do NOT recommend** specifying the simulation properties via an external input file since hardcoding the [simulation specifications](../specifications/) in the MATLAB script does not cause long and severe compilation headaches that one gets in compiled languages." %}
 
 ### Calling the ParaDRAM sampler from Python  
 
 The [simulation specifications](../specifications/){:target="_blank"} are all automatically set to the appropriate default values. However, if needed, there are two ways to assign non-default values to the [simulation specifications](../specifications/){:target="_blank"} from the Python language (similar to the ParaMonte MATLAB library):  
-1.  assigning all [simulation specifications](../specifications/){:target="_blank"} as attributes of the ParaMonte sampler object that you have constructed (**the recommended method**). Here is a simple ParaDRAM simulation in Python,  
+1.  assigning all or any [simulation specifications](../specifications/){:target="_blank"} as attributes of the ParaMonte sampler object that you have constructed (**the recommended method**). Here is a simple ParaDRAM simulation in Python,  
     ```python  
     import paramonte as pm
     import numpy as np
@@ -95,7 +95,7 @@ The [simulation specifications](../specifications/){:target="_blank"} are all au
     The following screenshot shows a partial list of the ParaDRAM simulation attributes within the `spec` attribute of the constructed `ParaDRAM` object in Python (to see the full set of ParaDRAM [simulation specifications](../specifications/){:target="_blank"} and their descriptions see [this page](../specifications){:target="_blank"},  
     ![IPython ParaDRAM object's specification attributes screenshot]({{site.baseurl}}/images/pythonParadramSpecScreenshot.png)  
     Use `pmpd.spec.helpme()` to get help on the meanings of the simulation specifications. To get help with a specific simulation attribute, pass the attribute name as a string to the method, for example, `pmpd.spec.helpme("outputStatus")`.  
-1.  providing all [simulation specifications](../specifications/){:target="_blank"} in an external input file with the format described on [this page](../input/){:target="_blank"}.
+1.  providing all or any [simulation specifications](../specifications/){:target="_blank"} in an external input file with the format described on [this page](../input/){:target="_blank"}.
     {% include tip.html content="Unlike the case for C/C++/Fortran, **we do NOT recommend** specifying the simulation properties via an external input file since hardcoding the [simulation specifications](../specifications/) in the Python script does not cause long and severe compilation headaches as in compiled languages." %}
 {% endcomment %}
 
