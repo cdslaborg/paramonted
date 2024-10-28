@@ -330,6 +330,7 @@ TAB_SIZE               = 4
 # a double escape (\\{ and \\})
 
 ALIASES =
+ALIASES += psldir="$(paramonte_dir)/src/$(paramonte_lang)"
 ALIASES += icx="Intel LLVM C/C++ Compiler `icx`"
 ALIASES += ifx="Intel LLVM Fortran Compiler `ifx`"
 ALIASES += ifx{1}="\ifx version \1"
@@ -1327,14 +1328,15 @@ EXCLUDE_SYMLINKS       = NO
 # exclude all test directories for example use the pattern */test/*
 
 EXCLUDE_PATTERNS    = */___recycle___/*
-EXCLUDE_PATTERNS    = */___backup___/*
+EXCLUDE_PATTERNS   += */___backup___/*
 EXCLUDE_PATTERNS   += */___trash___/*
 EXCLUDE_PATTERNS   += */___*___/*
 EXCLUDE_PATTERNS   += */___*___.*
-EXCLUDE_PATTERNS    = */CMake*/*
 EXCLUDE_PATTERNS   += */__*__/*
 EXCLUDE_PATTERNS   += */__*__.*
+EXCLUDE_PATTERNS   += */___*
 EXCLUDE_PATTERNS   += */test/input/*
+#EXCLUDE_PATTERNS   += */CMake*/*
 EXCLUDE_PATTERNS   += */*.txt
 EXCLUDE_PATTERNS   += */*.md
 #EXCLUDE_PATTERNS   += */*.py
@@ -1344,10 +1346,12 @@ EXCLUDE_PATTERNS   += */*.md
 #EXCLUDE_PATTERNS   += */*.c
 #EXCLUDE_PATTERNS   += */*.F90
 #EXCLUDE_PATTERNS   += */pm_array*
-#EXCLUDE_PATTERNS   += */test/test_pm_*
+EXCLUDE_PATTERNS   += */pm_clusPartition*
+EXCLUDE_PATTERNS   += */test/test_pm_*
+EXCLUDE_PATTERNS   += */pm_procPois*/*
 EXCLUDE_PATTERNS   += */pm_sampling_*.F90
 EXCLUDE_PATTERNS   += */*pm_partition*.F90
-EXCLUDE_PATTERNS   += */*pm_process*.F90
+EXCLUDE_PATTERNS   += */*pm_procPois*.F90
 EXCLUDE_PATTERNS   += */*ParaNest*.F90
 EXCLUDE_PATTERNS   += */*.inc.F90
 EXCLUDE_PATTERNS   += */*.imp.F90

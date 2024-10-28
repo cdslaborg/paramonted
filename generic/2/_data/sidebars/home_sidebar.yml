@@ -131,7 +131,7 @@ entries:
       output: web, pdf
       external_url: "!site.baseurl!/../../fortran/!site.pmvmfortran!/"
 
-    - title: ParaMonte MATLAB API (in progress)
+    - title: ParaMonte MATLAB API
       output: web, pdf
       external_url: "!site.baseurl!/../../matlab/!site.pmvmmatlab!/"
 
