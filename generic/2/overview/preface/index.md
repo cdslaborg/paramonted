@@ -100,40 +100,37 @@ The most recent release 2 of the library, expands the library's scope beyond Mon
 
 Since this project's inception, many new Monte Carlo and ML packages and programming environments (in particular, in high-level languages) have been developed. What likely makes the ParaMonte library unique among other existing packages is the following set of design goals and features:
 
-- **Full automation** of all Monte Carlo simulations to the highest levels possible to ensure the **highest level of user-friendliness** of the library and minimal time investment requirements for building, running, and post-processing simulation models.  
-- **Interoperability** of the core library with as many programming languages as possible, including C/C++, Fortran, MATLAB, and Python, with ongoing efforts to support other popular programming languages.  
-- **High-Performance** meticulously low-level library implementation to ensure the fastest possible Monte Carlo simulations.  
-- **Parallelizability** of all simulations via two-sided/one-sided MPI/Coarray communications while requiring **zero-parallel-coding efforts** from the user.  
-- **Virtually zero-dependence** of ParaMonte::Kernel on external libraries to ensure hassle-free ParaMonte library builds and Monte Carlo simulations.  
-- **Fully deterministic reproducibility** and automatically enabled restart functionality for all simulations up to 16 digits of precision, as requested by the user.  
-- **Comprehensive reporting and post-processing** of each simulation and its results, as well as their automatic storage in external files, to ensure the results will be understandable and reproducible anytime in the distant future.  
++   **Full automation** of all Monte Carlo simulations to the highest levels possible to ensure the **highest level of user-friendliness** of the library and minimal time investment requirements for building, running, and post-processing simulation models.  
++   **Interoperability** of the core library with as many programming languages as possible, including C/C++, Fortran, MATLAB, and Python, with ongoing efforts to support other popular programming languages.  
++   **High-Performance** meticulously low-level library implementation to ensure the fastest possible Monte Carlo simulations.  
++   **Parallelizability** of all simulations via two-sided/one-sided MPI/Coarray communications while requiring **zero-parallel-coding efforts** from the user.  
++   **Virtually zero-dependence** of ParaMonte::Kernel on external libraries to ensure hassle-free ParaMonte library builds and Monte Carlo simulations.  
++   **Fully deterministic reproducibility** and automatically enabled restart functionality for all simulations up to 16 digits of precision, as requested by the user.  
++   **Comprehensive reporting and post-processing** of each simulation and its results, as well as their automatic storage in external files, to ensure the results will be understandable and reproducible anytime in the distant future.  
 
 ## Who are the ParaMonte authors and developers?  
 
 In chronological order,  
 
-- [**Amir Shahmoradi**]({{site.companyurl}}/people/#amir-shahmoradi){:target="_blank"} (Contributions: ParaMonte kernel routines + C/C++/Fortran/MATLAB/Python interfaces)  
-    - astrophysicist/bioinformatician by training (and a science-lover in general),  
-    - Ph.D. in computational physics/bioinformatics from the University of Texas at Austin,  
-    - currently a faculty member of Physics and Data Science at The University of Texas at Arlington,  
-    - with teaching/research experience/background in computational and data sciences, statistics, data analysis and modeling, stochastic processes, Monte Carlo Methods, Bayesian probability theory, high energy physics, astronomy and astrophysics, computational physics, Molecular Dynamics simulations, biomedical science and MRI data analysis, bioinformatics and evolutionary biology (viral evolution, protein dynamics and interactions),  
-    - contact: [shahmoradi@utexas.edu](mailto:"shahmoradi@utexas.edu") or [{{site.companyurl}}]({{site.companyurl}}){:target="_blank"}  
+1.  [**Amir Shahmoradi**]({{site.companyurl}}/people/#amir-shahmoradi){:target="_blank"} (Contributions: ParaMonte C/C++/Fortran/MATLAB/Python libraries)  
+    +   astrophysicist/bioinformatician by training (and a curious mind in general),  
+    +   PhD in computational physics/bioinformatics from the University of Texas at Austin,  
+    +   currently a faculty member of Physics and Data Science at The University of Texas at Arlington,  
+    +   with teaching/research experience/background in computational and data sciences, statistics, data analysis and modeling, stochastic processes, Monte Carlo Methods, Bayesian probability theory, high energy physics, astronomy and astrophysics, computational physics, Molecular Dynamics simulations, biomedical science and MRI data analysis, bioinformatics and evolutionary biology (viral evolution, protein dynamics and interactions),  
+    +   contact: [shahmoradi@utexas.edu](mailto:"shahmoradi@utexas.edu") or [{{site.companyurl}}]({{site.companyurl}}){:target="_blank"}  
 
-- [**Fatemeh Bagheri**](https://www.linkedin.com/in/fbagheri){:target="_blank"} (Contributions: ParaMonte kernel routines + Python interface)  
-    - physicist/cosmologist by training,  
-    - currently a UTA Physics member,  
-    - deep philosophical thinker,  
-    - contact: [Fatemeh.Bagheri@uta.edu](mailto:"Fatemeh.Bagheri@uta.edu")
+1.  [**Fatemeh Bagheri**](https://www.linkedin.com/in/fbagheri){:target="_blank"} (Contributions: ParaMonte C/C++/Fortran/MATLAB/Python libraries)  
+    +   deep philosophical thinker,  
+    +   physicist/cosmologist by training,  
+    +   PhD in Astronomy (Sharif University), 
+    +   PhD in Space Physics (University of Texas),  
+    +   currently at NASA Goddard Space Flight Center,  
+    +   contact: [fatemeh.bagheri@nasa.gov](mailto:"fatemeh.bagheri@nasa.gov") or [https://faba.one](https://faba.one)
 
-- [**Shashank Kumbhare**]({{site.companyurl}}/people/#shashank-kumbhare){:target="_blank"} (Contributions: ParaMonte MATLAB interface)  
-    - physicist / Computational Data Scientist,  
-    - currently a UTA Physics member,  
-    - contact: [shashankkumbhare8@gmail.com](mailto:"shashankkumbhare8@gmail.com")
-
-- [**Joshua Alexander Osborne**]({{site.companyurl}}/people/#joshua-alexander-osborne){:target="_blank"} (Contributions: ParaMonte Python interface)  
-    - physicist / Computational Data Scientist,  
-    - currently a UTA Physics member,  
-    - contact: [joshuaalexanderosborne@gmail.com](mailto:"joshuaalexanderosborne@gmail.com")
+1.  [**Joshua Alexander Osborne**]({{site.companyurl}}/people/#joshua-alexander-osborne){:target="_blank"} (Contributions: ParaMonte C/C++/Fortran/MATLAB/Python libraries)  
+    +   physicist / computational data scientist,  
+    +   PhD in Physics / Data Science (University of Texas Arlington),  
+    +   contact: [joshuaalexanderosborne@gmail.com](mailto:"joshuaalexanderosborne@gmail.com")
 
 ## How to acknowledge the use of the ParaMonte library in your work?  
   

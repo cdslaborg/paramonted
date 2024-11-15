@@ -27,11 +27,11 @@ There are two ways to use the ParaMonte library from C/C++/Fortran languages on 
 
 ## Using the prebuilt ParaMonte library  
 
-**This is the fast way**. Download the prebuilt ParaMonte libraries for {{include.os}} from the [release page of the ParaMonte repository on GitHub]({{site.currentRelease}}){:target="_blank"} for the configuration of your choice. If you are not familiar with the naming convention used for the ParaMonte library files, refer to the [pre-installation notes](../readme/){:target="_blank"} before continuing.  
+**This is the fast way**. Download the prebuilt ParaMonte libraries for {{include.os}} from the [release page of the ParaMonte repository on GitHub]({{site.githubReleaseCurrent}}){:target="_blank"} for the configuration of your choice. If you are not familiar with the naming convention used for the ParaMonte library files, refer to the [pre-installation notes](../readme/){:target="_blank"} before continuing.  
 
 {% if include.os == "Darwin" %}
 {{site.data.alerts.important}}
-If you intend to use the prebuilt libraries from the <a href="{{site.currentRelease}}" target="_blank">release page of the ParaMonte repository on GitHub</a>, <b>do NOT download these files directly from the web</b> links on the release page and <b>do NOT download the libraries by clicking directly on the links provided below</b>. We <b>strongly recommend</b> that you use the <b><code>curl</code></b> command line program to download your desired prebuilt library from the release page. To do so, first make sure you have <b><code>curl</code></b> installed on your system. If it is not installed, you can install it via <a href="https://brew.sh/" target="_blank">Homebrew</a>,
+If you intend to use the prebuilt libraries from the <a href="{{site.githubReleaseCurrent}}" target="_blank">release page of the ParaMonte repository on GitHub</a>, <b>do NOT download these files directly from the web</b> links on the release page and <b>do NOT download the libraries by clicking directly on the links provided below</b>. We <b>strongly recommend</b> that you use the <b><code>curl</code></b> command line program to download your desired prebuilt library from the release page. To do so, first make sure you have <b><code>curl</code></b> installed on your system. If it is not installed, you can install it via <a href="https://brew.sh/" target="_blank">Homebrew</a>,
 <br>
 <pre>
 brew install curl
@@ -39,7 +39,7 @@ brew install curl
 Then, copy the web link to the prebuilt library of your interest and download it via <b><code>curl</code></b>. For example,  
 <pre>
 libname=libparamonte_c_darwin_arm64_intel_release_shared_heap
-curl -OL {{site.currentReleaseDownload}}/$libname.{{compressedLibExt}}
+curl -OL {{site.githubReleaseCurrentDownload}}/$libname.{{compressedLibExt}}
 tar xvzf $libname.{{compressedLibExt}} && cd $libname
 ./build.sh && ./run.sh
 </pre>
@@ -53,45 +53,45 @@ If you still do not know which library configuration is the most appropriate for
 
 -   for usage from the **C** programming languages:  
     {% capture libname %}libparamonte_c_{{include.os|downcase}}_amd64_intel_release_shared_heap{% endcapture %}
-    -   [{{libname}}]({{ site.currentReleaseDownload }}/{{libname}}.{{compressedLibExt}}) for **serial** simulations.  
+    -   [{{libname}}]({{ site.githubReleaseCurrentDownload }}/{{libname}}.{{compressedLibExt}}) for **serial** simulations.  
     {% if include.os == "Darwin" %}
         Here are the library download, untar, building, and running commands altogether,  
         ```bash  
         libname={{libname}}
-        curl -OL {{site.currentReleaseDownload}}/$libname.{{compressedLibExt}}
+        curl -OL {{site.githubReleaseCurrentDownload}}/$libname.{{compressedLibExt}}
         tar xvzf $libname.{{compressedLibExt}} && cd $libname
         ./build.sh && ./run.sh
         ```  
     {% else %}
-    -   [libparamonte_c_{{include.os|downcase}}_amd64_intel_release_shared_heap_impi.{{compressedLibExt}}]({{ site.currentReleaseDownload }}/libparamonte_c_{{include.os|downcase}}_amd64_intel_release_shared_heap_impi.{{compressedLibExt}}) for **MPI-parallel** simulations via the Intel MPI library.  
+    -   [libparamonte_c_{{include.os|downcase}}_amd64_intel_release_shared_heap_impi.{{compressedLibExt}}]({{ site.githubReleaseCurrentDownload }}/libparamonte_c_{{include.os|downcase}}_amd64_intel_release_shared_heap_impi.{{compressedLibExt}}) for **MPI-parallel** simulations via the Intel MPI library.  
     {% endif %}
 -   for usage from the **C++** programming languages:  
     {% capture libname %}libparamonte_cpp_{{include.os|downcase}}_amd64_intel_release_shared_heap{% endcapture %}
-    -   [{{libname}}.{{compressedLibExt}}]({{ site.currentReleaseDownload }}/{{libname}}.{{compressedLibExt}}) for **serial** simulations.  
+    -   [{{libname}}.{{compressedLibExt}}]({{ site.githubReleaseCurrentDownload }}/{{libname}}.{{compressedLibExt}}) for **serial** simulations.  
     {% if include.os == "Darwin" %}
         Here are the library download, untar, building, and running commands altogether,  
         ```bash  
         libname={{libname}}
-        curl -OL {{site.currentReleaseDownload}}/$libname.{{compressedLibExt}}
+        curl -OL {{site.githubReleaseCurrentDownload}}/$libname.{{compressedLibExt}}
         tar xvzf $libname.{{compressedLibExt}} && cd $libname
         ./build.sh && ./run.sh
         ```  
     {% else %}
-    -   [libparamonte_cpp_{{include.os|downcase}}_amd64_intel_release_shared_heap_impi.{{compressedLibExt}}]({{ site.currentReleaseDownload }}/libparamonte_cpp_{{include.os|downcase}}_amd64_intel_release_shared_heap_impi.{{compressedLibExt}}) for **MPI-parallel** simulations via the Intel MPI library.  
+    -   [libparamonte_cpp_{{include.os|downcase}}_amd64_intel_release_shared_heap_impi.{{compressedLibExt}}]({{ site.githubReleaseCurrentDownload }}/libparamonte_cpp_{{include.os|downcase}}_amd64_intel_release_shared_heap_impi.{{compressedLibExt}}) for **MPI-parallel** simulations via the Intel MPI library.  
     {% endif %}
 -   for usage from the **Fortran** programming language:  
     {% capture libname %}libparamonte_fortran_{{include.os|downcase}}_amd64_intel_release_shared_heap{% endcapture %}
-    -   [{{libname}}.{{compressedLibExt}}]({{ site.currentReleaseDownload }}/{{libname}}.{{compressedLibExt}}) for **serial** simulations.
+    -   [{{libname}}.{{compressedLibExt}}]({{ site.githubReleaseCurrentDownload }}/{{libname}}.{{compressedLibExt}}) for **serial** simulations.
     {% if include.os == "Darwin" %}
         Here are the library download, untar, building, and running commands altogether,  
         ```bash  
         libname={{libname}}
-        curl -OL {{site.currentReleaseDownload}}/$libname.{{compressedLibExt}}
+        curl -OL {{site.githubReleaseCurrentDownload}}/$libname.{{compressedLibExt}}
         tar xvzf $libname.{{compressedLibExt}} && cd $libname
         ./build.sh && ./run.sh
         ```  
     {% else %}
-    -   [libparamonte_fortran_{{include.os|downcase}}_amd64_intel_release_shared_heap_impi.{{compressedLibExt}}]({{ site.currentReleaseDownload }}/libparamonte_fortran_{{include.os|downcase}}_amd64_intel_release_shared_heap_impi.{{compressedLibExt}}) for **MPI-parallel** simulations via the Intel MPI library.  
+    -   [libparamonte_fortran_{{include.os|downcase}}_amd64_intel_release_shared_heap_impi.{{compressedLibExt}}]({{ site.githubReleaseCurrentDownload }}/libparamonte_fortran_{{include.os|downcase}}_amd64_intel_release_shared_heap_impi.{{compressedLibExt}}) for **MPI-parallel** simulations via the Intel MPI library.  
     {% endif %}
 
 {% if include.os == "Linux" or include.os == "Darwin" %}
@@ -110,102 +110,102 @@ Suppose you want to build your applications exclusively via GNU compilers and MP
 
 - for usage from the **C** programming languages:  
     {% capture libname %}libparamonte_c_{{include.os|downcase}}_amd64_gnu_release_shared_heap{% endcapture %}
-    -   [{{libname}}.{{compressedLibExt}}]({{ site.currentReleaseDownload }}/{{libname}}.{{compressedLibExt}}) for **serial** simulations.
+    -   [{{libname}}.{{compressedLibExt}}]({{ site.githubReleaseCurrentDownload }}/{{libname}}.{{compressedLibExt}}) for **serial** simulations.
     {% if include.os == "Darwin" %}
         Here are the library download, untar, building, and running commands altogether,  
         ```bash  
         libname={{libname}}
-        curl -OL {{site.currentReleaseDownload}}/$libname.{{compressedLibExt}}
+        curl -OL {{site.githubReleaseCurrentDownload}}/$libname.{{compressedLibExt}}
         tar xvzf $libname.{{compressedLibExt}} && cd $libname
         ./build.sh && ./run.sh
         ```  
     {% endif %}
     {% capture libname %}libparamonte_c_{{include.os|downcase}}_amd64_gnu_release_shared_heap_mpich{% endcapture %}
-    -   [{{libname}}.{{compressedLibExt}}]({{ site.currentReleaseDownload }}/{{libname}}.{{compressedLibExt}}) for **MPI-parallel** simulations via the **MPICH** MPI library.  
+    -   [{{libname}}.{{compressedLibExt}}]({{ site.githubReleaseCurrentDownload }}/{{libname}}.{{compressedLibExt}}) for **MPI-parallel** simulations via the **MPICH** MPI library.  
     {% if include.os == "Darwin" %}
         Here are the library download, untar, building, and running commands altogether,  
         ```bash  
         libname={{libname}}
-        curl -OL {{site.currentReleaseDownload}}/$libname.{{compressedLibExt}}
+        curl -OL {{site.githubReleaseCurrentDownload}}/$libname.{{compressedLibExt}}
         tar xvzf $libname.{{compressedLibExt}} && cd $libname
         ./build.sh && ./run.sh
         ```  
     {% endif %}
     {% capture libname %}libparamonte_c_{{include.os|downcase}}_amd64_gnu_release_shared_heap_openmpi{% endcapture %}
-    -   [{{libname}}.{{compressedLibExt}}]({{ site.currentReleaseDownload }}/{{libname}}.{{compressedLibExt}}) for **MPI-parallel** simulations via the **OpenMPI** MPI library.  
+    -   [{{libname}}.{{compressedLibExt}}]({{ site.githubReleaseCurrentDownload }}/{{libname}}.{{compressedLibExt}}) for **MPI-parallel** simulations via the **OpenMPI** MPI library.  
     {% if include.os == "Darwin" %}
         Here are the library download, untar, building, and running commands altogether,  
         ```bash  
         libname={{libname}}
-        curl -OL {{site.currentReleaseDownload}}/$libname.{{compressedLibExt}}
+        curl -OL {{site.githubReleaseCurrentDownload}}/$libname.{{compressedLibExt}}
         tar xvzf $libname.{{compressedLibExt}} && cd $libname
         ./build.sh && ./run.sh
         ```  
     {% endif %}
 - for usage from the **C++** programming languages:  
     {% capture libname %}libparamonte_cpp_{{include.os|downcase}}_amd64_gnu_release_shared_heap{% endcapture %}
-    -   [{{libname}}.{{compressedLibExt}}]({{ site.currentReleaseDownload }}/{{libname}}.{{compressedLibExt}}) for **serial** simulations.
+    -   [{{libname}}.{{compressedLibExt}}]({{ site.githubReleaseCurrentDownload }}/{{libname}}.{{compressedLibExt}}) for **serial** simulations.
     {% if include.os == "Darwin" %}
         Here are the library download, untar, building, and running commands altogether,  
         ```bash  
         libname={{libname}}
-        curl -OL {{site.currentReleaseDownload}}/$libname.{{compressedLibExt}}
+        curl -OL {{site.githubReleaseCurrentDownload}}/$libname.{{compressedLibExt}}
         tar xvzf $libname.{{compressedLibExt}} && cd $libname
         ./build.sh && ./run.sh
         ```  
     {% endif %}
     {% capture libname %}libparamonte_cpp_{{include.os|downcase}}_amd64_gnu_release_shared_heap_mpich{% endcapture %}
-    -   [{{libname}}.{{compressedLibExt}}]({{ site.currentReleaseDownload }}/{{libname}}.{{compressedLibExt}}) for **MPI-parallel** simulations via the **MPICH** MPI library.  
+    -   [{{libname}}.{{compressedLibExt}}]({{ site.githubReleaseCurrentDownload }}/{{libname}}.{{compressedLibExt}}) for **MPI-parallel** simulations via the **MPICH** MPI library.  
     {% if include.os == "Darwin" %}
         Here are the library download, untar, building, and running commands altogether,  
         ```bash  
         libname={{libname}}
-        curl -OL {{site.currentReleaseDownload}}/$libname.{{compressedLibExt}}
+        curl -OL {{site.githubReleaseCurrentDownload}}/$libname.{{compressedLibExt}}
         tar xvzf $libname.{{compressedLibExt}} && cd $libname
         ./build.sh && ./run.sh
         ```  
     {% endif %}
     {% capture libname %}libparamonte_cpp_{{include.os|downcase}}_amd64_gnu_release_shared_heap_openmpi{% endcapture %}
-    -   [{{libname}}.{{compressedLibExt}}]({{ site.currentReleaseDownload }}/{{libname}}.{{compressedLibExt}}) for **MPI-parallel** simulations via the **OpenMPI** MPI library.  
+    -   [{{libname}}.{{compressedLibExt}}]({{ site.githubReleaseCurrentDownload }}/{{libname}}.{{compressedLibExt}}) for **MPI-parallel** simulations via the **OpenMPI** MPI library.  
     {% if include.os == "Darwin" %}
         Here are the library download, untar, building, and running commands altogether,  
         ```bash  
         libname={{libname}}
-        curl -OL {{site.currentReleaseDownload}}/$libname.{{compressedLibExt}}
+        curl -OL {{site.githubReleaseCurrentDownload}}/$libname.{{compressedLibExt}}
         tar xvzf $libname.{{compressedLibExt}} && cd $libname
         ./build.sh && ./run.sh
         ```  
     {% endif %}
 - for usage from the **Fortran** programming language:  
     {% capture libname %}libparamonte_fortran_{{include.os|downcase}}_amd64_gnu_release_shared_heap{% endcapture %}
-    -   [{{libname}}.{{compressedLibExt}}]({{ site.currentReleaseDownload }}/{{libname}}.{{compressedLibExt}}) for **serial** simulations.
+    -   [{{libname}}.{{compressedLibExt}}]({{ site.githubReleaseCurrentDownload }}/{{libname}}.{{compressedLibExt}}) for **serial** simulations.
     {% if include.os == "Darwin" %}
         Here are the library download, untar, building, and running commands altogether,  
         ```bash  
         libname={{libname}}
-        curl -OL {{site.currentReleaseDownload}}/$libname.{{compressedLibExt}}
+        curl -OL {{site.githubReleaseCurrentDownload}}/$libname.{{compressedLibExt}}
         tar xvzf $libname.{{compressedLibExt}} && cd $libname
         ./build.sh && ./run.sh
         ```  
     {% endif %}
     {% capture libname %}libparamonte_fortran_{{include.os|downcase}}_amd64_gnu_release_shared_heap_mpich{% endcapture %}
-    -   [{{libname}}.{{compressedLibExt}}]({{ site.currentReleaseDownload }}/{{libname}}.{{compressedLibExt}}) for **MPI-parallel** simulations via the **MPICH** MPI library.  
+    -   [{{libname}}.{{compressedLibExt}}]({{ site.githubReleaseCurrentDownload }}/{{libname}}.{{compressedLibExt}}) for **MPI-parallel** simulations via the **MPICH** MPI library.  
     {% if include.os == "Darwin" %}
         Here are the library download, untar, building, and running commands altogether,  
         ```bash  
         libname={{libname}}
-        curl -OL {{site.currentReleaseDownload}}/$libname.{{compressedLibExt}}
+        curl -OL {{site.githubReleaseCurrentDownload}}/$libname.{{compressedLibExt}}
         tar xvzf $libname.{{compressedLibExt}} && cd $libname
         ./build.sh && ./run.sh
         ```  
     {% endif %}
     {% capture libname %}libparamonte_fortran_{{include.os|downcase}}_amd64_gnu_release_shared_heap_openmpi{% endcapture %}
-    -   [{{libname}}.{{compressedLibExt}}]({{ site.currentReleaseDownload }}/{{libname}}.{{compressedLibExt}}) for **MPI-parallel** simulations via the **OpenMPI** MPI library.  
+    -   [{{libname}}.{{compressedLibExt}}]({{ site.githubReleaseCurrentDownload }}/{{libname}}.{{compressedLibExt}}) for **MPI-parallel** simulations via the **OpenMPI** MPI library.  
     {% if include.os == "Darwin" %}
         Here are the library download, untar, building, and running commands altogether,  
         ```bash  
         libname={{libname}}
-        curl -OL {{site.currentReleaseDownload}}/$libname.{{compressedLibExt}}
+        curl -OL {{site.githubReleaseCurrentDownload}}/$libname.{{compressedLibExt}}
         tar xvzf $libname.{{compressedLibExt}} && cd $libname
         ./build.sh && ./run.sh
         ```  
@@ -227,7 +227,7 @@ Suppose you want to build your applications exclusively via GNU compilers and MP
 **This is the long way**. Despite the scary name, **the entire build process is super-straightforward and fully automated {{compilerInstallation}}**. Currently, building the ParaMonte library from scratch minimally requires {{theseCompilerSuites}} installed on your system.  
 {% if include.os == "Windows" %}
 {{site.data.alerts.tip}}
-There are ongoing efforts to make the fully automated ParaMonte library builds via the GNU Compiler Collection also possible on Windows. If you need this feature, please let us know on <a href="{{site.issues}}" target="_blank">the GitHub issues page</a> to prioritize and expedite its implementation for your usage.
+There are ongoing efforts to make the fully automated ParaMonte library builds via the GNU Compiler Collection also possible on Windows. If you need this feature, please let us know on <a href="{{site.githubIssues}}" target="_blank">the GitHub issues page</a> to prioritize and expedite its implementation for your usage.
 {{site.data.alerts.end}}
 {% endif %}  
 {% comment %}
@@ -369,7 +369,7 @@ The core of the ParaMonte library is in pure [2018-standard-compliant Fortran](h
     ```  
     {% endcapture %}  
 {% endif %}
-1.  **Download the [latest release of the ParaMonte source code]({{site.archive}}/main.{{compressedLibExt}}) from GitHub**{{uncompressInstructions}}
+1.  **Download the [latest release of the ParaMonte source code]({{site.githubArchive}}/main.{{compressedLibExt}}) from GitHub**{{uncompressInstructions}}
 
 {% if include.os == "Windows" %}
 1.  **Open the command-line interface of the Intel Parallel Studio** as shown in the above figure and change the directory to the folder containing the ParaMonte GitHub repository folder you just downloaded and unzipped.  

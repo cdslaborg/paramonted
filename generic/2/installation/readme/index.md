@@ -48,15 +48,29 @@ mathjax: true
 
 ## Naming convention used for ParaMonte library builds  
 
-Across all supported Operating Systems (OS) and platforms/architectures, a universal naming convention is currently used to build the ParaMonte kernel libraries,  
+The ParaMonte core library file in all programming languages is always named `libparamonte.<suffix>` where `<suffix>` is replaced with platform-specific suffix based on the library type determined by the compiler.  
+The following table illustrates the common library suffixes used on different platforms.
 
-```
-libparamonte_<interface language: c/cpp/fortran/matlab/python/r/...>_<OS: windows/linux/darwin/...>_<architecture: amd64/arm64/...>_<compiler vendor and major version: intel2021/gnu13/...>_<build type: native/tuned/ipo/release/testing/debug>_<library type: shared/static>_<memory allocation type: stack/heap>_<parallelism library/type: serial/mpi/impi/mpich/openmpi/openmp/cafsingle/cafshared/cafdist/...>_<runtime checking mode: checked/nocheck>.<library file extension: dll/lib/so/a/dylib>  
-```  
+| Operating System  | Dynamic (Shared) Library  | Static (Archive) Library  |  
+|------------------:|:-------------------------:|:-------------------------:|  
+| Windows	        | `dll`	                    | `lib`                     |  
+| macOS	            | `dylib`                   | `a`                       |  
+| Linux	            | `so`                      | `a`                       |  
+| FreeBSD           | `so`                      | `a`                       |  
+
+The ParaMonte binary folder naming follows a universal naming convention across all programming languages and platforms.  
++   The generated binary folders (containing the ParaMonte library and its examples) have the following pattern for compiled languages (C, C++, Fortran),
+    ```
+    libparamonte_<interface language: c/cpp/fortran/...>_<OS: windows/linux/darwin/...>_<architecture: amd64/arm64/...>_<compiler vendor and major version: intel2021/gnu13/...>_<build type: native/tuned/ipo/release/testing/debug>_<library type: shared/static>_<memory allocation type: stack/heap>_<parallelism library/type: serial/mpi/impi/mpich/openmpi/openmp/cafsingle/cafshared/cafdist/...>_<runtime checking mode: checked/nocheck>  
+    ```  
++   and the generated binary folders (containing the ParaMonte library and its examples) have the following pattern for interpreted languages (MATLAB, Python, R, etc.),
+    ```
+    libparamonte_<interface language: c/cpp/fortran/...>_<OS: windows/linux/darwin/...>_<architecture: amd64/arm64/...>  
+    ```  
 
 where,  
 
-- **interface language** can be either:
+- **programming language** can be either:
     - **c**: indicating a library build meant to be called and used from C or C-complaint main applications.  
     - **cpp**: indicating a library build meant to be called and used from C++ main applications.  
     - **fortran**: indicating a library build meant to be called and used from Fortran main applications.  

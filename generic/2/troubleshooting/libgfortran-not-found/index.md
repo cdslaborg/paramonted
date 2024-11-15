@@ -51,7 +51,7 @@ All of such errors imply that the compiler/linker cannot locate the required <b>
         Install a fresh compatible version of the GNU Compiler Collection, or,  
     </li>
     <li>
-        As the last resort, download the <a href="{{site.currentReleaseDownload}}/{{site.libgfortranLinux}}">libgfortran shared library file</a> against which the prebuilt ParaMonte libaries have been linked, then place thelibrary file in the same folder as the ParaMonte library folder. Then redefine the Bash environmental variable <b><code>LD_LIBRARY_PATH</code></b> to also search the working build directory of your application for the dependencies,  
+        As the last resort, download the <a href="{{site.githubReleaseCurrentDownload}}/{{site.libgfortranLinux}}">libgfortran shared library file</a> against which the prebuilt ParaMonte libaries have been linked, then place thelibrary file in the same folder as the ParaMonte library folder. Then redefine the Bash environmental variable <b><code>LD_LIBRARY_PATH</code></b> to also search the working build directory of your application for the dependencies,  
         {% highlight bash %}export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH{% endhighlight %}
         and then rebuild or rerun your application.
     </li>

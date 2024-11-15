@@ -25,7 +25,7 @@ The above step should generate an MPI-parallelized `main.exe` executable file in
 At this point, you need to have already made up your mind about which approach you want to take to link your code to the ParaMonte library,  
 
 -   you have already built the ParaMonte library from scratch on your system, or,  
--   you intend to use [the ParaMonte prebuilt libraries]({{site.currentRelease}}){:target="_blank"}.  
+-   you intend to use [the ParaMonte prebuilt libraries]({{site.githubReleaseCurrent}}){:target="_blank"}.  
 
 If you have not made up your mind yet, we recommend using the prebuilt ParaMonte binaries. Although the entire [ParaMonte library build process](../../../installation/readme/){:target="_blank"} is fully automated, it can take much longer than simply downloading the ParaMonte prebuilt libraries from the project's repository.  
 
@@ -54,7 +54,7 @@ To build and link your application, we recommend installing the following compil
 
 To simplify our build process, here we will only consider dynamic-linking to the ParaMonte library (as opposed to static-linking).  **In brief, the build steps are the following**,  
 1.  Either,  
-    -   download the ParaMonte prebuilt library of your choice from the [release page of the ParaMonte repository on GitHub]({{site.currentRelease}}){:target="_blank"}. If you are not sure which one is suitable for your usage, see,  
+    -   download the ParaMonte prebuilt library of your choice from the [release page of the ParaMonte repository on GitHub]({{site.githubReleaseCurrent}}){:target="_blank"}. If you are not sure which one is suitable for your usage, see,  
         -   the [pre-installation notes](../../../installation/readme/){:target="_blank"} and,  
         -   the [installation instructions](../../../installation/windows/#using-the-prebuilt-paramonte-library){:target="_blank"} for Windows, or,  
         -   the [installation instructions](../../../installation/macos/#using-the-prebuilt-paramonte-library){:target="_blank"} for macOS, or,    

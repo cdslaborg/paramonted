@@ -62,7 +62,7 @@ The corresponding required `paramonte.f90` module interface file can be also dow
 At this point, you need to have already made up your mind about which approach you want to take to compile and link your code to the ParaMonte library,  
 
 -   you have already built the ParaMonte library from scratch on your system, or,  
--   you intend to use [the prebuilt ParaMonte libraries]({{site.currentRelease}}){:target="_blank"}.  
+-   you intend to use [the prebuilt ParaMonte libraries]({{site.githubReleaseCurrent}}){:target="_blank"}.  
 
 If you have not made up your mind yet, we recommend using the prebuilt ParaMonte binaries. Although the entire [ParaMonte library build process](../../installation/readme/){:target="_blank"} is fully automated, it can take much longer than simply downloading the prebuilt ParaMonte libraries from the project's repository.  
 
@@ -96,7 +96,7 @@ To build and link your application, we recommend installing the following compil
 
 In brief, the process of building your {{progLang}} application involves the following steps,  
 1.  Either,  
-    -   **Download the ParaMonte prebuilt library** of your choice from the [release page of the ParaMonte repository on GitHub]({{site.currentRelease}}){:target="_blank"}. If you are not sure which one is suitable for your usage, see,  
+    -   **Download the ParaMonte prebuilt library** of your choice from the [release page of the ParaMonte repository on GitHub]({{site.githubReleaseCurrent}}){:target="_blank"}. If you are not sure which one is suitable for your usage, see,  
         -   the [pre-installation notes](../../installation/readme/){:target="_blank"} and,  
         -   the [installation instructions](../../installation/windows/#using-the-prebuilt-paramonte-library){:target="_blank"} for Windows, or,  
         -   the [installation instructions](../../installation/macos/#using-the-prebuilt-paramonte-library){:target="_blank"} for macOS, or,    
@@ -161,11 +161,11 @@ In brief, the process of building your {{progLang}} application involves the fol
     By default, the build-script automatically chooses the compiler for building your application based on the name of the prebuilt ParaMonte library that you have chosen to use. You can override this default option by providing the compiler name and the compile/linker flags via the two command-line options <b><code>-c</code></b> and <b><code>-f</code></b> to the build-script. For example, 
     <ul>
         <li>
-            to compile and link a <b>serial {{progLang}} application</b> via the GNU {{progLang}} compiler against a <a href="{{site.currentReleaseDownload}}/{{pmLibNameLinuxIntelRelease}}.tar.gz">Linux-version</a> or a <a href="{{site.currentReleaseDownload}}/{{pmLibNameDarwinIntelRelease}}.tar.gz">macOS-version</a> of an Intel-prebuilt serial shared ParaMonte library in <code>release</code>  mode, you can specify the following options for the build-script on the command-line,  
+            to compile and link a <b>serial {{progLang}} application</b> via the GNU {{progLang}} compiler against a <a href="{{site.githubReleaseCurrentDownload}}/{{pmLibNameLinuxIntelRelease}}.tar.gz">Linux-version</a> or a <a href="{{site.githubReleaseCurrentDownload}}/{{pmLibNameDarwinIntelRelease}}.tar.gz">macOS-version</a> of an Intel-prebuilt serial shared ParaMonte library in <code>release</code>  mode, you can specify the following options for the build-script on the command-line,  
             <pre>./build.sh -c {{gnuLinuxCompiler}} -f "{{gnuLinuxCompilerFlags}}"</pre>
         </li>
         <li>
-            to compile and link an <b>MPI-parallel {{progLang}} application</b> via the Intel MPI-wrapper for the GNU {{progLang}} compiler against a <a href="{{site.currentReleaseDownload}}/{{pmLibNameLinuxIntelReleaseMPI}}.tar.gz">Linux-version</a> of an Intel-prebuilt serial shared ParaMonte library in <code>release</code>  mode, you can specify the following options for the build-script on the command-line,  
+            to compile and link an <b>MPI-parallel {{progLang}} application</b> via the Intel MPI-wrapper for the GNU {{progLang}} compiler against a <a href="{{site.githubReleaseCurrentDownload}}/{{pmLibNameLinuxIntelReleaseMPI}}.tar.gz">Linux-version</a> of an Intel-prebuilt serial shared ParaMonte library in <code>release</code>  mode, you can specify the following options for the build-script on the command-line,  
             <pre>./build.sh -c {{gnuLinuxCompilerWrapper}} -f "{{gnuLinuxCompilerFlags}}"</pre>
         </li>
     </ul>

@@ -4,7 +4,7 @@
 
 #### Compiling and linking on Windows via the Intel {{progLang}} compiler for **serial applications**  
 
--   {{ donwloadParaMonteFrom }} [here]({{site.currentReleaseDownload}}/{{site.pmVersion}}/libparamonte_dynamic_heap_release_intel_{{pmLang|downcase}}_windows_x64_mt.zip).  
+-   {{ donwloadParaMonteFrom }} [here]({{site.githubReleaseCurrentDownload}}/libparamonte_dynamic_heap_release_intel_{{pmLang|downcase}}_windows_x64_mt.zip).  
 {% include example.build.pmlib.files.md pmcs="intel" ptype="serial" os="windows" %}
 -   Now, we are going to use the Intel {{progLang}} compiler to compile and link your code,  
     {% comment %}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%{% endcomment %}
@@ -52,7 +52,7 @@
 
 #### Compiling and linking on Windows via the Intel {{progLang}} compiler for **parallel applications**  
 
--   For simplicity, we will only consider the MPI-parallelism here. {{ donwloadParaMonteFrom }} [here]({{site.currentReleaseDownload}}/libparamonte_dynamic_heap_release_intel_{{pmLang|downcase}}_mpi_windows_x64_mt.zip).  
+-   For simplicity, we will only consider the MPI-parallelism here. {{ donwloadParaMonteFrom }} [here]({{site.githubReleaseCurrentDownload}}/libparamonte_dynamic_heap_release_intel_{{pmLang|downcase}}_mpi_windows_x64_mt.zip).  
 {% include example.build.pmlib.files.md pmcs="intel" ptype="MPI" os="windows" %}
 -   Now, we are going to use the Intel {{progLang}} MPI compiler wrapper to compile and link your code,  
     {% comment %}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%{% endcomment %}
@@ -131,7 +131,7 @@ Open an instance of the x64 Native Tools Command Prompt which is automatically i
 
 #### Compiling and linking on Windows via the Microsoft Visual {{progLang}} compiler for **serial applications**  
 
--   {{ donwloadParaMonteFrom }} [here]({{site.currentReleaseDownload}}/libparamonte_dynamic_heap_release_intel_{{pmLang|downcase}}_windows_x64_mt.zip).  
+-   {{ donwloadParaMonteFrom }} [here]({{site.githubReleaseCurrentDownload}}/libparamonte_dynamic_heap_release_intel_{{pmLang|downcase}}_windows_x64_mt.zip).  
 {% include example.build.pmlib.files.md pmcs="msvc" ptype="serial" os="windows" %}
 -   Now, we are going to use the MSVC {{progLang}} compiler `cl` to compile and link your code,  
     ```text
@@ -159,7 +159,7 @@ Open an instance of the x64 Native Tools Command Prompt which is automatically i
 
 {% include warning.html content="At this point, you need to have an MPI library already installed on your system. All **prebuilt** ParaMonte libraries on Windows OS rely on the Intel MPI library. Therefore, if you intend to use the prebuilt ParaMonte libraries for your C/C++ applications, you will have to install [the Intel MPI library](https://software.intel.com/en-us/mpi-library){:target='_blank'} on your system before continuing." %}  
 
--   For simplicity, we will only consider the MPI-parallelism here. {{ donwloadParaMonteFrom }} [here]({{site.currentReleaseDownload}}/libparamonte_dynamic_heap_release_intel_{{pmLang|downcase}}_mpi_windows_x64_mt.zip).  
+-   For simplicity, we will only consider the MPI-parallelism here. {{ donwloadParaMonteFrom }} [here]({{site.githubReleaseCurrentDownload}}/libparamonte_dynamic_heap_release_intel_{{pmLang|downcase}}_mpi_windows_x64_mt.zip).  
 {% include example.build.pmlib.files.md pmcs="intel" ptype="MPI" os="windows" %}
 -   Now, we are going to use the Intel `mpicc` or `mpicl` {{progLang}} MPI compiler wrappers along with the Microsoft {{progLang}} compiler `cl.exe` (specified by the flag `-cc=cl`) to compile and link your code,  
     ```text

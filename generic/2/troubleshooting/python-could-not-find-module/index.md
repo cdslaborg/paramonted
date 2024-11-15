@@ -52,7 +52,7 @@ import paramonte as pm
 pm.verify()
 ```  
 
-If this does not resolve the error, please report this error on [the issues page of the ParaMonte repository on GitHub]({{site.issues}}){:target="_blank"}.  
+If this does not resolve the error, please report this error on [the issues page of the ParaMonte repository on GitHub]({{site.githubIssues}}){:target="_blank"}.  
 
 {% include askme.html %}
 {% include links.html %}

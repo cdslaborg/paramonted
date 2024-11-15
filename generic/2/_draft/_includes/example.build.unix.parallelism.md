@@ -16,7 +16,7 @@
 
 #### Compiling and linking on {{include.os}} via the {{include.pmcs}} {{progLang}} compiler for **{{thisApplicationParallelism}}**  
 
--   {{ donwloadParaMonteFrom }} [here]({{site.currentReleaseDownload}}/libparamonte_dynamic_heap_release_{{include.pmcs|downcase}}_{{pmLang|downcase}}_linux_x64_mt.tar.gz).  
+-   {{ donwloadParaMonteFrom }} [here]({{site.githubReleaseCurrentDownload}}/libparamonte_dynamic_heap_release_{{include.pmcs|downcase}}_{{pmLang|downcase}}_linux_x64_mt.tar.gz).  
 {% include example.build.pmlib.files.md ptype=include.ptype pmcs=include.pmcs os=include.os %}
 -   Now, we are going to use the {{compilerBrand}} to compile and link your code,  
     {% if pmLang == "Fortran" %}

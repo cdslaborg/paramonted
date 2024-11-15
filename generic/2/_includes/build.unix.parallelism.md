@@ -89,7 +89,7 @@
 
 #### Building the executable on {{include.os}} via the {{include.pmcs}} {{progLang}} compiler for **{{thisApplicationParallelism}}**  
 
--   {{ donwloadParaMonteFrom }} [here]({{site.currentReleaseDownload}}/{{pmLibName}}.tar.gz).  
+-   {{ donwloadParaMonteFrom }} [here]({{site.githubReleaseCurrentDownload}}/{{pmLibName}}.tar.gz).  
     {{site.data.alerts.tip}}
     Although here we are downloading and using the ParaMonte libraries prebuilt via the {{include.pmcs}} {{progLang}} compiler, in general, you should be able to use the {{include.pmcs}} {{progLang}} compiler to link your applications against the ParaMonte libraries prebuilt via either Intel or GNU {{progLang}} compilers.
     {{site.data.alerts.end}}

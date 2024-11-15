@@ -19,7 +19,7 @@ Suppose we want to randomly sample the above objective function via the **D**ela
     <a name="linking-methods"></a><br><br>
     There are two ways to compile and link the above objective function to the ParaMonte library:  
     1. you have built the ParaMonte library on your system from scratch using a Fortran/C compiler suite installed on your system (ideally, the Intel Parallel Studio or the GNU Compiler Collection), or,  
-    2. you want to use the prebuilt ParaMonte libraries, which can be downloaded from [the ParaMonte release page on GitHub]({{site.currentRelease}}){:target="_blank"}.    
+    2. you want to use the prebuilt ParaMonte libraries, which can be downloaded from [the ParaMonte release page on GitHub]({{site.githubReleaseCurrent}}){:target="_blank"}.    
 {% endcomment %}
 
 {% comment %}%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%{% endcomment %}
@@ -81,7 +81,7 @@ In the following sections, we will describe which interface is suitable for what
 The Object-Oriented-Programing (OOP) style interface is the parts of the codes in the above that are enclosed by the `IS_COMPATIBLE_COMPILER` preprocessor flag. The OOP interface can be used only if,  
 
 1. you have built the ParaMonte library from scratch on your system using a Fortran compiler installed on your system (ideally, the Intel `ifort` Fortran compiler), or,  
-2. you intend to use the prebuilt ParaMonte libraries which can be downloaded from the [ParaMonte release page on GitHub]({{site.currentRelease}}){:target="_blank"}, but you promise that you are using a compatible compiler to compile your example. Typically this means using the [same compiler/library suite and version](https://github.com/cdslaborg/paramonte/blob/main/CHANGES.md){:target="_blank"} that has been used to build ParaMonte.  
+2. you intend to use the prebuilt ParaMonte libraries which can be downloaded from the [ParaMonte release page on GitHub]({{site.githubReleaseCurrent}}){:target="_blank"}, but you promise that you are using a compatible compiler to compile your example. Typically this means using the [same compiler/library suite and version](https://github.com/cdslaborg/paramonte/blob/main/CHANGES.md){:target="_blank"} that has been used to build ParaMonte.  
 
 If one of the above two scenarios describes your situation, then you can safely use the OOP-style interface (enclosed between the two preprocessor directives `#if defined IS_COMPATIBLE_COMPILER` and `#else`) in the above code.  
 

@@ -33,7 +33,7 @@ https://www.mathworks.com/matlabcentral/answers/512901-mex-xcodebuild-error-sdk-
 {% endcomment %}
 
 
-If the operating system of your machine is **macOS (Darwin)** and you intend to download and use one of the [ParaMonte prebuilt libraries]({{site.releases}}){:target='_blank'} on your macOS system, it is highly likely that the [System Integrity Protection](https://en.wikipedia.org/wiki/System_Integrity_Protection){:target='_blank'} of macOS, in particular, the [macOS Catalina](https://en.wikipedia.org/wiki/MacOS_Catalina) released in 2019 will prevent you from running the ParaMonte kernel libraries on your system.  
+If the operating system of your machine is **macOS (Darwin)** and you intend to download and use one of the [ParaMonte prebuilt libraries]({{site.githubReleases}}){:target='_blank'} on your macOS system, it is highly likely that the [System Integrity Protection](https://en.wikipedia.org/wiki/System_Integrity_Protection){:target='_blank'} of macOS, in particular, the [macOS Catalina](https://en.wikipedia.org/wiki/MacOS_Catalina) released in 2019 will prevent you from running the ParaMonte kernel libraries on your system.  
 
 Depending on what prebuilt ParaMonte library language you download to use, you may receive an error of different nature, preventing you from calling the ParaMonte libraries on your system. But in most cases, a macOS message window will pop up with a warning message like the following,  
 
@@ -47,7 +47,7 @@ asking you to either move this file to trash because macOS does not know its dev
 
 There is still an indirect method of overriding the macOS SIP's authoritarian decision to not run the ParaMonte libraries on your system. We will explain these steps for the case of using the ParaMonte prebuilt libraries for the C programming language. However, these steps are identical in all programming languages, in particular, the MATLAB programming language, in which, one often encounters this issue.  
 
-1.  Suppose you have downloaded one of the ParaMonte prebuilt libraries from the ParaMonte release page on GitHub, for example, [libparamonte_c_darwin_amd64_gnu_release_shared_heap.tar.gz]({{site.currentReleaseDownload}}/libparamonte_c_darwin_amd64_gnu_release_shared_heap.tar.gz).  
+1.  Suppose you have downloaded one of the ParaMonte prebuilt libraries from the ParaMonte release page on GitHub, for example, [libparamonte_c_darwin_amd64_gnu_release_shared_heap.tar.gz]({{site.githubReleaseCurrentDownload}}/libparamonte_c_darwin_amd64_gnu_release_shared_heap.tar.gz).  
   
 1.  When you untar this file and run the `build.sh` command in the uncompressed folder, a `run.sh` script will be generated which you can call to run the supplied ParaMonte example application.  
     ```bash  

@@ -17,7 +17,7 @@
 
 #### Building the executable on Windows via the Intel {{progLang}} compiler for **serial applications**  
 
--   {{ donwloadParaMonteFrom }} [here]({{site.currentReleaseDownload}}/{{pmLibName}}.zip).  
+-   {{ donwloadParaMonteFrom }} [here]({{site.githubReleaseCurrentDownload}}/{{pmLibName}}.zip).  
 {% include build.pmlib.files.md pmcs=include.pmcs ptype="serial" os="Windows" %}
 -   Now, we are going to use the Intel {{progLang}} compiler to compile and link your code,  
     {% if pmLang == "Fortran" %}
@@ -74,7 +74,7 @@
 
 #### Building the executable on Windows via the Intel {{progLang}} compiler for **parallel applications**  
 
--   For simplicity, we will only consider the MPI-parallelism here. {{ donwloadParaMonteFrom }} [here]({{site.currentReleaseDownload}}/{{pmLibNameMPI}}.zip).  
+-   For simplicity, we will only consider the MPI-parallelism here. {{ donwloadParaMonteFrom }} [here]({{site.githubReleaseCurrentDownload}}/{{pmLibNameMPI}}.zip).  
 {% include build.pmlib.files.md pmcs="Intel" ptype="MPI" os=osname %}
 -   Now, we are going to use the Intel {{progLang}} MPI compiler wrapper to compile and link your code,  
     {% if pmLang == "Fortran" %}
@@ -158,7 +158,7 @@ Open an instance of the **x64 Native Tools Command Prompt** which is automatical
 {% capture pmLibName    %}libparamonte_{{pmLang|downcase|replace:"+","p"}}_windows_amd64_intel_release_shared_heap{% endcapture %}
 {% capture pmLibNameMPI %}{{pmLibName}}_impi{% endcapture %}
 
--   {{ donwloadParaMonteFrom }} [here]({{site.currentReleaseDownload}}/{{pmLibName}}.zip).  
+-   {{ donwloadParaMonteFrom }} [here]({{site.githubReleaseCurrentDownload}}/{{pmLibName}}.zip).  
 {% include build.pmlib.files.md pmcs="msvc" ptype="serial" os="Windows" %}
 -   Now, we are going to use the MSVC {{progLang}} compiler `cl` to compile and link your code,  
     ```batch
@@ -189,7 +189,7 @@ Open an instance of the **x64 Native Tools Command Prompt** which is automatical
 
 {% include warning.html content="At this point, you need to have an MPI library already installed on your system. All **prebuilt** ParaMonte libraries on Windows OS rely on the Intel MPI library. Therefore, if you intend to use the prebuilt ParaMonte libraries for your C/C++ applications, you will have to install [the Intel MPI library](https://software.intel.com/en-us/mpi-library){:target='_blank'} on your system before continuing." %}  
 
--   For simplicity, we will only consider the MPI-parallelism here. {{ donwloadParaMonteFrom }} [here]({{site.currentReleaseDownload}}/{{pmLibNameMPI}}.zip).  
+-   For simplicity, we will only consider the MPI-parallelism here. {{ donwloadParaMonteFrom }} [here]({{site.githubReleaseCurrentDownload}}/{{pmLibNameMPI}}.zip).  
 {% include build.pmlib.files.md pmcs="Intel" ptype="MPI" os="Windows" %}
 -   Now, we are going to use the Intel `mpicc` or `mpicl` {{progLang}} MPI compiler wrappers along with the Microsoft {{progLang}} compiler `cl.exe` (specified by the flag `-cc=cl`) to compile and link your code,  
     ```batch

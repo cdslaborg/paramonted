@@ -41,7 +41,7 @@ The current release of the ParaMonte MATLAB library has been tested only with th
     <li><b>incompatible</b> and <b>not tested</b> with <b>MATLAB < 2018a</b></li>
 </ul>
 Support for MATLAB R2018a on Windows is unstable. In particular, <a href="https://www.mathworks.com/downloads/" target="_blank">MATLAB R2018a Update 6</a> is required for the proper functioning of the ParaMonte kernel routines on Windows systems with MATLAB R2018a.<br>
-If you encounter incompatibilities or bugs in the ParaMonte library with any of the supported MATLAB versions in the above, please report the issue on the <a href="{{site.issues}}" target="_blank">GitHub issues page of the library</a>.
+If you encounter incompatibilities or bugs in the ParaMonte library with any of the supported MATLAB versions in the above, please report the issue on the <a href="{{site.githubIssues}}" target="_blank">GitHub issues page of the library</a>.
 {{site.data.alerts.end}}
 
 <br>  
@@ -51,9 +51,11 @@ There are two ways to install and use the ParaMonte library from MATLAB on your 
 ## The fast way  
 
 1.  **Download** and unzip the prebuilt MATLAB package for ParaMonte from the project repository's release page on GitHub:
-    +   For **Windows**: [**libparamonte_matlab_windows_amd64.zip**]({{site.currentReleaseDownload}}/libparamonte_matlab_windows_amd64.zip).  
-    +   For **Linux**: [**libparamonte_matlab_linux_amd64.tar.gz**]({{site.currentReleaseDownload}}/libparamonte_matlab_linux_amd64.tar.gz).  
-    +   For **macOS** (**Darwin**): Follow the instruction below to download this compressed file: [**libparamonte_matlab_darwin_amd64.tar.gz**]({{site.currentReleaseDownload}}/libparamonte_matlab_darwin_amd64.tar.gz) (do **NOT** download this file by directly clicking on this link. Follow the instructions below).  
+    +   For **Windows**: [**libparamonte_matlab_windows_amd64.zip**]({{site.githubReleaseCurrentDownload}}/libparamonte_matlab_windows_amd64.zip).  
+    +   For **Linux**: [**libparamonte_matlab_linux_amd64.tar.gz**]({{site.githubReleaseCurrentDownload}}/libparamonte_matlab_linux_amd64.tar.gz).  
+    +   For **macOS** (**Darwin**): Follow the instruction below to download this compressed file: 
+        [**libparamonte_matlab_darwin_amd64.tar.gz**]({{site.githubReleaseCurrentDownload}}/libparamonte_matlab_darwin_amd64.tar.gz) 
+        (do **NOT** download this file by directly clicking on this link. Follow the instructions below).  
         {% include tip.important.download.method.md lang="matlab" arch="amd64" %}
 1.  Depending on your operating system,  
     -   on **Windows**:  
@@ -64,12 +66,16 @@ There are two ways to install and use the ParaMonte library from MATLAB on your 
             ```bash  
             matlab
             ```  
-            {% include tip.html content="If the `matlab` executable is not recognized by the Bash terminal, see [this page](../../troubleshooting/bash-matlab-command-not-found){:target='_blank'} for a solution." %}  
-1.  Once the MATLAB interactive environment opens, change the current working of MATLAB to the **root directory** of the ParaMonte library (*where the ParaMonte library license file exists*). You can do this on the MATLAB command prompt via,  
+            {% include tip.html content="If the `matlab` executable is not recognized by the Bash terminal, 
+            see [this page](../../troubleshooting/bash-matlab-command-not-found){:target='_blank'} for a solution." %}  
+1.  Once the MATLAB interactive environment opens, change the current working directory of MATLAB to 
+    the **root directory** of the ParaMonte library (*where the ParaMonte library license file exists*). 
+    You can do this on the MATLAB command prompt via,  
     ```matlab  
     cd path_to_the_root_directory_of_paramonte
     ```  
-    where you will have to replace the `path_to_the_root_directory_of_paramonte` with the root path to the ParaMonte library on your system. The root path is the path to the directory where the ParaMonte `LICENSE.md` file exists.  
+    where you will have to replace the `path_to_the_root_directory_of_paramonte` with the root path 
+    to the ParaMonte library on your system. The root path is the path to the directory where the ParaMonte `LICENSE.md` file exists.  
 1.  Call the ParaMonte library for the first time via the following commands (simply type the commands on the MATLAB command prompt),  
     ```matlab  
     addpath(genpath("./"),"-begin"); % add the ParaMonte library directories to MATLAB's list of search paths.
@@ -77,7 +83,9 @@ There are two ways to install and use the ParaMonte library from MATLAB on your 
     pm.verify(); % verify the integrity of the ParaMonte library on your system.
     ```  
     If needed, follow any extra instructions provided by the library on your MATLAB command prompt.  
-1.  You are all set! Enjoy the unification of simplicity, high-performance, parallelism, thoroughness, and advanced Monte Carlo algorithms, all in one place. Follow the instructions [on this page](../../run/matlab){:target="_blank"} to run your ParaMonte-enabled simulations.  
+1.  You are all set! Enjoy the unification of simplicity, high-performance, parallelism, 
+    thoroughness, and advanced Monte Carlo algorithms, all in one place. Follow the instructions 
+    [on this page](../../run/matlab){:target="_blank"} to run your ParaMonte-enabled simulations.  
     {{site.data.alerts.important}}{% include important.macos.sip.msg.md %}{{site.data.alerts.end}}
 
 ## The long way  
@@ -102,7 +110,7 @@ The ParaMonte MATLAB library has been tested only with the recent versions of MA
     <li><b>MATLAB 2016b</b>&nbsp;: <b>compatible&nbsp;&nbsp;</b>, untested</li>
     <li>MATLAB <2016a            :    incompatible              , untested</li>
 </ul>
-If you encounter incompatibilities or bugs in the ParaMonte library with any of the supported MATLAB versions in the above, please report the issue on the <a href="{{site.issues}}" target="_blank">GitHub issues page of the library</a>.
+If you encounter incompatibilities or bugs in the ParaMonte library with any of the supported MATLAB versions in the above, please report the issue on the <a href="{{site.githubIssues}}" target="_blank">GitHub issues page of the library</a>.
 {{site.data.alerts.end}}
 {% endcomment %}
 
