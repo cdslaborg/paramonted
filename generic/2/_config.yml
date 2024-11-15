@@ -46,7 +46,8 @@ company_name: Computational Data Science Lab
 #### if you're using GitLab, provide the basepath to the branch you've created for reviews, following the sample here. if not, leave this value blank.
 ####
 
-gitlab_editme_path: https://github.com/cdslaborg/paramonted/tree/main/generic/2
+github_editme_path: cdslaborg/paramonted/tree/main/generic/2/
+#gitlab_editme_path: https://github.com/cdslaborg/paramonted/tree/main/generic/2
 
 ####
 #### if you're using disqus for comments, add the shortname here. if not, leave this value blank.
@@ -120,7 +121,8 @@ cmakeVersion: 3.21.0
 ####
 
 codecov: "https://www.cdslab.org/paramonte/codecov"
-githubissues: "https://github.com/cdslaborg/paramonte/issues"
+githubTree: "https://github.com/cdslaborg/paramonte/tree/main"
+githubIssues: "https://github.com/cdslaborg/paramonte/issues"
 githubArchive: "https://github.com/cdslaborg/paramonte/archive"
 githubReleases: "https://github.com/cdslaborg/paramonte/releases"
 githubReleasesAuxil: "https://github.com/cdslaborg/paramonte/releases/auxil"
@@ -154,7 +156,6 @@ exclude:
 ####
 
 feedback_disable: false
-
 feedback_subject_line: ParaMonte Library
 
 ####

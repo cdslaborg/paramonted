@@ -142,6 +142,28 @@ entries:
 
   ################################################################
 
+  - title: "usage :: examples"
+    output: web, pdf
+    folderitems:
+
+    - title: ParaDRAM C examples
+      url: /usage/examples/c/
+      output: web, pdf
+
+    - title: ParaDRAM C++ examples
+      url: /usage/examples/cpp/
+      output: web, pdf
+
+    - title: ParaDRAM Fortran examples
+      url: /usage/examples/fortran/
+      output: web, pdf
+
+    - title: ParaDRAM MATLAB examples
+      url: /usage/examples/matlab/
+      output: web, pdf
+
+  ################################################################
+
   - title: "usage :: sampling :: ParaDRAM"
     output: web, pdf
     folderitems:
