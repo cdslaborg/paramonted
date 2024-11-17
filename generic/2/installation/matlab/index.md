@@ -89,11 +89,11 @@ There are two ways to install and use the ParaMonte library from MATLAB on your 
 <p></p>
 
 1.  **Download** and untar/unzip the prebuilt MATLAB package for ParaMonte from the project repository's release page on GitHub:
-    +   For **Windows** with `AMD64` (Intel) processor: [**libparamonte_matlab_windows_amd64.zip**]({{site.githubReleaseCurrentDownload}}/libparamonte_matlab_windows_amd64.zip).  
-    +   For **Linux** with `AMD64` (Intel) processor: [**libparamonte_matlab_linux_amd64.tar.gz**]({{site.githubReleaseCurrentDownload}}/libparamonte_matlab_linux_amd64.tar.gz).  
-    +   For **macOS** (**Darwin**) with `AMD64` (Intel) processor: Follow the instruction below to download the ParaMonte MATLAB prebuilt library.
+    +   For **Windows** with **`AMD64` (Intel)** processor: [**libparamonte_matlab_windows_amd64.zip**]({{site.githubReleaseCurrentDownload}}/libparamonte_matlab_windows_amd64.zip).  
+    +   For **Linux** with **`AMD64` (Intel)** processor: [**libparamonte_matlab_linux_amd64.tar.gz**]({{site.githubReleaseCurrentDownload}}/libparamonte_matlab_linux_amd64.tar.gz).  
+    +   For **macOS** (**Darwin**) with **`AMD64` (Intel)** processor: Follow the instruction below to download the ParaMonte MATLAB prebuilt library.
         {% include tip.important.download.method.md lang="MATLAB" arch="amd64" %}
-    +   For **macOS** (**Darwin**) with `ARM64` processor (M1, M2, etc.): Follow the instruction below to download the ParaMonte MATLAB prebuilt library.
+    +   For **macOS** (**Darwin**) with **`ARM64` processor** (**M1**, **M2**, **M3**, **M4**, etc.): Follow the instruction below to download the ParaMonte MATLAB prebuilt library.
         {% include tip.important.download.method.md lang="MATLAB" arch="arm64" %}
 1.  Follow further instructions below for the [first-time usage](#first-time-usage).
 
