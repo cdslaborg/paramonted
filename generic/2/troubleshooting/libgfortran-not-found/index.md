@@ -34,7 +34,7 @@ C/C++ examples documentation is currently being developed. Please check back in 
 {{site.data.alerts.note}}
 The latest release of the prebuilt ParaMonte libraries for dynamic linking for the Linux Operating System has been built via the <b>GNU Compiler Collection <code>version {{site.gnuVersionLinux}}</code></b>. As a result, when using these specific GNU-based prebuilt ParaMonte libraries, you may encounter C/C++/Fortran application compilation and linking errors, similar in nature to the following error message,  
 <pre>
-/opt/apps/gcc/6.3.0/bin/ld: warning: libgfortran.so.5, needed by libparamonte_c_linux_amd64_gnu_release_shared_heap.so, not found
+/opt/apps/gcc/6.3.0/bin/ld: warning: libgfortran.so.5, needed by libparamonte.so, not found
 </pre>
 All of such errors imply that the compiler/linker cannot locate the required <b><code>libgfortran</code></b> or other shared library files on your system, or if they exist, they are not compatible with the required missing shared file and therefore cannot serve as a substitute. The possible resolutions are the following,  
 
@@ -45,13 +45,13 @@ All of such errors imply that the compiler/linker cannot locate the required <b>
         where you will have to replace <b><code>PATH_TO_SHARED_OBJECT_FOLDER</code></b> with the path to the folder containing the required object file(s).
         <br>
         For example, for a local build of the ParaMonte library for which the required GNU compilers have been also automatically built by the ParaMonte build-scripts, this {{site.libgfortranLinux}} shared object file resides in the build directory,  
-        <pre>/build/prerequisites/prerequisites/installations/gnu/{{site.gnuVersionLinux}}/lib64</pre> relative to the root directory of the ParaMonte library.
+        {% highlight bash %}/build/prerequisites/prerequisites/installations/gnu/{{site.gnuVersionLinux}}/lib64{% endhighlight %} relative to the root directory of the ParaMonte library.
     </li>
     <li>
         Install a fresh compatible version of the GNU Compiler Collection, or,  
     </li>
     <li>
-        As the last resort, download the <a href="{{site.githubReleaseCurrentDownload}}/{{site.libgfortranLinux}}">libgfortran shared library file</a> against which the prebuilt ParaMonte libaries have been linked, then place thelibrary file in the same folder as the ParaMonte library folder. Then redefine the Bash environmental variable <b><code>LD_LIBRARY_PATH</code></b> to also search the working build directory of your application for the dependencies,  
+        As the last resort, download the <a href="{{site.githubReleaseCurrentDownload}}/{{site.libgfortranLinux}}">libgfortran shared library file</a> against which the prebuilt ParaMonte libaries have been linked, then place the library file in the same folder as the ParaMonte library folder. Then redefine the Bash environmental variable <b><code>LD_LIBRARY_PATH</code></b> to also search the working build directory of your application for the dependencies,  
         {% highlight bash %}export LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH{% endhighlight %}
         and then rebuild or rerun your application.
     </li>

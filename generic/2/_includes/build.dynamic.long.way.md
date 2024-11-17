@@ -23,14 +23,12 @@ Before proceeding to the platform-specific build instructions above, you must se
 To do so, open a ParaMonte-compatible MATLAB session which you intend to use with ParaMonte application later. 
 Type the following command on the MATLAB command prompt:
 <br>
-<pre>
-mex -setup C
-</pre>
+<pre class="language-shell highlighter-rouge"><code>mex -setup C</code></pre>
 This command will set up the MATLAB MEX compiler for the C programming language. 
 If necessary or desired, you can additionally set up the MATLAB MEX compiler for C++ and Fortran programming languages.
-<pre>
-mex -setup C++
-mex -setup Fortran
+<pre class="language-shell highlighter-rouge">
+<code>mex -setup C++
+mex -setup Fortran</code>
 </pre>
 
 Beware that each MATLAB version release is only compatible with a handful of C, C++, and Fortran compilers. 

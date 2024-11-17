@@ -1,4 +1,4 @@
-### The ParaMonte C, C++, Fortran API Documentation Source
+### The ParaMonte C, C++, Fortran, MATLAB, Python API Documentation Source
 
 This folder contains the source codes for the ParaMonte Doxygen documentations.
 
@@ -20,7 +20,7 @@ To regenerate the ParaMonte documentation from source,
     ```bash
     ./build.sh --lang TARGET_LANG --exam all --bench all
     ```
-    where `TARGET_LANG` must be replaced by target programming language: `c`, `cpp`, `fortran`.
+    where `TARGET_LANG` must be replaced by target programming language: `c`, `cpp`, `fortran`, `matlab`, `python`.
     1.  If the library examples and benchmarks have been already built, you can drop the flags ` --exam all --bench all`.
     1.  Alternative, if you intend to generate only the documentation without the additional examples, benchmarks, and images, try
         ```bash

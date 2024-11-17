@@ -1,6 +1,6 @@
 ---
 title: ParaMonte Code Coverage Generation Guidelines
-tags: [codecov, kernel, code coverage, gcov, lcov]
+tags: [codecov, kernel, fortran, code coverage, gcov, lcov]
 keywords: codecov, code coverage, kernel, C, C++, Fortran, gcov, lcov
 #summary: "."
 sidebar: home_sidebar

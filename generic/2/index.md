@@ -4,6 +4,7 @@
 #keywords: ParaMonte, Fortran, C, Python, Julia, MATLAB, getting_started, homepage, front_matter, frontpage
 sidebar: home_sidebar
 permalink: index.html
+noneditable: true
 summary:
 comments: false
 redirect_from:

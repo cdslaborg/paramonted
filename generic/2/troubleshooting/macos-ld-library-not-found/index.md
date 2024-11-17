@@ -39,10 +39,10 @@ C/C++ examples documentation is currently being developed. Please check back in 
 
 While building the ParaMonte library on a macOS (Darwin) operating system, you may encounter an error of the following nature:  
 
-```bash  
+<pre>
 ld: library not found for -lSystem
 collect2: error: ld returned 1 exit status
-```  
+</pre>
 
 This error happens particularly when the GCC Fortran compiler `gfortran` is directly called by the ParaMonte library build script `install.sh` located in the root directory of the library's repository on [GitHub](https://github.com/cdslaborg/paramonte).  
 

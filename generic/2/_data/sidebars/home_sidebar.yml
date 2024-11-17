@@ -1,5 +1,14 @@
 # This is your sidebar TOC. The sidebar code loops through sections here and provides the appropriate formatting.
 
+####
+#### WARNING
+#### To generate highlighting in the sidebar for the current active page,
+#### It is essential to provide the full file name of the page (including the `.html` prefix).
+#### The only exception is the default page name `index.html`, in which case, 
+#### the `/` dir separator at the end of the directory containing the file
+#### `index.html` is essential if the file name `index.html` is missing.
+####
+
 entries:
 - title: sidebar
   product:
@@ -72,27 +81,27 @@ entries:
 
     - title: ParaMonte installation quickstart
       output: web, pdf
-      url: /installation/QUICKSTART.md
+      url: /installation/QUICKSTART.md.html
 
     - title: ParaMonte installation guidelines
       output: web, pdf
-      url: /installation/install.md
+      url: /installation/install.md.html
 
     - title: ParaMonte installation in Unix Bash
       output: web, pdf
-      url: /installation/install.sh.md
+      url: /installation/install.sh.md.html
 
     - title: ParaMonte installation in Windows CMD
       output: web, pdf
-      url: /installation/install.bat.md
+      url: /installation/install.bat.md.html
 
     - title: ParaMonte installation configuration
       output: web, pdf
-      url: /installation/install.config.md
+      url: /installation/install.config.md.html
 
     - title: ParaMonte installation via CMake
       output: web, pdf
-      url: /installation/CMakeLists.md
+      url: /installation/CMakeLists.md.html
 
     #- title: ParaMonte C/C++/Fortran - Windows
     #  output: web, pdf
@@ -213,19 +222,19 @@ entries:
     folderitems:
 
     - title: reporting defects
-      url: /contributing/defects
+      url: /contributing/defects/
       output: web, pdf
 
     - title: requesting enhancements
-      url: /contributing/enhancements
+      url: /contributing/enhancements/
       output: web, pdf
 
     - title: development guidelines - general
       url: /contributing/development/general/
       output: web, pdf
 
-    - title: development guidelines - kernel
-      url: /contributing/development/kernel/
+    - title: development guidelines - Fortran
+      url: /contributing/development/fortran/
       output: web, pdf
 
   ################################################################

@@ -34,19 +34,17 @@ C/C++ examples documentation is currently being developed. Please check back in 
 {% endcomment %}
 
 While compiling and linking your C/C++ code against the ParaMonte libraries via the Intel C/C++ compilers on macOS, you may receive a compiler error message similar to the following,  
-```text  
+<pre>
 catastrophic error: cannot open source file "stdio.h"
-```  
-
+</pre>
 or,
-```text  
+<pre>
 catastrophic error: cannot open source file "math.h"
-```  
-
+</pre>
 or, 
-```text  
+<pre>
 xcode-select: error: tool 'xcodebuild' requires Xcode, but active developer directory '/Library/Developer/CommandLineTools' is a command line tools instance
-```  
+</pre>
 
 Taking the following steps to install the macOS <b>Command Line Tools</b> and then agreeing with its license terms may fix this issue. 
 Open a <b>Bash command prompt</b> and type the following and run them,  

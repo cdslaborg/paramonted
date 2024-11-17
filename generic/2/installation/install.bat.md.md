@@ -47,5 +47,9 @@ mathjax: true
 
 {% include paramonte/install.bat.md %}
 
+{{site.data.alerts.tip}}
+{% include tshoot.windows.drive.change.md %}
+{{site.data.alerts.end}}
+
 {% include askme.html %}
 {% include links.html %}

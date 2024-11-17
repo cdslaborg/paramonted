@@ -36,19 +36,19 @@ ERROR in the compiling/linking [2]
 </pre>
 This error implies that the path to your Intel MPI library installation files is not properly setup in your environment. You can fix the error by calling the Intel's dedicated Batch script <b><code>mpivars.bat</code></b> that Intel has developed solely for the purpose of setting up the MPI environmental variables and paths before using the Intel MPI library. For detailed instructions on how to set up your Intel MPI environment see <a href="https://software.intel.com/en-us/get-started-with-mpi-for-windows" target="_blank">Getting Started with Intel® MPI Library for Windows OS (Beta)</a>. In brief, this script normally lives in a directory like,  
 
-<pre>
+{% highlight text %}
 C:\Program Files (x86)\IntelSWTools\compilers_and_libraries_2019.4.245\windows\mpi\intel64\bin\mpivars.bat
-</pre>
+{% endhighlight %}
 
 Locate this setup-script on your system and execute the contents of it on your command line, like the following,  
 
 {% highlight text %}
 "C:\Program Files (x86)\IntelSWTools\compilers_and_libraries_2019.4.245\windows\mpi\intel64\bin\mpivars.bat"
 {% endhighlight %}
-<pre>
+{% highlight text %}
 Intel(R) MPI Library 2019 Update 4 for Windows* Target Build Environment for Intel(R) 64 applications
 Copyright 2007-2019 Intel Corporation.
-</pre>
+{% endhighlight %}
 
 Notice the use of double-quotations around the path to the script. This is ensure that any special <b>escape characters</b> in the path (such as the <b>white-space</b> characters) are properly taken care of.
 {{site.data.alerts.end}}

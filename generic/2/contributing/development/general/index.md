@@ -101,7 +101,7 @@ The following coding style are enforced within all ParaMonte source files in any
 +   All static functions or methods of classes begin with a lowercase verb.
 +   Logical functions always begin with `is`. Example: `isDigit()`.  
 +   All variables begin with a lower-case character. 
-    {% include tip.html content="An exception to this rule is the ParaMonte kernel routines where non-scalar objects used to begin with an upper-case letter. This old however, is now abandoned in favor of making the first character of all variables lower-case. This is to bring consistency with all other interfaces to the ParaMonte library." %}  
+    {% include tip.html content="An exception to this rule is the ParaMonte routines where non-scalar objects used to begin with an upper-case letter. This old however, is now abandoned in favor of making the first character of all variables lower-case. This is to bring consistency with all other interfaces to the ParaMonte library." %}  
 +   All logical variables must be English propositions that evaluate to either `true` or `false`. Example: `inputFileHasPriority`.  
 +   All constants (parameters) or variable that are supposed to not change at runtime must be written upper-case, separated by underscore. Example: `FILE_EXT = ".txt"`.  
     {% include note.html content="Exceptions to this rule sometimes happen in isolated scenarios. In such cases, we recommend that you provide a minimal comment next to the first appearance of the entity explaining why the deviation from the syntax rules of the library was necessary." %}  

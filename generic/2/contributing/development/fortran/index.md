@@ -1,7 +1,7 @@
 ---
-title: Kernel development guidelines
-tags: [development, guidelines, general, contribution, contributing]
-keywords: development, guidelines, kernel, contribution, contributing
+title: ParaMonte Fortran development guidelines
+tags: [development, guidelines, general, fortran, contribution, contributing]
+keywords: development, guidelines, kernel, Fortran, contribution, contributing
 #summary: "."
 sidebar: home_sidebar
 #permalink: /program-units/functions/index.html
@@ -23,26 +23,26 @@ C/C++ examples documentation is currently being developed. Please check back in 
 <br>
 
 Thank you for your interest in contributing to ParaMonte! Your help is very much appreciated. 
-Below are some tips and guidelines to get started with **contributing to the ParaMonte kernel routines**.  
+Below are some tips and guidelines to get started with **contributing to the ParaMonte Fortran routines**.  
 
 ## Initial steps  
 
 +   First, read the [general development guidelines](../general/){:target="_blank"}. 
 +   Take a look at the [issues](https://github.com/cdslaborg/paramonte/issues){:target="_blank"} page. 
-    Make sure you find an open issue **about the kernel routines** and that you do not duplicate someone else's work.  
+    Make sure you find an open issue **about the Fortran routines** and that you do not duplicate someone else's work.  
 +   If your contribution does not exist as an issue, post a [new issue](https://github.com/cdslaborg/paramonte/issues/new/choose){:target="_blank"} discussing the changes you're proposing to implement, 
     whether bug fix(es) or enhancement/feature request(s), or give the rest of developers a heads up that you are going to start work on [an open issue](https://github.com/cdslaborg/paramonte/issues){:target="_blank"}.  
 +   [Fork the ParaMonte git project](https://help.github.com/articles/fork-a-repo/){:target="_blank"} to your private account.  
 
 ## Kernel development conventions  
 
-Pay careful attention to the following conventions used in the development of the kernel routines.
+Pay careful attention to the following conventions used in the development of the Fortran routines.
 
 ### Preprocessor directives  
 
-The kernel routines of ParaMonte heavily rely on the compiler preprocessing directives to implement multiple completely different parallelism paradigms (serial, MPI, Coarray) that are specifically tailored for the needs of multiple completely different programming languages (C, C++, Fortran, Julia, MATLAB, Python, R, ...) for different builds (`debug`, `testing`, `release`), for different operating systems (`Windows`, `Linux`, `macOS`, `WSL`), and many more.  
+The Fortran routines of ParaMonte heavily rely on the compiler preprocessing directives to implement multiple completely different parallelism paradigms (serial, MPI, Coarray) that are specifically tailored for the needs of multiple completely different programming languages (C, C++, Fortran, Julia, MATLAB, Python, R, ...) for different builds (`debug`, `testing`, `release`), for different operating systems (`Windows`, `Linux`, `macOS`, `WSL`), and many more.  
 
-Despite significant efforts to minimize the use of preprocessor directive in the kernel routines, their frequent usage is unavoidable as they greatly minimize the cost of development. Simultaneously, however, the preprocessor directive can increase confusion and and lead to implicit bugs that are hard to detect.  
+Despite significant efforts to minimize the use of preprocessor directive in the Fortran routines, their frequent usage is unavoidable as they greatly minimize the cost of development. Simultaneously, however, the preprocessor directive can increase confusion and and lead to implicit bugs that are hard to detect.  
 
 {% include warning.html content="Any code section that requires some specific operating system, platform, compiler, programming language, compiler settings, or parallelism paradigms must be fenced with the appropriate preprocessor macros such that it is executed only in the appropriate circumstances. Failure to do so, will lead to a non-portable codebase. In general, there must exist an `#else` preprocessor section for any fenced code section that appropriately handles other possible scenarios, if the other scenarios are not possible, it is followed by an `#error \"error message\"` preprocessor directive." %}
 
@@ -89,14 +89,14 @@ Generally, one should avoid the use of code that bind the library to a particula
 
 There are currently two preprocessor directives that determine the type of parallelism to which the code section sandwiched by the preprocessor macro belongs.  
 
-1.  The `MPI_ENABLED` preprocessor macro must be defined with value `1` for any code section that exclusively belongs to MPI-parallelized versions of the kernel routines.  
-1.  The `CAF_ENABLED` preprocessor macro must be defined with value `1` for any code section that exclusively belongs to CAF-parallelized versions of the kernel routines (Coarray parallelism).  
-1.  The `OMP_ENABLED` preprocessor macro must be defined with value `1` for any code section that exclusively belongs to OMP-parallelized versions of the kernel routines (OpenMP parallelism). As of Dec 2020, there is no section of the kernel routines uses OpenMP parallelism.  
+1.  The `MPI_ENABLED` preprocessor macro must be defined with value `1` for any code section that exclusively belongs to MPI-parallelized versions of the Fortran routines.  
+1.  The `CAF_ENABLED` preprocessor macro must be defined with value `1` for any code section that exclusively belongs to CAF-parallelized versions of the Fortran routines (Coarray parallelism).  
+1.  The `OMP_ENABLED` preprocessor macro must be defined with value `1` for any code section that exclusively belongs to OMP-parallelized versions of the Fortran routines (OpenMP parallelism). As of Dec 2020, there is no section of the Fortran routines uses OpenMP parallelism.  
 
 For example, if a section is MPI-parallelized, it must be fenced with the following preprocessor directive,  
 
 ```fortran  
-#if defined MPI_ENABLED
+#if MPI_ENABLED
 call mpi_initialized( isInitialized, ierrMPI )
 #endif
 ```  
@@ -104,7 +104,7 @@ call mpi_initialized( isInitialized, ierrMPI )
 or, if a section must be executed in either MPI or Coarray parallelisms, it must be fenced via the following preprocessor directive,  
 
 ```fortran  
-#if defined CAF_ENABLED || defined MPI_ENABLED
+#if CAF_ENABLED || MPI_ENABLED
 integer :: imageID
 #endif
 ```  
@@ -126,7 +126,7 @@ Occasionally, it is necessary to define sections of code that should run only in
 
 #### Library interface preprocessor directives  
 
-To make the ParaMonte an inter-operable cross-language library, it is necessary to tailor sections of code for the particular languages of interest. The kernel connection to all languages other than Fortran is provided via the `FCI_ENABLED` preprocessor macro in the ParaMonte library.  
+To make the ParaMonte an inter-operable cross-language library, it is necessary to tailor sections of code for the particular languages of interest. The Fortran connection to all languages other than Fortran is provided via the `FCI_ENABLED` preprocessor macro in the ParaMonte library.  
 
 1.  The `CFI_ENABLED` preprocessor macro must be defined with value `1` for any section of the code that is meant to be accessible from any programming language other than Fortran, most importantly, the C programming language.  
 
@@ -143,10 +143,10 @@ In addition, some code sections might have to be exclusively executed when the l
 
 ### Coding style conventions  
 
-The following coding style are enforced within the kernel files. 
+The following coding style are enforced within the Fortran files. 
 If you do not follows these rules in your contribution, please provide an explanation and justification of the alternative approach that you have taken in your contribution.  
 
-+   [Strict naming conventions are enforced](../general/#general-coding-style-conventions){:target="_blank"} within the entire library, including the kernel routines.
++   [Strict naming conventions are enforced](../general/#general-coding-style-conventions){:target="_blank"} within the entire library, including the Fortran routines.
 
 +   Strict semantic compliance with the latest Fortran standard (2018).
 
@@ -166,30 +166,34 @@ If you do not follows these rules in your contribution, please provide an explan
 
 +   All constants (parameters) are upper-case separated by underscore. Example: `FILE_EXT = ".txt"`.  
 
-+   All module names must begin with an uppercase letter and more importantly, must end with the prefix `_mod`. Example: `ParaMCMC_mod`.  
++   All module names must begin with an uppercase letter and more importantly, must end with the prefix `pm_` standing for the `ParaMonte` library. Example: `pm_sampling`.  
     **Why?** This helps create multiple different entity names from a single base name. For example,  
     ```fortran  
-    use String_mod, only: String_type
-    type(String_type) :: string
+    use pm_str, only: str_type
+    type(str_type) :: str
     ```  
 
-+   Each module must be stored in a separate source file and the name of the source file must be the same as the module name, unless there is a good justification to do it otherwise. This is a strict rule to maintain the integrity of the library source file and the build scripts.  
++   Each module must be stored in a separate source file and the name of the source file must be the same as the module name, 
+    unless there is a good justification to do it otherwise. This is a strict rule to maintain the integrity of the library source file and the build scripts.  
 
-+   All submodule names must begin with an uppercase letter and more importantly, must end with the prefix `_smod`. Example: `Routines_smod`.  
++   Modules should almost always contain only generic interfaces to functionalities.  
 
-+   If a module has submodules, the name of the submodule file should follow the module name after `@`. For example the following submodule,  
++   If a module has submodules, the name of the submodule should follow the module name after `@` in the actual file name containing the submodule. 
+    For example the following submodule,  
     ```fortran  
-    submodule (Decoration_mod) Routines_smod
+    submodule (pm_display) routines
     ...
-    end submodule Routines_smod
+    end submodule routines
     ```  
-    will have to be stored in a source file with the name `Decoration_mod@Routines_smod.f90`.  
+    will have to be stored in a source file with the name `pm_display@routines.f90`.  
 
-+   All type and class names must begin with an uppercase letter and more importantly, must end with the prefix `_type`. Example: `ParaMCMC_type`.  
++   Each module should generally associate with only one submodule named `routines` which contains the implementation of the generic interfaces in the parent module.
+
++   All type and class names must begin with an uppercase letter and more importantly, must end with the prefix `_type`. Example: `sampler_type`.  
     **Why?** This helps create multiple different entity names from a single base name. For example,  
     ```fortran  
-    use String_mod, only: String_type
-    type(String_type) :: string
+    use pm_str, only: str_type
+    type(str_type) :: str
     ```  
 
 ### Comments  
@@ -197,22 +201,30 @@ If you do not follows these rules in your contribution, please provide an explan
 +   In general, the code itself should be expressive enough to obviate any need for comments. 
     However, when needed, comments are encouraged and should be kept informative and concise.  
 
-+   Use the [Doxygen]() convention and style for code annotations and documentation. 
-    See the ParaMonte kernel source code for samples of Doxygen documentations of the kernel routines. 
++   Use the [Doxygen](https://www.doxygen.nl/manual/docblocks.html) convention and style for code annotations and documentation. 
+    See the ParaMonte Fortran source code for samples of Doxygen documentations of the Fortran routines. 
 
 +   If there is any work or comment to be left for the future developer(s) including yourself, use the syntax of Doxygen 
     `\todo` (or less preferably `@todo`) to define future tasks and `\author` (or less preferably `@author`) to introduce yourself 
     to the future developer within the code comments. For example,  
     ```fortran  
-    ! \todo: There is room for performance improvements here by pre-computing the following array in procedure xxx.
+    !>  \todo
+    !>  \pvhigh
+    !>  There is room for performance improvements here by pre-computing the following array in procedure xxx.
     ```  
+    The ParaMonte Doxygen documentation contains five predefined commands that indicate the importance of the task to do.  
+    +   `\pvhigh` : Priority Very High
+    +   `\phigh` : Priority High
+    +   `\pmed` : Priority Medium
+    +   `\plow` : Priority Low
+    +   `\pvlow` : Priority Very Low
 
 ## Final steps  
 
 Once you have implemented your contributions,  
 
-+   Do not forget to test your contributions by adding new kernel tests to the unit-testing framework of the library.  
-+   Also, generate code coverage report to ensure your contributions do not lower the overall code coverage of the kernel routines.  
++   Do not forget to test your contributions by adding new Fortran tests to the unit-testing framework of the library.  
++   Also, generate code coverage report to ensure your contributions do not lower the overall code coverage of the Fortran routines.  
 +   Follow the [generic contribution guidelines](../general/#all-contributors){:target='_blank'} to submit and merge your contributions with the main branch of the library on GitHub. 
 
 {% include askme.html %}

@@ -376,6 +376,7 @@ elif [ "${lang}" = "matlab" ]; then
     export paramonte_project_name="${paramonte_project_name} MATLAB"
 elif [ "${lang}" = "python" ]; then
     export paramonte_project_name="${paramonte_project_name} Python"
+    export paramonte_optimize_for_java="YES"
 elif [ "${lang}" = "java" ]; then
     export paramonte_project_name="${paramonte_project_name} Java"
     export paramonte_optimize_for_java="YES"

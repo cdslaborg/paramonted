@@ -4,13 +4,13 @@ would lead to such error messages as the following,
 <pre>bash: matlab: command not found</pre>
 To resolve the error, you need to provide the full path to the MATLAB executable. On macOS, the full path to the MATLAB executable typically is, 
 {% highlight bash %}
-/Applications/MATLAB_R2020a.app/bin/matlab
+/Applications/MATLAB_R2023a.app/bin/matlab
 {% endhighlight %}
 and on Linux, 
 {% highlight bash %}
-/usr/local/MATLAB/R2020a/bin/matlab
+/usr/local/MATLAB/R2023a/bin/matlab
 {% endhighlight %}
-where in both cases you will have to replace <b><code>R2020a</code></b> with the MATLAB version installed on your system. You can also execute the following command on your Bash terminal to add a MATLAB executable alias to your <b><code>~/.bashrc</code></b> file so that every time a bash terminal is opened on your system, or when you execute <b><code>source ~/.bashrc</code></b> in your current Bash session, it would automatically recognize the path to the MATLAB executable, 
+where in both cases you will have to replace <b><code>R2023a</code></b> with the MATLAB version installed on your system. You can also execute the following command on your Bash terminal to add a MATLAB executable alias to your <b><code>~/.bashrc</code></b> file so that every time a bash terminal is opened on your system, or when you execute <b><code>source ~/.bashrc</code></b> in your current Bash session, it would automatically recognize the path to the MATLAB executable, 
 {% highlight bash %}
 echo "alias matlab=path_to_matlab_executable" >> ~/.bashrc
 {% endhighlight %}

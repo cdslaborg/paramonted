@@ -61,6 +61,10 @@
         <tab type='user' url='../../matlab/latest/index.html' title='latest' intro=''/>
         <tab type='user' url='../../matlab/3/index.html' title='3' intro=''/>
     </tab>
+    <tab type='usergroup' visible='yes' title='Python' intro='Python Documentation Version History'>
+        <tab type='user' url='../../python/latest/index.html' title='latest' intro=''/>
+        <tab type='user' url='../../python/3/index.html' title='3' intro=''/>
+    </tab>
 
 
 

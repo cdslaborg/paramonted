@@ -60,13 +60,13 @@ The following table illustrates the common library suffixes used on different pl
 
 The ParaMonte binary folder naming follows a universal naming convention across all programming languages and platforms.  
 +   The generated binary folders (containing the ParaMonte library and its examples) have the following pattern for compiled languages (C, C++, Fortran),
-    ```
+    <pre>
     libparamonte_<interface language: c/cpp/fortran/...>_<OS: windows/linux/darwin/...>_<architecture: amd64/arm64/...>_<compiler vendor and major version: intel2021/gnu13/...>_<build type: native/tuned/ipo/release/testing/debug>_<library type: shared/static>_<memory allocation type: stack/heap>_<parallelism library/type: serial/mpi/impi/mpich/openmpi/openmp/cafsingle/cafshared/cafdist/...>_<runtime checking mode: checked/nocheck>  
-    ```  
+    </pre>
 +   and the generated binary folders (containing the ParaMonte library and its examples) have the following pattern for interpreted languages (MATLAB, Python, R, etc.),
-    ```
+    <pre>
     libparamonte_<interface language: c/cpp/fortran/...>_<OS: windows/linux/darwin/...>_<architecture: amd64/arm64/...>  
-    ```  
+    </pre>
 
 where,  
 
@@ -176,60 +176,56 @@ As of 2020, the `amd64` and `arm64` processor architectures takes the lion's sha
 
 ### How can I find out the platform and architecture of my system?  
 
-- On **Windows OS**, open a Windows command-line interface (`cmd.exe`).  
-    - To find out your system's OS, type,  
-```shell
-echo %OS%
-```
-    which should result in an answer like the following,  
-```
-Windows_NT
-```  
-    - To check your system's platform/architecture, type,  
-```shell
-echo %PLATFORM%
-```
-    which should result in an answer like the following,  
-```
-x64
-```
-    or,  
-```shell
-echo %PROCESSOR_ARCHITECTURE%
-```  
-    which should result in an answer like the following,  
-```
-AMD64
-```
-    if your system's architecture is `amd64`.  
-
-<br>
-
-- On **Unix-like OS** (Linux/macOS), open a Bash shell.  
-    - To find out your system's OS, type,  
-```shell
-uname -s
-```
-    which should result in an answer like the following,  
-```
-Linux
-```  
-    or,  
-```
-Darwin
-```  
-    depending on the type of your OS.  
-    - To check your system's platform/architecture, type,  
-```shell
-uname -m
-```
-    which should result in an answer like the following,  
-```
-x86_64
-```
-    if your system's architecture is `amd64`.  
-
-
++   On **Windows OS**, open a Windows command-line interface (`cmd.exe`).  
+    +   To find out your system's OS, type,  
+        ```batch
+        echo %OS%
+        ```
+        which should result in an answer like the following,  
+        <pre>
+        Windows_NT
+        </pre>
+    +   To check your system's platform/architecture, type,  
+        ```batch
+        echo %PLATFORM%
+        ```
+        which should result in an answer like the following,  
+        <pre>
+        x64
+        </pre>
+        or,  
+        ```batch
+        echo %PROCESSOR_ARCHITECTURE%
+        ```  
+        which should result in an answer like the following,  
+        <pre>
+        AMD64
+        </pre>
+        if your system's architecture is `amd64`.  
+        <br>
++   On **Unix-like OS** (Linux/macOS), open a Bash shell.  
+    +   To find out your system's OS, type,  
+        ```batch
+        uname -s
+        ```
+        which should result in an answer like the following,  
+        <pre>
+        Linux
+        </pre>
+        or,  
+        <pre>
+        Darwin
+        </pre>
+        depending on the type of your OS.  
+    +   To check your system's platform/architecture, type,  
+        ```bash
+        uname -m
+        ```
+        which should result in an answer like the following,  
+        <pre>
+        x86_64
+        </pre>
+        if your system's architecture is `amd64`.  
 
 
 {% include askme.html %}

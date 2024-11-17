@@ -47,8 +47,8 @@ To access the latest release of the package, visit [the ParaMonte GitHub reposit
 **MATLAB versions used for this release**  
 
 +   **Windows**: `MATLAB 9.6.0.1072779 (R2019a)`  
-+     **Linux**: `MATLAB 9.8.0.1323502 (R2020a)`  
-+     **macOS**: `MATLAB 9.8.0.1323502 (R2020a)`  
++     **Linux**: `MATLAB 9.8.0.1323502 (R2023a)`  
++     **macOS**: `MATLAB 9.8.0.1323502 (R2023a)`  
 
 **MATLAB version compatibility**  
 

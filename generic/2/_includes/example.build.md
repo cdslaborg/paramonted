@@ -1,10 +1,34 @@
 {% if include.lang == "c" %}
     {% assign progLangName = "C" %}
+    {% assign progLangExam = "group__runParaDRAM.html#vis-mvn" %}
+    {% capture progLangVers %}{{site.pmvmc}}{% endcapture %}
 {% elsif include.lang == "cpp" %}
     {% assign progLangName = "C++" %}
+    {% assign progLangExam = "group__runParaDRAM.html#vis-mvn" %}
+    {% capture progLangVers %}{{site.pmvmcpp}}{% endcapture %}
 {% elsif include.lang == "fortran" %}
     {% assign progLangName = "Fortran" %}
+    {% assign progLangExam = "interfacepm__sampling_1_1getErrSampling.html#vis-mixture" %}
+    {% capture progLangVers %}{{site.pmvmfortran}}{% endcapture %}
+{% elsif include.lang == "matlab" %}
+    {% assign progLangName = "MATLAB" %}
+    {% assign progLangExam = "classParadram.html#vis-himmelblau" %}
+    {% capture progLangVers %}{{site.pmvmmatlab}}{% endcapture %}
+{% elsif include.lang == "python" %}
+    {% assign progLangName = "Python" %}
+    {% assign progLangExam = "classParadram.html#vis-himmelblau" %}
+    {% capture progLangVers %}{{site.pmvmpython}}{% endcapture %}
+{% elsif include.lang == "r" %}
+    {% assign progLangName = "R" %}
+    {% assign progLangExam = "classParadram.html#vis-himmelblau" %}
+    {% capture progLangVers %}{{site.pmvmr}}{% endcapture %}
 {% endif %}
+
+{{site.data.alerts.tip}}
+    The examples source codes, build instructions, and an illustration of their output are all available and documented in 
+    the <a href="https://www.cdslab.org/paramonte/{{include.lang}}/{{progLangVers}}/" target="_blank">ParaMonte {{progLangName}} API documentation</a>.<br>
+    See for example, the illustrations in the documentation of the <a href="https://www.cdslab.org/paramonte/{{include.lang}}/{{progLangVers}}/{{progLangExam}}" target="_blank">ParaMonte {{progLangName}} ParaDRAM sampler</a>.
+{{site.data.alerts.end}}
 
 ## Building and running examples from the library source  
 
@@ -33,17 +57,20 @@ and subsequently run all ParaMonte {{progLangName}} examples whose name or path,
 [example directory of the ParaMonte GitHub repository]({{site.githubTree}}/example/{{include.lang}}){:target="_blank"},
 partially matches the specified pattern `sampling`.  
 
-{% include tip.html content='If multiple example patterns are desired, separate the patterns with semicolon and double-quote the entire value. For example, `--exam "sampling;himmelblau"`.' %}
+{% include tip.html content='If multiple example patterns are desired, separate the patterns 
+with semicolon and double-quote the entire value. For example, `--exam "sampling;himmelblau"`.' %}
 
 ## Building and running examples from the pre-built library releases  
 
-The prebuilt ParaMonte library release ship with all available 
-examples for the {{include.lang}} programming language environment.  
+The prebuilt ParaMonte {{progLangName}} library releases ship with all 
+available examples for the {{progLangName}} programming language environment.  
 
 To run a specific example in the prebuilt library,
 
-1.  Navigate to the folder containing the `main` example file.
+1.  Navigate to the example folder of your interest in the prebuilt library containing the `main` example file.
+
 {% if include.lang == "c" or include.lang == "cpp" or include.lang == "fortran" %}
+
 1.  Run the build script in the relevant terminal to **build and run** the example.
     1.  In a **Windows Batch terminal**, try,
         ```batch
@@ -57,7 +84,9 @@ To run a specific example in the prebuilt library,
         ```batch
         chmod +x build.sh && ./build.sh
         ```
+
 {% elsif include.lang == "matlab" %}
+
 1.  Either,
     1.  open a MATLAB session and run the supplied MATLAB script `main.m`, or,
     1.  call the MATLAB application from within a relevant terminal 
@@ -78,8 +107,10 @@ To run a specific example in the prebuilt library,
             {{site.data.alerts.tip}}
             On Windows platforms using the Intel MPI library, you need to specify an additional
             flag `-localonly` for the `mpiexec` launcher to limit the parallelism to the local machine.
-            <pre class="language-bash highlighter-rouge">
-            mpiexec -localonly -n 3 matlab -batch main
+            <pre class="language-batch highlighter-rouge">
+            <code>mpiexec -localonly -n 3 matlab -batch main</code>
             </pre>
             {{site.data.alerts.end}}
+        {% include note.html content="The MATLAB `-batch` flag prevents a MATLAB GUI session from opening and instead runs the MATLAB engine in the background. You should always use this flag when using MATLAB on the command line." %}
+
 {% endif %}

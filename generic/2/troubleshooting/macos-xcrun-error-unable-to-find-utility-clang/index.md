@@ -29,15 +29,15 @@ https://www.mathworks.com/matlabcentral/answers/512901-mex-xcodebuild-error-sdk-
 
 While building the ParaMonte MATLAB library on macOS, you may receive a compiler error message similar to the following,  
 
-```text  
+<pre>
 xcrun: error: unable to find utility "clang", not a developer tool or in PATH
-```  
+</pre>
 
 or particularly, after macOS automatic update to a more recent version, for example, macosx10.15.4,  
 
-```text  
+<pre>
 MEX - xcodebuild: error: SDK "macosx10.15.4" cannot be located
-```  
+</pre>
 
 To resolve this error,  
 
