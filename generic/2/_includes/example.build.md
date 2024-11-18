@@ -30,42 +30,23 @@
     See for example, the illustrations in the documentation of the <a href="https://www.cdslab.org/paramonte/{{include.lang}}/{{progLangVers}}/{{progLangExam}}" target="_blank">ParaMonte {{progLangName}} ParaDRAM sampler</a>.
 {{site.data.alerts.end}}
 
-## Building and running examples from the library source  
-
-If you are building the ParaMonte library from the source code, 
-you can also instruct the build scripts to build, run and postprocess 
-the examples after the ParaMonte build is complete. 
-To build and run the examples, you must specify the name of the 
-example you want to run along with the ParaMonte build configuration 
-flag [`--exam`](../../../installation/install.config.md#exam). 
-For example,
-
-+   In a **Windows** Batch command line (e.g., CMD), 
-    try in the root directory of the ParaMonte GitHub repository,
-    ```batch
-    install.bat --lang {{include.lang}} --exam sampling
-    ```
-
-+   In a **Unix** Bash or ZSH command line,
-    try in the root directory of the ParaMonte GitHub repository,
-    ```bash
-    ./install.sh --lang {{include.lang}} --exam sampling
-    ```
-
-The above installation commands will be build the ParaMonte {{progLangName}} library
-and subsequently run all ParaMonte {{progLangName}} examples whose name or path, as appearing in the
-[example directory of the ParaMonte GitHub repository]({{site.githubTree}}/example/{{include.lang}}){:target="_blank"},
-partially matches the specified pattern `sampling`.  
-
-{% include tip.html content='If multiple example patterns are desired, separate the patterns 
-with semicolon and double-quote the entire value. For example, `--exam "sampling;himmelblau"`.' %}
-
 ## Building and running examples from the pre-built library releases  
 
-The prebuilt ParaMonte {{progLangName}} library releases ship with all 
-available examples for the {{progLangName}} programming language environment.  
+{% if include.lang == "matlab" or include.lang == "python" %}
+
+The [prebuilt ParaMonte {{progLangName}} library releases]({{site.baseurl}}/installation/{{include.lang}}/#the-fast-way){:target="_blank"} 
+ship with all available examples for the {{progLangName}} programming language environment.  
+
+{% else %}
+
+The prebuilt ParaMonte {{progLangName}} library releases (yet to be added to the current library prerelease) 
+ship with all available examples for the {{progLangName}} programming language environment.  
+
+{% endif %}
 
 To run a specific example in the prebuilt library,
+
+1.  Download your target prebuilt library of your interest.  
 
 1.  Navigate to the example folder of your interest in the prebuilt library containing the `main` example file.
 
@@ -114,3 +95,33 @@ To run a specific example in the prebuilt library,
         {% include note.html content="The MATLAB `-batch` flag prevents a MATLAB GUI session from opening and instead runs the MATLAB engine in the background. You should always use this flag when using MATLAB on the command line." %}
 
 {% endif %}
+
+## Building and running examples from the library source  
+
+If you are building the ParaMonte library from the source code, 
+you can also instruct the build scripts to build, run and postprocess 
+the examples after the ParaMonte build is complete. 
+To build and run the examples, you must specify the name of the 
+example you want to run along with the ParaMonte build configuration 
+flag [`--exam`](../../../installation/install.config.md#exam). 
+For example,
+
++   In a **Windows** Batch command line (e.g., CMD), 
+    try in the root directory of the ParaMonte GitHub repository,
+    ```batch
+    install.bat --lang {{include.lang}} --exam sampling
+    ```
+
++   In a **Unix** Bash or ZSH command line,
+    try in the root directory of the ParaMonte GitHub repository,
+    ```bash
+    ./install.sh --lang {{include.lang}} --exam sampling
+    ```
+
+The above installation commands will be build the ParaMonte {{progLangName}} library
+and subsequently run all ParaMonte {{progLangName}} examples whose name or path, as appearing in the
+[example directory of the ParaMonte GitHub repository]({{site.githubTree}}/example/{{include.lang}}){:target="_blank"},
+partially matches the specified pattern `sampling`.  
+
+{% include tip.html content='If multiple example patterns are desired, separate the patterns 
+with semicolon and double-quote the entire value. For example, `--exam "sampling;himmelblau"`.' %}
