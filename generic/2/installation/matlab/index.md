@@ -132,7 +132,7 @@ Once the library build and installation is complete, follow further instructions
     If needed, follow any extra instructions provided by the library on your MATLAB command prompt.  
 1.  You are all set! Enjoy the unification of simplicity, high-performance, parallelism, thoroughness, 
     and advanced Monte Carlo algorithms and Machine Learning, all in one place. 
-    See the [ParaMonte MATLAB documentation]({{site.baseurl}}/matlab/{{site.pmvmmatlab}}){:target="_blank"} 
+    See the [ParaMonte MATLAB documentation]({{site.baseurl}}/../../matlab/{{site.pmvmmatlab}}){:target="_blank"} 
     for detailed functionalities and examples.  
     {{site.data.alerts.important}}
     {% include important.macos.sip.msg.md %}
