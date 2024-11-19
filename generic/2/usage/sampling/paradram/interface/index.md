@@ -37,13 +37,13 @@ We have taken special care to develop a highly similar (if not the same) Applica
 
 ### Calling the ParaDRAM sampler from C  
 
-The [simulation specifications](../specifications/){:target="_blank"} are all automatically set to the appropriate default values. However, to assign non-default values to the [simulation specifications](../specifications/){:target="_blank"} from the C languages, the user must provide all or any [simulation specifications](../specifications/){:target="_blank"} as an external input file in the format described on [this page](../input/){:target="_blank"}. The benefits of using an external file to specify the properties of a ParaMonte simulation are also detailed [here](../input/#why-is-input-file-the-preferred-method-of-simulation-setup){:target="_blank"}.  
+The [simulation specifications](../specifications/){:target="_blank"} are all automatically set to the appropriate default values. However, to assign non-default values to the [simulation specifications](../specifications/){:target="_blank"} from the C language, the user must provide all or any [simulation specifications](../specifications/){:target="_blank"} as an external input file in the format described on [this page](../input/){:target="_blank"}. The benefits of using an external file to specify the properties of a ParaMonte simulation are also detailed [here](../input/#why-is-input-file-the-preferred-method-of-simulation-setup){:target="_blank"}.  
 
 For a complete descriptive example of ParaDRAM usage from within C, see [the ParaMonte C documentation]({{site.baseurl}}/../../c/2/group__pm__sampling.html){:target="_blank"}.  
 
 ### Calling the ParaDRAM sampler from C++  
 
-The [simulation specifications](../specifications/){:target="_blank"} are all automatically set to the appropriate default values. However, to assign non-default values to the [simulation specifications](../specifications/){:target="_blank"} from the C++ languages, the user must provide all or any [simulation specifications](../specifications/){:target="_blank"} as an external input file in the format described on [this page](../input/){:target="_blank"}. The benefits of using an external file to specify the properties of a ParaMonte simulation are also detailed [here](../input/#why-is-input-file-the-preferred-method-of-simulation-setup){:target="_blank"}.  
+The [simulation specifications](../specifications/){:target="_blank"} are all automatically set to the appropriate default values. However, to assign non-default values to the [simulation specifications](../specifications/){:target="_blank"} from the C++ language, the user must provide all or any [simulation specifications](../specifications/){:target="_blank"} as an external input file in the format described on [this page](../input/){:target="_blank"}. The benefits of using an external file to specify the properties of a ParaMonte simulation are also detailed [here](../input/#why-is-input-file-the-preferred-method-of-simulation-setup){:target="_blank"}.  
 
 For a complete descriptive example of ParaDRAM usage from within C++, see [the ParaMonte C++ documentation]({{site.baseurl}}/../../cpp/2/group__pm__sampling.html){:target="_blank"}.  
 
@@ -66,7 +66,7 @@ The [simulation specifications](../specifications/){:target="_blank"} are all au
     pm = paramonte();                       % generate a paramonte class instance
     pmpd = pm.ParaDRAM();                   % generate a ParaDRAM sampler instance
     pmpd.spec.outputFileName = "./out/mvn"; % set the file prefix for the ParaDRAM output files.
-    pmpd.spec.outputStatus = true;    % overwrite the output files if they already exist.
+    pmpd.spec.outputStatus = true;          % overwrite the output files if they already exist.
     pmpd.runSampler ( 3 ...                 sample a 3-dimensional MVN
                     , getLogFunc ...        the anonymous function returning the log of MVN
                     );
