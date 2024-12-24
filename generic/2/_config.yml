@@ -127,6 +127,7 @@ githubArchive: "https://github.com/cdslaborg/paramonte/archive"
 githubReleases: "https://github.com/cdslaborg/paramonte/releases"
 githubReleasesAuxil: "https://github.com/cdslaborg/paramonte/releases/auxil"
 githubReleaseCurrent: "https://github.com/cdslaborg/paramonte/releases/2024.04.29"
+githubReleasesAuxilDownload: "https://github.com/cdslaborg/paramonte/releases/download/auxil"
 githubReleaseCurrentDownload: "https://github.com/cdslaborg/paramonte/releases/download/2024.04.29"
 
 ####

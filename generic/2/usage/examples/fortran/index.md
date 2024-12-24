@@ -1,6 +1,6 @@
 ---
-title: "Building and running the ParaMonte C++ examples"
-#tags: [Python, ParaDRAM, API, Fortran, C, C++, interoperation]
+title: "Building and running the ParaMonte Fortran examples"
+#tags: [Python, ParaDRAM, API, Fortran, interoperation]
 keywords: 
         fortran
         Fortran
@@ -21,7 +21,7 @@ mathjax: true
 {% endcomment %}
 <br>
 
-{% include example.build.md lang = "fortran" %}
+{% include pm.examples.md lang = "fortran" %}
 
 
 {% include askme.html %}

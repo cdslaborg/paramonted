@@ -1,6 +1,6 @@
 <footer>
     <div class="row">
-        {% include socialIcons.html %}
+        {% include media.icons.html %}
         <div class="col-lg-12 footer">
             &copy;{{ site.time | date: "%Y"  }} <a href="{{site.companyurl}}" target="_blank">{{site.company_name}}</a><br />
             Last updated on {{ site.time | date: "%B %-d, %Y"}}<br/>
@@ -11,7 +11,7 @@
             {% endcomment %}
         <p>
             <a href="{{site.companyurl}}" target="_blank"><img class="footerlogo" src="{{ site.baseurl }}/images/logo.png" }}" alt="cdslab.org" /></a>
-            {% include sc.html %}
+            {% include stat.sc.html %}
         </p>
         </div>
     </div>

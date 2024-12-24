@@ -40,32 +40,32 @@ entries:
       type: homepage
 
     - title: ParaMonte release notes
-      url: /overview/paramonte-release-notes/
+      url: /overview/CHANGES.md.html
       output: web, pdf
       type: frontmatter
 
     - title: ParaMonte C release notes
-      url: /overview/paramonte-c-release-notes/
+      url: /overview/src/c/CHANGES.md.html
       output: web, pdf
       type: frontmatter
 
     - title: ParaMonte C++ release notes
-      url: /overview/paramonte-cpp-release-notes/
+      url: /overview/src/cpp/CHANGES.md.html
       output: web, pdf
       type: frontmatter
 
     - title: ParaMonte Fortran release notes
-      url: /overview/paramonte-fortran-release-notes/
+      url: /overview/src/fortran/CHANGES.md.html
       output: web, pdf
       type: frontmatter
 
     - title: ParaMonte MATLAB release notes
-      url: /overview/paramonte-matlab-release-notes/
+      url: /overview/src/matlab/CHANGES.md.html
       output: web, pdf
       type: frontmatter
 
     - title: ParaMonte Python release notes
-      url: /overview/paramonte-python-release-notes/
+      url: /overview/src/python/CHANGES.md.html
       output: web, pdf
       type: frontmatter
 
@@ -75,9 +75,9 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: ParaMonte pre-installation notes
+    - title: ParaMonte installation preface
       output: web, pdf
-      url: /installation/readme/
+      url: /installation/preface/
 
     - title: ParaMonte installation quickstart
       output: web, pdf
@@ -133,19 +133,19 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: ParaMonte C API
+    - title: ParaMonte API for C 
       output: web, pdf
       external_url: "!site.baseurl!/../../c/!site.pmvmc!/"
 
-    - title: ParaMonte C++ API
+    - title: ParaMonte API for C++
       output: web, pdf
       external_url: "!site.baseurl!/../../cpp/!site.pmvmcpp!/"
 
-    - title: ParaMonte Fortran API
+    - title: ParaMonte API for Fortran
       output: web, pdf
       external_url: "!site.baseurl!/../../fortran/!site.pmvmfortran!/"
 
-    - title: ParaMonte MATLAB API
+    - title: ParaMonte API for MATLAB
       output: web, pdf
       external_url: "!site.baseurl!/../../matlab/!site.pmvmmatlab!/"
 
@@ -155,19 +155,19 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: ParaDRAM C examples
+    - title: ParaMonte examples in C 
       url: /usage/examples/c/
       output: web, pdf
 
-    - title: ParaDRAM C++ examples
+    - title: ParaMonte examples in C++
       url: /usage/examples/cpp/
       output: web, pdf
 
-    - title: ParaDRAM Fortran examples
+    - title: ParaMonte examples in Fortran
       url: /usage/examples/fortran/
       output: web, pdf
 
-    - title: ParaDRAM MATLAB examples
+    - title: ParaMonte examples in MATLAB
       url: /usage/examples/matlab/
       output: web, pdf
 
@@ -177,7 +177,7 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: ParaDRAM quick start
+    - title: ParaDRAM preface
       url: /usage/sampling/paradram/interface/
       output: web, pdf
 
@@ -243,7 +243,7 @@ entries:
     output: web, pdf
     folderitems:
 
-    - title: enhancement-requests and bug-reports
+    - title: troubleshooting preface
       url: /troubleshooting/issues/
       output: web, pdf
 

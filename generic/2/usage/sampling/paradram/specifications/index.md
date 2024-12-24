@@ -29,7 +29,7 @@ The simulation specifications listed on this page can appear either in an extern
 within any programming environment or can be set as ParaDRAM sampler object components from within specific programming environments such as MATLAB and Python. 
 Refer to the corresponding programming language documentations for more details on the usage. 
 
-{% include specdram.md sampler="ParaDRAM" %}
+{% include pm.sampling.specdram.md sampler="ParaDRAM" %}
 
 {% include askme.html %}
 {% include links.html %}

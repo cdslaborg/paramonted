@@ -21,7 +21,7 @@ mathjax: true
 {% endcomment %}
 <br>
 
-{% include example.build.md lang = "cpp" %}
+{% include pm.examples.md lang = "cpp" %}
 
 
 {% include askme.html %}

@@ -1,5 +1,5 @@
 ---
-title: "Calling the ParaDRAM sampler: A quick start"
+title: "The ParaDRAM sampler interface"
 #tags: [Python, ParaDRAM, API, Fortran, C, C++, interoperation]
 keywords: 
         C
@@ -25,11 +25,13 @@ mathjax: true
 {% endcomment %}
 <br>
 
-{% include tip.quick.start.md %}
+{% include pm.examples.quickstart.md %}
 
 ## One API for usage from all programming languages  
 
-We have taken special care to develop a highly similar (if not the same) Application Programming Interface (API) for the ParaMonte library routines across all supported programming languages. In particular, every simulation performed via the ParaDRAM routine requires the user to supply only two mandatory pieces of information:  
+We have taken special care to develop a highly similar (if not the same) Application Programming Interface (API) for the ParaMonte library routines across all supported programming languages.  
+
+Every simulation performed via the ParaDRAM routine requires the user to supply only two mandatory pieces of information:  
 1.  A user-supplied density function `getLogFunc()` that the sampler must explore.  
 1.  The number of dimensions `ndim` of the domain of the user-supplied density function `getLogFunc()`.  
 

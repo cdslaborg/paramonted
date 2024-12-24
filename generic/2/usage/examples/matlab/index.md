@@ -20,7 +20,7 @@ mathjax: true
 {% endcomment %}
 <br>
 
-{% include example.build.md lang = "matlab" %}
+{% include pm.examples.md lang = "matlab" %}
 
 
 {% include askme.html %}

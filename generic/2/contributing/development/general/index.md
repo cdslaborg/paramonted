@@ -18,7 +18,7 @@ C/C++ examples documentation is currently being developed. Please check back in 
 
 <div id="toc"></div>  
 
-{% include shields.contributing.md %}
+{% include pm.contributing.shields.md %}
 
 <br>
 

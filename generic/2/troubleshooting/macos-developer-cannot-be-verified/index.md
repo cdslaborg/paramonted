@@ -41,11 +41,11 @@ Depending on what prebuilt ParaMonte library language you download to use, you m
 
 asking you to either move this file to trash because macOS does not know its developer or, cancel your ParaMonte simulation run. This new warning message does not even allow you to override the automatic decision made by the System Integrity Protection (SIP) of macOS to block the application. This is an extremely conservative new approach taken by macOS with the apparent goal of eventually forcing all macOS developers to register a developer account with Apple.  
 
-> This is an example of how corporations become evil by gradually stripping their customers' freedom and rights. People do not need a corporation, Apple, to tell them what they can or cannot use on their purchased equipment, Mac.  
+> This is an example of how corporations become evil by gradually stripping their customers of their freedom and rights. People do not need a corporation, Apple, to tell them what they can or cannot use on their purchased equipment, Mac.  
 
 **Steps to override the macOS SIP's automatic blocking of the ParaMonte library:**  
 
-There is still an indirect method of overriding the macOS SIP's authoritarian decision to not run the ParaMonte libraries on your system. We will explain these steps for the case of using the ParaMonte prebuilt libraries for the C programming language. However, these steps are identical in all programming languages, in particular, the MATLAB programming language, in which, one often encounters this issue.  
+There is still an indirect method of overriding the macOS SIP's authoritarian decision not to run the ParaMonte libraries on your system. We will explain these steps for using the ParaMonte prebuilt libraries for the C programming language. However, these steps are identical in all programming languages, particularly the MATLAB programming language, in which one often encounters this issue.  
 
 1.  Suppose you have downloaded one of the ParaMonte prebuilt libraries from the ParaMonte release page on GitHub, for example, [libparamonte_c_darwin_amd64_gnu_release_shared_heap.tar.gz]({{site.githubReleaseCurrentDownload}}/libparamonte_c_darwin_amd64_gnu_release_shared_heap.tar.gz).  
   

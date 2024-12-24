@@ -30,7 +30,7 @@ C/C++ examples documentation is currently being developed. Please check back in 
 {% endcomment %}
 
 1.  Two open-source software `gcov` and `lcov` are required for code instrumentation and HTML generation. 
-    {% include important.html content="The code coverage report generation currently requires a [ParaMonte-compatible](../../overview/paramonte-fortran-release-notes/){:target='_blank'} GNU Fortran compiler." %}
+    {% include important.html content="The code coverage report generation currently requires a [ParaMonte-compatible](../../overview/src/fortran/CHANGES.md){:target='_blank'} GNU Fortran compiler." %}
     {% include warning.html content="The GNU Fortran compiler version must be compatible with the GNU `gcov` (and possibly `lcov`) software version(s)." %}
 
 1.  The `install.sh` build script in the repository's root directory automates the code coverage report.
